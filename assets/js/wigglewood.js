@@ -94,6 +94,31 @@
     }
   }
 
+  /* ---- Drifting leaves over the whole world ---- */
+  var leafField = document.querySelector(".leaves");
+  if (leafField && !reduce) {
+    // hand-drawn-ish leaf silhouettes in the Wiggle Wood greens
+    var leafColors = ["%238ccb6e", "%235aa152", "%23c3ef8f", "%232f7d52", "%23e79a23"];
+    function leafSvg(c) {
+      return "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M28 4C14 5 5 14 4 28c14-1 23-10 24-24z' fill='" + c + "'/%3E%3Cpath d='M6 26C12 18 19 11 27 6' stroke='%23204d2a' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E\")";
+    }
+    var LN = window.innerWidth < 680 ? 7 : 14;
+    for (var i = 0; i < LN; i++) {
+      var leaf = document.createElement("span");
+      leaf.className = "leaf";
+      var sz = 16 + Math.random() * 22;
+      leaf.style.width = leaf.style.height = sz.toFixed(0) + "px";
+      leaf.style.left = (Math.random() * 100).toFixed(2) + "%";
+      leaf.style.backgroundImage = leafSvg(leafColors[i % leafColors.length]);
+      leaf.style.setProperty("--dx", (Math.random() * 220 - 60).toFixed(0) + "px");
+      leaf.style.setProperty("--dr", (260 + Math.random() * 620).toFixed(0) + "deg");
+      leaf.style.animationDuration = (13 + Math.random() * 16).toFixed(1) + "s";
+      leaf.style.animationDelay = "-" + (Math.random() * 24).toFixed(1) + "s";
+      leaf.style.opacity = "0";
+      leafField.appendChild(leaf);
+    }
+  }
+
   /* ---- Year in footer ---- */
   var yr = document.querySelector("[data-year]");
   if (yr) yr.textContent = new Date().getFullYear();
