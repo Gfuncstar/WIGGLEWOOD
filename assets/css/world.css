@@ -50,24 +50,50 @@
 .forest-light span:nth-child(3){left:70%;--rot:11deg;transform:rotate(11deg);animation:ray 17s ease-in-out infinite 5s}
 
 /* ---------- Video scene backgrounds ----------
-   Sections pull in the actual episode's frames as evocative backdrops.
-   Each has a dark overlay so investor copy stays readable. */
-.scene-bg{position:relative;overflow:hidden}
-.scene-bg::before{
-  content:"";position:absolute;inset:0;z-index:0;
-  background-size:cover;background-position:center;
-  filter:brightness(.55) saturate(1.1);
-  transform:scale(1.04);
-  animation:sceneDrift 30s ease-in-out infinite alternate;
+   Each page-hero gets a looping episode video clip behind the content.
+   overflow:hidden clips the video to the hero but the .page-hero-fade div
+   sits outside the hero and bridges the seam seamlessly. */
+.page-hero{position:relative;overflow:hidden;margin-bottom:0}
+
+/* the video element itself */
+.scene-vid{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  filter:brightness(.62) saturate(1.12);
+  z-index:0;pointer-events:none;
 }
+
+/* cross-section fade strip — sits at the very bottom of .page-hero and
+   extends 120px INTO the section below using negative margin, killing the line */
+.page-hero-fade{
+  position:relative;z-index:10;
+  height:140px;margin-top:-140px;pointer-events:none;
+  background:linear-gradient(180deg, transparent 0%, #0a1c1e 100%);
+}
+
+/* dark overlay: readable text left, fade to dark at bottom for seamless join */
+.page-hero::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(6,22,23,.68) 0%, rgba(6,22,23,.16) 50%, transparent 78%),
+    linear-gradient(180deg, rgba(6,22,23,.18) 0%, transparent 20%, transparent 60%, rgba(9,28,30,.85) 90%);
+}
+.page-hero > *:not(.scene-vid){position:relative;z-index:2}
+
+/* For section-alt bands that also use a scene clip */
+.section-scene{position:relative;overflow:hidden}
+.section-scene .scene-vid{filter:brightness(.45) saturate(1.1)}
+.section-scene::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(10,28,30,.6) 0%, rgba(10,28,30,.35) 40%,
+      rgba(10,28,30,.35) 60%, rgba(10,28,30,.8) 100%);
+}
+.section-scene > *:not(.scene-vid){position:relative;z-index:2}
+
+/* Remove the old CSS-only approach (kept for WebP fallback if JS fails) */
+.scene-bg{}
 .scene-bg > *{position:relative;z-index:1}
-/* Each page's designated scene */
-.scene-night::before  {background-image:url('../img/scenes/scene-night.webp')}
-.scene-cubby::before  {background-image:url('../img/scenes/scene-cubby-warm.webp')}
-.scene-cast::before   {background-image:url('../img/scenes/scene-cast-red.webp')}
-.scene-glow::before   {background-image:url('../img/scenes/scene-glow.webp')}
-.scene-hug::before    {background-image:url('../img/scenes/scene-hug.webp')}
-.scene-forest::before {background-image:url('../img/scenes/scene-forest.webp')}
 
 /* ---------- Drifting leaves ---------- */
 .leaves{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
@@ -140,25 +166,29 @@
 .peeker--br{right:-1vw;bottom:-1vh;width:clamp(110px,14vw,190px);transform:scaleX(-1)}
 
 /* ---------- Home hero ---------- */
-.hero{align-items:flex-start}
+.hero{align-items:flex-start;overflow:hidden}
+/* The home hero carries its own scene-vid */
+.hero .scene-vid{z-index:-1;filter:brightness(.7) saturate(1.08)}
 .hero__inner{
   display:flex;flex-direction:column;align-items:center;text-align:center;
-  padding-top:clamp(4rem,8vh,6rem);padding-bottom:0;
+  padding-top:clamp(4rem,8vh,6rem);padding-bottom:0;position:relative;z-index:2;
 }
 .hero__logo{width:clamp(160px,18vw,280px)}
 .hero__title{max-width:26ch;margin:.3rem auto .3rem;font-size:clamp(1.35rem,2.6vw,2.1rem)}
 .hero__sub{margin:0 auto;max-width:42ch;font-size:clamp(.96rem,1.25vw,1.12rem)}
 .hero__cta{justify-content:center;margin-top:1rem}
-/* scrim: darken only where words sit, leave character faces below unobscured */
+/* scrim: top-heavy so text is readable, open in the middle for characters */
 .hero__scrim{
+  z-index:1;
   background:linear-gradient(180deg,
-    rgba(7,28,29,.70) 0%, rgba(7,28,29,.28) 24%, transparent 42%,
-    transparent 62%, rgba(8,24,25,.42) 100%)
+    rgba(7,28,29,.65) 0%, rgba(7,28,29,.22) 22%, transparent 38%,
+    transparent 58%, rgba(8,24,25,.38) 78%, rgba(9,26,27,.72) 90%, rgba(10,28,29,.95) 100%)
 }
-/* seamless fade into the section below */
+/* bottom of hero fades out — the .page-hero-fade strip handles the seam */
 .hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:28vh;z-index:0;pointer-events:none;
-  background:linear-gradient(180deg, transparent 0%, rgba(10,30,31,.48) 56%, #0a1c1d 100%)
+  content:"";position:absolute;left:0;right:0;bottom:0;height:26vh;
+  z-index:2;pointer-events:none;
+  background:linear-gradient(180deg, transparent 0%, rgba(10,28,30,.7) 70%, rgba(10,28,30,.9) 100%)
 }
 
 /* ---------- Two-column default for all prose sections ---------- */

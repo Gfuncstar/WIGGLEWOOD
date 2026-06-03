@@ -34,12 +34,32 @@ function actor(spec) {
   return `<img class="${cls}" src="assets/img/characters/${file}.webp" alt="${ALT[spec.name] || spec.name}" loading="lazy" />`;
 }
 
+/* Map scene names to video clip filenames */
+const SCENE_VID = {
+  "scene-night":      "scene-night.mp4",
+  "scene-cubby":      "scene-cubby-warm.mp4",
+  "scene-cast":       "scene-cast-red.mp4",
+  "scene-glow":       "scene-glow.mp4",
+  "scene-hug":        "scene-hug.mp4",
+  "scene-forest":     "scene-forest.mp4",
+  "scene-cubby-warm": "scene-cubby-warm.mp4",
+};
+
+function sceneVideo(sceneClass) {
+  const vid = SCENE_VID[sceneClass];
+  if (!vid) return "";
+  return `<video class="scene-vid" autoplay muted loop playsinline preload="auto">
+    <source src="assets/img/scenes/${vid}" type="video/mp4" />
+  </video>`;
+}
+
 function pageHero(p) {
   const actors = p.actors || [];
   const halo = HALO[(actors[0] || {}).name] || "rgba(255,224,122,.4)";
   const scene = SCENE[p.slug] || "";
   return `
-<header class="page-hero${scene ? " scene-bg " + scene : ""}">
+<header class="page-hero">
+  ${scene ? sceneVideo(scene) : ""}
   <div class="page-hero__inner">
     <div class="page-hero__text" data-reveal>
       <p class="eyebrow">${p.eyebrow}</p>
@@ -51,7 +71,8 @@ function pageHero(p) {
       ${actors.map(actor).join("\n      ")}
     </div>
   </div>
-</header>`;
+</header>
+<div class="page-hero-fade" aria-hidden="true"></div>`;
 }
 
 /* primary nav + full sitemap (footer) */
@@ -195,6 +216,9 @@ PAGES.push({
   metaDesc: "Wiggle Wood is a music-led animated series for children aged three to five, promoting kindness, diversity and inclusion. A global brand and investment opportunity.",
   html: `
 <header class="hero">
+  <video class="scene-vid" autoplay muted loop playsinline preload="auto" style="z-index:-1">
+    <source src="assets/img/scenes/scene-forest.mp4" type="video/mp4" />
+  </video>
   <div class="hero__bg">
     <picture>
       <source type="image/webp" srcset="assets/img/hero/hero-2400.webp 2400w, assets/img/hero/hero-1600.webp 1600w, assets/img/hero/hero-1000.webp 1000w" sizes="100vw" />
@@ -213,6 +237,7 @@ PAGES.push({
   </div>
   <a class="scroll-cue" href="#enter" aria-label="Scroll down">Enter<span></span></a>
 </header>
+<div class="page-hero-fade" aria-hidden="true"></div>
 
 <section class="section" id="enter" data-reveal>
   <div class="container">
