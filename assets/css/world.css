@@ -6,12 +6,15 @@
    peeking in / interacting on every page.
    ========================================================================= */
 
-/* ---------- The real forest art, kept visible (not blurred away) ---------- */
+/* ---------- Animated painterly forest backdrop (BACKGROUND.webp) ---------- */
 #forest::before{
-  background-image:url('../img/hero/hero-2400.webp');
-  /* almost crisp so you can actually SEE the world; gentle grade for mood */
-  filter:saturate(1.06) brightness(.92) blur(1.5px);
-  transform:scale(1.08);
+  background-image:url('../img/world/background.webp');
+  background-position:center top;
+  background-size:cover;
+  /* a tall 2500x7120 painting — drift slowly through it so it feels alive */
+  filter:saturate(1.05) brightness(.94);
+  transform:scale(1.06);
+  animation:bgDrift 52s ease-in-out infinite alternate;
 }
 #forest::after{
   /* lighter than the base theme so the scene reads through, but text on the
@@ -51,9 +54,10 @@
 /* ---------- Drifting leaves ---------- */
 .leaves{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 .leaf{
-  position:absolute;top:-8%;width:26px;height:26px;opacity:0;
+  position:absolute;top:-10%;width:56px;height:56px;opacity:0;
   background:no-repeat center/contain;
   will-change:transform;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));
   animation:leaf-fall linear infinite;
 }
 
@@ -121,7 +125,47 @@
 /* breadcrumb-ish back-to-home pill on inner pages */
 .page-eyebrow-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 
+/* ---------- Centered home hero ---------- */
+.hero{align-items:center}
+.hero__inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:0}
+.hero__title{max-width:24ch;margin-inline:auto}
+.hero__sub{margin-inline:auto}
+.hero__cta{justify-content:center}
+
+/* ---------- Financial model components ---------- */
+.fund-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.6rem}
+.fund-card{background:var(--glass);border:1px solid var(--glass-border);border-top:3px solid var(--gold);border-radius:var(--r-md);padding:1.1rem;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.fund-card strong{display:block;color:#fff;font-family:var(--font-display);margin-bottom:.4rem}
+.fund-card p{margin:0;font-size:.92rem;color:var(--paper-dim)}
+.fig-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.6rem}
+.fig{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1.1rem;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.fig__num{font-family:var(--font-display);font-weight:800;font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--gold);line-height:1.05}
+.fig__lab{font-size:.82rem;color:var(--paper-dim);margin-top:.35rem}
+
+/* ---------- Production timeline ---------- */
+.timeline{display:grid;gap:.9rem;margin-top:1.6rem;position:relative}
+.tl{display:grid;grid-template-columns:170px 1fr;gap:1.2rem;align-items:start;
+  background:var(--glass);border:1px solid var(--glass-border);border-left:3px solid var(--gold);
+  border-radius:var(--r-md);padding:1.2rem 1.4rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:transform .35s var(--ease),border-color .35s}
+.tl:hover{transform:translateX(5px);border-color:var(--glass-border-hi)}
+.tl__when{font-family:var(--font-display);font-weight:800;color:var(--gold-glow);font-size:1.02rem}
+.tl__what strong{display:block;color:#fff;font-family:var(--font-display);font-size:1.1rem;margin-bottom:.3rem}
+.tl__what p{margin:0;font-size:.92rem;color:var(--paper-dim)}
+
+/* ---------- Document download link ---------- */
+.doc-dl{display:inline-flex;align-items:center;gap:.4em;margin-top:.6rem;font-family:var(--font-eyebrow);font-weight:700;font-size:.8rem;color:var(--gold-glow);transition:gap .2s,color .2s}
+.doc-dl svg{width:15px;height:15px}
+.doc-dl:hover{gap:.7em;color:var(--gold)}
+.doc-item>div{display:flex;flex-direction:column}
+
+@media(max-width:680px){
+  .fund-grid,.fig-grid{grid-template-columns:1fr}
+  .tl{grid-template-columns:1fr;gap:.3rem}
+}
+
 /* ---------- Keyframes ---------- */
+@keyframes bgDrift{0%{transform:scale(1.06) translateY(0)}100%{transform:scale(1.14) translateY(-7%)}}
 @keyframes sway-l{0%,100%{transform:rotate(-2.2deg)}50%{transform:rotate(2.4deg)}}
 @keyframes sway-r{0%,100%{transform:scaleX(-1) rotate(-2.4deg)}50%{transform:scaleX(-1) rotate(2.2deg)}}
 @keyframes flutter{0%,100%{transform:translateY(0) rotate(-2deg)}25%{transform:translateY(-14px) rotate(1.5deg)}50%{transform:translateY(-6px) rotate(-1deg)}75%{transform:translateY(-18px) rotate(2.5deg)}}

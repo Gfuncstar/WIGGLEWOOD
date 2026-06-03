@@ -140,8 +140,7 @@ const WORLD = `
   <img class="canopy__branch canopy__branch--r" src="assets/img/world/branch2-1600.webp" alt="" />
   <img class="canopy__sprig" src="assets/img/world/branch2-1600.webp" alt="" />
 </div>
-<div class="leaves" aria-hidden="true"></div>
-<div class="fireflies" aria-hidden="true"></div>`;
+<div class="leaves" aria-hidden="true"></div>`;
 
 function layout(p) {
   const active = p.slug === "index" ? "index" : p.slug;
@@ -341,13 +340,13 @@ PAGES.push({
   <div class="container">
     <p class="eyebrow">Episode Stories</p>
     <h2 class="h-2">A glimpse into the storytelling</h2>
-    <p>Each story is built around a simple emotional truth, brought to life through character, humour, and the natural world. Twenty episodes have been developed at springboard stage, with the full document available in the Documents section.</p>
+    <p>Each story is built around a simple emotional truth, brought to life through character, humour, and the natural world. Twenty episodes have been developed at springboard stage, with the full document available in the Documents section. The five stories below represent the breadth and emotional range of the series, with the remaining 52 episodes per season developed as we move into pre-production.</p>
     <div class="episode-grid" data-reveal-stagger>
       <div class="episode-card"><span class="ep-label">Pilot Episode</span><h4>Show Your Glow</h4><p>Cyd is determined to make the perfect gift for Bellona&rsquo;s Butterversary, but when the Wigglers meet shy Luna Glow-worm, who refuses to shine because she believes her light is not bright enough, Cyd begins to see perfection differently. Through friendship and song, the Wigglers discover that beauty is not about being flawless, but about being proud of who you are and letting your own unique light shine. Together, they learn that your best is beautiful.</p></div>
       <div class="episode-card"><span class="ep-label">Episode 2</span><h4>Don&rsquo;t Yuck my Dung</h4><p>Bruno the dung beetle needs help rolling his dung ball, but Cosmo is not exactly thrilled about touching poo. Bruno sets about teaching the Wigglers about the wonders of dung, and that just because you do not like something, it does not mean everyone feels the same way. And that is perfectly fine.</p></div>
-      <div class="episode-card"><span class="ep-label">Episode 3</span><h4>Hog Bugs</h4><p>An injured hedgehog arrives at Caterpillar Cubby, and Chadwick immediately bonds with him. He has broken a leg and cannot walk properly. Through helping to care for him, Chadwick reflects on his own experience of using a wheelchair. He realises just how much he has to offer, and why it is important that everyone, regardless of ability, gets the support and space they need to thrive.</p></div>
-      <div class="episode-card"><span class="ep-label">Episode 4</span><h4>Noisy Neighbours</h4><p>Oliver Owl loves to sing through the night with the pure joy of someone who has never once been told to keep it down. He means no harm. He simply has no idea what time it is. The Wigglers must help Robin Robin navigate the noise in a way that is kind, not confrontational, demonstrating how to express our needs without hurting others.</p></div>
-      <div class="episode-card"><span class="ep-label">Episode 5</span><h4>Strong As Silk!</h4><p>Nancy Weaver the spider has got herself in a terrible tangle. The Wigglers try to help but keep making things worse. The lesson: sometimes the most helpful thing you can do is stop helping and listen to what someone actually needs. Listening is a superpower.</p></div>
+      <div class="episode-card"><span class="ep-label">Episode 3</span><h4>Hog Bugs</h4><p>A gang of greedy, gregarious locusts are passing through Wiggle Wood, intent on eating everything in sight. With a little help from Bellona, the Wigglers show the bothersome bugs that there is more joy in sharing than in gobbling everything up.</p></div>
+      <div class="episode-card"><span class="ep-label">Episode 4</span><h4>Noisy Neighbours</h4><p>Cosmo is building a new swing for the Wigglers, but cannot concentrate with Chadwick and Cyd holding an impromptu dance party nearby. She heads off to wiggle out her frustration and bumps into Robin Robin, who is at his wit&rsquo;s end: his neighbour Oliver Owl loves to sing through the night, and nocturnal Robin cannot sleep. The answer turns out to be far simpler than earplugs or soundproofing &mdash; Robin plucks up the courage to talk to Oliver, who is happy to keep it down. Cosmo realises she could do exactly the same with Chadwick and Cyd.</p></div>
+      <div class="episode-card"><span class="ep-label">Episode 5</span><h4>Strong As Silk!</h4><p>Gung-ho Chadwick has got himself into quite a pickle, and Cyd and Cosmo are going to need a rope to get him out. Sansi Silkworm offers up her thread, but Chadwick cannot believe something so delicate could possibly hold. He is about to learn that looks can be deceiving, and that things &mdash; and people &mdash; are often far stronger than they appear.</p></div>
     </div>
   </div>
 </section>`,
@@ -704,6 +703,68 @@ PAGES.push({
       <div class="tract"><div class="big">EIS &amp; HMRC</div><div class="lab">Tax credit certification achieved</div></div>
       <div class="tract"><div class="big">Pilot complete</div><div class="lab">Produced to broadcast standard</div></div>
     </div>
+
+    <h3 class="h-2" style="margin:3rem 0 1rem">The Financial Model</h3>
+    <p>Wiggle Wood has been structured to deploy capital efficiently while building a scalable content library capable of generating long-term recurring revenue across animation, music, consumer products, publishing, and licensing. The section below outlines the funding structure, financial projections and investment mechanics. A detailed financial model is available for review in our data room.</p>
+    <div class="two-col" style="margin-top:1.5rem">
+      <div>
+        <h4 class="h-label">Investment Structure</h4>
+        <p>Wiggle Wood offers investors a net profit participation interest in the IP rather than equity in The Wiggle Wood Company. Investors do not hold shares in the business. Instead, they receive a proportional share of net profits generated by Wiggle Wood across all revenue streams, in perpetuity. Returns begin as the series generates income and continue for as long as the IP performs, with no fixed exit event or defined end date. In the event of a future acquisition of the Wiggle Wood IP, investors participate in the proceeds in proportion to their net profit interest. This structure aligns investor returns directly with the commercial performance of the IP &mdash; a long-term, recurring income opportunity rather than a speculative equity stake dependent on a future liquidity event.</p>
+        <h4 class="h-label">Funding Structure</h4>
+        <div class="fund-grid">
+          <div class="fund-card"><strong>Development</strong><p>15% financed by the Creator<br>85% financed by Investor</p></div>
+          <div class="fund-card"><strong>Production</strong><p>61% financed by private equity<br>39% financed through the UK Animation Tax Credit (advanced by Coutts Bank)</p></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="h-label">Financial Projections</h4>
+        <p>Modelling a three-season production of 96 episodes with a production cost of &pound;14.25m (including &pound;2m of marketing), our revenue and cost projections across all classes deliver the following:</p>
+        <div class="fig-grid" data-reveal-stagger>
+          <div class="fig"><div class="fig__num">&pound;21.1m</div><div class="fig__lab">Positive net cashflow over a 6-year period</div></div>
+          <div class="fig"><div class="fig__num">Month 3, Yr 4</div><div class="fig__lab">Cashflow breakeven</div></div>
+          <div class="fig"><div class="fig__num">&pound;53.2m</div><div class="fig__lab">Net Present Value incl. terminal value &middot; IRR 103.60%</div></div>
+          <div class="fig"><div class="fig__num">&pound;11.8m</div><div class="fig__lab">NPV across 6 years excl. terminal value &middot; IRR 94.16%</div></div>
+        </div>
+        <p class="muted" style="font-size:.86rem;margin-top:.8rem">Valuation uses the Perpetual Growth Rate method, a 12% discount cost of capital (US Prime 7% + 5%) and a 0% perpetual growth rate. The model will be developed and refined further during this next development phase.</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:2rem">
+      <div class="panel">
+        <h4 class="h-label" style="margin-top:0">Enterprise Investment Scheme (EIS)</h4>
+        <p>Wiggle Wood has received EIS advance assurance from HMRC, making it eligible for investment under the UK Enterprise Investment Scheme. For qualifying UK taxpayers this provides meaningful tax advantages, including 30% income tax relief on the amount invested, exemption from capital gains tax on returns after a minimum three-year holding period, loss relief allowing any losses to be offset against income or capital gains, and CGT deferral relief on gains reinvested through EIS.</p>
+        <p class="muted" style="font-size:.86rem">EIS eligibility is subject to individual circumstances and applies to qualifying UK taxpayers only. Investors based outside the UK or paying tax in other jurisdictions should seek independent advice.</p>
+      </div>
+      <div class="panel">
+        <h4 class="h-label" style="margin-top:0">Production Security &amp; Completion Bond</h4>
+        <p>Wiggle Wood&rsquo;s production is backed by a completion bond provided by Paterson James, the UK&rsquo;s specialist completion guarantor for animation. A completion bond guarantees to investors that the production will be filmed, completed, and delivered to a high technical standard by an agreed date. Should production exceed its budget, the bulk of any over-costs become the responsibility of the Completion Guarantor rather than the investor.</p>
+        <p>Paterson James&rsquo;s involvement also brings the hands-on animation expertise of Bob Thompson, who oversees production on behalf of the underwriter throughout the process.</p>
+      </div>
+    </div>
+
+    <div class="cta-band" style="margin-top:2.5rem">
+      <p class="eyebrow" style="justify-content:center">Investor Term Sheet</p>
+      <h2 class="h-2" style="max-width:30ch;margin-inline:auto">Cashflowing three full seasons of Wiggle Wood over a three-year period.</h2>
+      <p class="lead" style="max-width:60ch;margin:.7rem auto 1.2rem">The investment funds the production and release of 156 fully broadcast-ready episodes with thirty original songs, including the official theme tune, alongside global marketing activation &mdash; targeting 15m views in Year 1, 100m in Year 2 and 300m in Year 3. The full Investor Term Sheet is available in the data room.</p>
+      <a class="btn" href="/documents">View the documents &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" data-reveal>
+  <div class="container">
+    <p class="eyebrow">Production Timeline</p>
+    <h2 class="h-2">From completed pilot to global franchise</h2>
+    <div class="timeline" data-reveal-stagger>
+      <div class="tl"><div class="tl__when">Now</div><div class="tl__what"><strong>Pilot Complete</strong><p>The pilot episode, <em>Show Your Glow</em>, is complete. It introduces Luna Glow-worm and serves as the creative and commercial proof of concept &mdash; the centrepiece of the investor proposition.</p></div></div>
+      <div class="tl"><div class="tl__when">Jun&ndash;Oct 2026</div><div class="tl__what"><strong>Investment Round</strong><p>Wiggle Wood goes out to investors in June 2026 with the objective of closing investment by October 2026. The team, creative, commercial strategy and financial model are all in place, and the pilot provides a tangible demonstration of quality and potential.</p></div></div>
+      <div class="tl"><div class="tl__when">Oct 2026&ndash;Apr 2027</div><div class="tl__what"><strong>Pre-Production</strong><p>A six-month pre-production phase. A minimum of 26 episode scripts are drafted, refined and tested with real preschool audiences, alongside character development, storyboarding, voice scheduling, music composition and full production infrastructure.</p></div></div>
+      <div class="tl"><div class="tl__when">Apr 2027&ndash;Apr 2028</div><div class="tl__what"><strong>Production</strong><p>All 52 episodes of Season One are produced within 12 months. Producing a full season in advance of launch gives the YouTube channel an unbroken release runway from day one &mdash; critical to algorithmic growth and audience retention.</p></div></div>
+      <div class="tl"><div class="tl__when">May 2028</div><div class="tl__what"><strong>YouTube Launch</strong><p>The first episode launches on YouTube. From that point, one new episode publishes every week without pause, building algorithmic momentum.</p></div></div>
+      <div class="tl"><div class="tl__when">2028&ndash;2029</div><div class="tl__what"><strong>Season One</strong><p>52 episodes release weekly. Year One marketing targets 15 million views, with English and Spanish releases reaching families across the UK, US, Ireland, Australia, New Zealand and Latin America. Season Two runs in parallel.</p></div></div>
+      <div class="tl"><div class="tl__when">2029&ndash;2030</div><div class="tl__what"><strong>Season Two</strong><p>International footprint expands into key European territories, scaling toward 100 million views. Broadcast and streaming conversations progress, and consumer products, publishing and music licensing begin generating meaningful revenue. Season Three runs alongside.</p></div></div>
+      <div class="tl"><div class="tl__when">2030&ndash;2031</div><div class="tl__what"><strong>Season Three</strong><p>Wiggle Wood operates as an established global children&rsquo;s brand, targeting 300 million views across an expanding network of languages and territories, with active licensing, a growing consumer-products ecosystem and broadcast partnerships across multiple markets.</p></div></div>
+    </div>
   </div>
 </section>`,
 });
@@ -763,12 +824,16 @@ PAGES.push({
     </div>
 
     <h3 class="h-2" style="margin-bottom:1rem">Organisational Framework</h3>
-    <p>The Wiggle Wood Company is structured to scale. The current founding team is led by Aim&eacute;e Anderson as Creator and CEO, supported by a world-class creative and commercial team. Following investment, the company will hire into four senior leadership positions:</p>
+    <p>Wiggle Wood is structured and operated within the Entrepreneurial Operating System (EOS), a proven business framework used by thousands of scaling companies worldwide. EOS defines a clear distinction between the Visionary and the Integrator: the Visionary sets direction, protects the brand and drives long-term strategy; the Integrator runs the business day-to-day, holding operational accountability and managing the leadership team.</p>
+    <p>Within this model, the Chief Executive Officer operates as Visionary, focused on creative direction, investor relationships, strategic partnerships and long-term brand value. The Chief Operating Officer operates as Integrator, with a single direct line of accountability from the CEO and full operational responsibility for the business beneath it. The business is organised into three divisions &mdash; Content, Product and Brand &mdash; each led by a dedicated C-suite officer reporting into the COO. Wiggle Wood works with a professional UK-based EOS facilitator to implement and maintain the framework across the organisation.</p>
+
+    <h4 class="h-label">Strategic Leadership Hires (Planned Post-Investment)</h4>
+    <p>The senior leadership team is being assembled with deliberate care. These are significant appointments &mdash; individuals with franchise-level experience in global children&rsquo;s entertainment &mdash; and Wiggle Wood is committed to hiring the right people rather than filling seats quickly. Bringing C-suite leaders on board before funding is in place would be premature for candidates of this calibre, who carry the notice periods and seniority the roles demand. Recruitment begins formally approximately 18 months ahead of launch, with early engagement already underway.</p>
     <div class="roles-grid" data-reveal-stagger>
-      <div class="role-card"><h4>Chief Operating Officer</h4><p>Responsible for operational delivery, production scheduling, and business infrastructure. Oversees day-to-day operations and ensures the business runs efficiently at every stage of growth.</p></div>
-      <div class="role-card"><h4>Chief Content Officer</h4><p>Responsible for the creative direction of Wiggle Wood across all platforms and formats. Oversees the writers&rsquo; room, character development, editorial standards, and the long-term creative vision for the IP.</p></div>
-      <div class="role-card"><h4>Chief Product Officer</h4><p>Responsible for the commercial product strategy, including licensing, merchandise, publishing, and consumer products. Leads the development of the Wiggle Wood brand from entertainment IP into a full consumer products platform.</p></div>
-      <div class="role-card"><h4>Chief Brand Officer</h4><p>Responsible for the Wiggle Wood brand identity, marketing strategy, audience growth, and partnerships. Leads the development of Wiggle Wood&rsquo;s presence across digital, social, and traditional media.</p></div>
+      <div class="role-card"><h4>Chief Operating Officer</h4><p>The company&rsquo;s Integrator within the EOS framework, reporting directly to the CEO. Establishes and leads the operational infrastructure to scale Wiggle Wood as a global business &mdash; financial oversight, organisational design, legal and governance, and cross-functional efficiency. The Content, Product and Brand officers each report into this role. Requires significant experience scaling media, entertainment or IP-driven businesses.</p></div>
+      <div class="role-card"><h4>Chief Content Officer</h4><p>Brings senior experience developing and scaling global children&rsquo;s franchises across series, publishing, licensing and long-form content. Defines and safeguards the long-term creative architecture of the Wiggle Wood universe, working in close partnership with the Showrunner to maintain tonal integrity, character authenticity and narrative cohesion across future seasons, spin-offs and potential feature development. Reports to the COO.</p></div>
+      <div class="role-card"><h4>Chief Product Officer</h4><p>Leads the translation of the IP into a cohesive, high-quality product ecosystem. Owns the consumer-products roadmap &mdash; licensing strategy, category development and retail partnerships across toys, publishing, apparel and homeware &mdash; working with the Chief Brand Officer to ensure product integrity. Requires deep experience in children&rsquo;s IP product development and the international licensing landscape. Reports to the COO.</p></div>
+      <div class="role-card"><h4>Chief Brand Officer</h4><p>Builds and scales Wiggle Wood as a globally recognised consumer brand, translating the storytelling property into a culturally resonant brand across licensing, partnerships, publishing, music, retail and live experiences. Defines and protects strategic positioning as the IP expands beyond the screen, overseeing brand architecture and audience-growth frameworks. Reports to the COO.</p></div>
     </div>
 
     <h3 class="h-2" style="margin:3rem 0 1rem">Production Team</h3>
@@ -858,7 +923,10 @@ PAGES.push({
 
 /* ---------- DOCUMENTS ---------- */
 const DOC_ICON = `<div class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>`;
-function doc(title, desc) { return `<div class="doc-item">${DOC_ICON}<div><h4>${title}</h4><p>${desc}</p></div></div>`; }
+function doc(title, desc) {
+  const href = `mailto:hello@wiggle-wood.com?subject=${encodeURIComponent("Wiggle Wood data room request: " + title)}`;
+  return `<div class="doc-item">${DOC_ICON}<div><h4>${title}</h4><p>${desc}</p><a class="doc-dl" href="${href}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>Request to download</a></div></div>`;
+}
 PAGES.push({
   slug: "documents",
   metaTitle: "Investor Data Room — Wiggle Wood",
