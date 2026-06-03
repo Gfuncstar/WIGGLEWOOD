@@ -34,22 +34,38 @@
   pointer-events:none;
 }
 
-/* ---------- Canopy: branches framing the top corners ---------- */
-.canopy{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-.canopy__branch{
-  position:absolute;top:-3vh;width:clamp(280px,42vw,620px);
-  filter:drop-shadow(0 22px 26px rgba(0,0,0,.4));
-  will-change:transform;
+/* ---------- Living light: the green actually moves ----------
+   The static painting stays for depth-of-field; these layers drift,
+   pulse and sweep over it so the forest breathes rather than sits flat. */
+.forest-haze{
+  position:fixed;inset:-12%;z-index:-3;pointer-events:none;
+  mix-blend-mode:soft-light;opacity:.9;will-change:transform;
+  background:
+    radial-gradient(38% 30% at 24% 32%, rgba(150,225,120,.55), transparent 60%),
+    radial-gradient(46% 36% at 72% 52%, rgba(74,205,185,.5), transparent 62%),
+    radial-gradient(34% 30% at 48% 82%, rgba(205,240,140,.45), transparent 60%),
+    radial-gradient(30% 26% at 88% 18%, rgba(120,210,160,.4), transparent 60%);
+  animation:hazeMove 24s ease-in-out infinite alternate;
 }
-.canopy__branch--l{left:-5vw;transform-origin:top left;animation:sway-l 11s ease-in-out infinite}
-.canopy__branch--r{right:-5vw;transform:scaleX(-1);transform-origin:top right;animation:sway-r 13s ease-in-out infinite}
-/* a low corner sprig bottom-right for depth */
-.canopy__sprig{
-  position:absolute;bottom:-6vh;right:-4vw;width:clamp(220px,30vw,440px);
-  transform:rotate(176deg);transform-origin:bottom right;opacity:.92;
-  filter:drop-shadow(0 -16px 24px rgba(0,0,0,.34));
-  animation:sway-r 15s ease-in-out infinite;
+/* soft god-rays sweeping down through the canopy */
+.forest-light{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;mix-blend-mode:screen;opacity:.55}
+.forest-light span{
+  position:absolute;top:-25%;width:34vw;height:165vh;transform-origin:top center;
+  background:linear-gradient(180deg, rgba(216,255,184,.20), rgba(190,245,150,.05) 55%, transparent 80%);
+  filter:blur(16px);will-change:transform,opacity;
 }
+.forest-light span:nth-child(1){left:4%;--rot:7deg;transform:rotate(7deg);animation:ray 15s ease-in-out infinite}
+.forest-light span:nth-child(2){left:40%;--rot:-5deg;transform:rotate(-5deg);animation:ray 19s ease-in-out infinite 2.5s}
+.forest-light span:nth-child(3){left:70%;--rot:11deg;transform:rotate(11deg);animation:ray 17s ease-in-out infinite 5s}
+
+/* floating forest air: pollen / drifting seeds (JS-spawned into .motes) */
+.motes{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.mote{position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%, rgba(255,250,220,.95), rgba(196,239,143,.35) 60%, transparent 72%);
+  box-shadow:0 0 10px 2px rgba(220,255,190,.35);
+  will-change:transform,opacity;animation:moteDrift linear infinite}
+.seed{position:absolute;width:18px;height:18px;pointer-events:none;will-change:transform;
+  background:no-repeat center/contain;animation:seedFloat linear infinite;opacity:0}
 
 /* ---------- Drifting leaves ---------- */
 .leaves{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
@@ -125,12 +141,32 @@
 /* breadcrumb-ish back-to-home pill on inner pages */
 .page-eyebrow-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 
-/* ---------- Centered home hero ---------- */
-.hero{align-items:center}
-.hero__inner{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:0}
-.hero__title{max-width:24ch;margin-inline:auto}
-.hero__sub{margin-inline:auto}
-.hero__cta{justify-content:center}
+/* ---------- Home hero: centred, lifted clear of the characters' faces ---------- */
+.hero{align-items:flex-start}
+.hero__inner{display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding-top:clamp(4rem,8vh,6.5rem);padding-bottom:0}
+.hero__logo{width:clamp(160px,19vw,290px)}
+.hero__title{max-width:26ch;margin:.35rem auto .3rem;font-size:clamp(1.4rem,2.7vw,2.2rem)}
+.hero__sub{margin:0 auto;max-width:42ch;font-size:clamp(.98rem,1.3vw,1.16rem)}
+.hero__cta{justify-content:center;margin-top:1.1rem}
+/* darken only the top band (behind the words) so the characters below stay clear */
+.hero__scrim{background:linear-gradient(180deg,
+  rgba(7,28,29,.66) 0%, rgba(7,28,29,.30) 26%, transparent 46%,
+  transparent 66%, rgba(8,24,25,.45) 100%)}
+/* seamless hand-off: fade the bright hero scene into the fixed forest backdrop */
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26vh;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg, transparent 0%, rgba(10,30,31,.5) 60%, #0a1c1d 100%)}
+.page-body .hero + .section{margin-top:-8vh;padding-top:10vh}
+
+/* ---------- Characters that genuinely move ---------- */
+.actor,.actor-stack{animation:aliveBob 6.2s ease-in-out infinite}
+.actor-stack{position:relative;display:flex;align-items:flex-end;justify-content:center;will-change:transform}
+.actor-stack .actor{animation:none;position:relative}
+.actor-stack .pose-b{position:absolute;left:50%;bottom:0;transform:translateX(-50%);animation:poseFade 5.4s ease-in-out infinite}
+.actor-stack img{height:100%;width:auto;object-fit:contain;filter:drop-shadow(0 22px 26px rgba(0,0,0,.5))}
+.actor--lead.actor-stack{height:clamp(240px,33vw,420px)}
+.actor--support.actor-stack{height:clamp(170px,22vw,300px)}
+.page-hero__art.is-duo .actor-stack.actor--lead{transform:translateX(6%)}
 
 /* ---------- Financial model components ---------- */
 .fund-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.6rem}
@@ -159,15 +195,40 @@
 .doc-dl:hover{gap:.7em;color:var(--gold)}
 .doc-item>div{display:flex;flex-direction:column}
 
+/* ---------- Named partners / people ---------- */
+.pc-role{display:block;font-family:var(--font-eyebrow);font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-glow);margin-bottom:.3rem}
+.partner-card h4,.adviser-card h4{margin-bottom:.4rem}
+.adviser-card .pc-role{color:var(--gold-glow)}
+.pc-link{display:inline-block;margin-top:.7rem;font-family:var(--font-eyebrow);font-weight:700;font-size:.82rem;color:var(--gold)}
+.pc-link:hover{text-decoration:underline}
+
+/* founder signature */
+.signature{width:min(240px,58%);margin:1rem 0 -.2rem;opacity:.92;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+
+/* content diagram (e.g. YouTube ecosystem) */
+.diagram{margin-top:2rem;text-align:center}
+.diagram img{max-width:720px;width:100%;margin:0 auto;background:#fff;border-radius:var(--r-md);padding:1.1rem;box-shadow:var(--shadow-sm)}
+.diagram figcaption{margin-top:.9rem;color:var(--paper-dim);font-size:.92rem;max-width:62ch;margin-inline:auto}
+
 @media(max-width:680px){
   .fund-grid,.fig-grid{grid-template-columns:1fr}
   .tl{grid-template-columns:1fr;gap:.3rem}
 }
 
 /* ---------- Keyframes ---------- */
-@keyframes bgDrift{0%{transform:scale(1.06) translateY(0)}100%{transform:scale(1.14) translateY(-7%)}}
-@keyframes sway-l{0%,100%{transform:rotate(-2.2deg)}50%{transform:rotate(2.4deg)}}
-@keyframes sway-r{0%,100%{transform:scaleX(-1) rotate(-2.4deg)}50%{transform:scaleX(-1) rotate(2.2deg)}}
+@keyframes bgDrift{0%{transform:scale(1.06) translateY(0)}100%{transform:scale(1.13) translateY(-6%)}}
+@keyframes hazeMove{0%{transform:translate(0,0) scale(1)}50%{transform:translate(2.5%,-2%) scale(1.07)}100%{transform:translate(-2%,2.5%) scale(1.03)}}
+@keyframes ray{0%,100%{opacity:.2;transform:rotate(var(--rot)) translateY(0)}50%{opacity:.6;transform:rotate(var(--rot)) translateY(3vh)}}
+@keyframes moteDrift{0%{transform:translate(0,0);opacity:0}10%{opacity:.9}90%{opacity:.8}100%{transform:translate(var(--dx,30px),-112vh);opacity:0}}
+@keyframes seedFloat{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:.85}90%{opacity:.8}100%{transform:translate(var(--dx,80px),112vh) rotate(var(--dr,420deg));opacity:0}}
+@keyframes aliveBob{
+  0%{transform:translateY(0) rotate(-1.6deg) scale(1,1)}
+  25%{transform:translateY(-11px) rotate(1deg) scale(1.02,.98)}
+  50%{transform:translateY(-19px) rotate(2.2deg) scale(.99,1.03)}
+  75%{transform:translateY(-7px) rotate(-1.2deg) scale(1.01,.99)}
+  100%{transform:translateY(0) rotate(-1.6deg) scale(1,1)}
+}
+@keyframes poseFade{0%,42%{opacity:0}52%,92%{opacity:1}100%{opacity:0}}
 @keyframes flutter{0%,100%{transform:translateY(0) rotate(-2deg)}25%{transform:translateY(-14px) rotate(1.5deg)}50%{transform:translateY(-6px) rotate(-1deg)}75%{transform:translateY(-18px) rotate(2.5deg)}}
 @keyframes leaf-fall{
   0%{transform:translate(0,0) rotate(0deg);opacity:0}
@@ -186,12 +247,12 @@
 }
 @media(max-width:680px){
   .portal{grid-template-columns:1fr}
-  .canopy__branch{width:60vw}
-  .peeker{display:none}
-  .actor--support{display:none}
+  /* keep the characters — just make the edge peekers smaller and tuck them in */
+  .peeker--bl,.peeker--br{width:96px}
+  .actor--support{height:clamp(120px,30vw,180px)}
   .section .container::before{inset:-2% -3%}
 }
 @media(prefers-reduced-motion:reduce){
-  .canopy__branch,.canopy__sprig,.actor,.peeker,.leaf{animation:none !important}
-  .leaves{display:none}
+  .actor,.peeker,.leaf,.mote,.seed,.forest-light span,.forest-haze{animation:none !important}
+  .leaves,.motes{display:none}
 }

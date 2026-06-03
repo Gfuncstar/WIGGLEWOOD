@@ -23,13 +23,11 @@
 
 <!-- ===== LIVING FOREST WORLD ===== -->
 <div id="forest" aria-hidden="true"></div>
+<div class="forest-light" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="forest-haze" aria-hidden="true"></div>
 <div class="forest-vignette" aria-hidden="true"></div>
-<div class="canopy" aria-hidden="true">
-  <img class="canopy__branch canopy__branch--l" src="assets/img/world/branch1-1600.webp" alt="" />
-  <img class="canopy__branch canopy__branch--r" src="assets/img/world/branch2-1600.webp" alt="" />
-  <img class="canopy__sprig" src="assets/img/world/branch2-1600.webp" alt="" />
-</div>
 <div class="leaves" aria-hidden="true"></div>
+<div class="motes" aria-hidden="true"></div>
 
 <nav class="nav" id="top">
   <a class="nav__logo" href="/" aria-label="Wiggle Wood home">
@@ -61,24 +59,28 @@
     </div>
     <div class="page-hero__art" data-reveal>
       <div class="page-hero__halo" style="--c:var(--c-robin-soft)"></div>
-      <img class="actor actor--lead" src="assets/img/characters/robin.webp" alt="Robin Robin" loading="lazy" />
+      <div class="actor-stack actor--lead">
+        <img class="actor pose-a" src="assets/img/characters/robin.webp" alt="Robin Robin" loading="lazy" />
+        <img class="actor pose-b" src="assets/img/characters/robin-alt.webp" alt="" aria-hidden="true" loading="lazy" />
+      </div>
     </div>
   </div>
 </header>
 <section class="section" data-reveal>
   <div class="container">
     <div class="partners-grid" data-reveal-stagger>
-      <div class="partner-card"><h4>YouTube and Digital Partner</h4><p>Wiggle Wood&rsquo;s primary distribution partner for digital content. YouTube provides the global platform, discovery algorithm, and monetisation infrastructure for the channel launch and ongoing content strategy.</p></div>
-      <div class="partner-card"><h4>International Distribution &amp; Sales</h4><p>Specialist children&rsquo;s content distributor responsible for licensing Wiggle Wood to traditional broadcasters, SVOD platforms, and educational distributors globally following the initial YouTube launch period.</p></div>
-      <div class="partner-card"><h4>Production Partner</h4><p>Specialist preschool animation studio responsible for all character animation, background art, visual effects, and post-production for the Wiggle Wood series.</p></div>
-      <div class="partner-card"><h4>Legal Partner</h4><p>Specialist media and entertainment law firm advising on IP protection, production agreements, licensing contracts, and investor documentation.</p></div>
-      <div class="partner-card"><h4>Bank Partner</h4><p>Banking partner providing financial infrastructure, treasury management, and production financing support for The Wiggle Wood Company.</p></div>
-      <div class="partner-card"><h4>PR Partner</h4><p>Specialist entertainment PR agency responsible for Wiggle Wood&rsquo;s media relations, talent PR, and brand communications strategy.</p></div>
-      <div class="partner-card"><h4>Advertising Partner</h4><p>Digital advertising and media buying partner responsible for paid audience development across Meta, YouTube, and programmatic channels.</p></div>
-      <div class="partner-card"><h4>Influencer Partner</h4><p>Influencer marketing partner managing relationships with parenting and family lifestyle creators to build organic awareness and trusted endorsement within parent communities.</p></div>
-      <div class="partner-card"><h4>Gaming &amp; Interactive</h4><p>Partner responsible for developing Wiggle Wood&rsquo;s interactive and gaming extensions, including mobile applications, interactive experiences, and educational games.</p></div>
-      <div class="partner-card"><h4>Production Insurance Partner</h4><p>Specialist production insurance partner providing comprehensive coverage for all aspects of Wiggle Wood&rsquo;s production and post-production activities.</p></div>
-      <div class="partner-card"><h4>Collections &mdash; Fintage House</h4><p>Independent collections agency responsible for all revenue collection, royalty distribution, and financial oversight across the Wiggle Wood IP portfolio, ensuring full financial transparency.</p></div>
+      <div class="partner-card"><span class="pc-role">YouTube &amp; Digital Distribution</span><h4>The Lasso Group</h4><p>A specialist digital distribution company expert in YouTube channel management, digital rights and anti-piracy, whose client roster includes the team behind Baby Shark, the most-watched video in YouTube history. Lasso will manage the Wiggle Wood channel end-to-end and distribute content through their own children&rsquo;s channel, Little Amigo (700,000+ subscribers), for immediate audience reach from launch.</p></div>
+      <div class="partner-card"><span class="pc-role">International Distribution &amp; Sales</span><h4>Canoe Film &mdash; Caroline Stern</h4><p>Wiggle Wood&rsquo;s international sales are led by Caroline Stern, founder of Canoe Film, with 20+ years of senior experience and global distribution on over 250 titles. Credits include Sky&rsquo;s The Penguin King (narrated by David Attenborough), the BBC&rsquo;s On Angel Wings and the emerging IP Master Moley. She leads territory strategy, broadcaster conversations and the phased global rollout.</p></div>
+      <div class="partner-card"><span class="pc-role">Production Partner</span><h4>Nest Productions</h4><p>One of the UK&rsquo;s most established production partnerships, with a community of 350+ production company partners. For Wiggle Wood, Nest manages the full production operation &mdash; budgeting, scheduling, hiring, pitching and negotiating &mdash; bringing genuine commercial weight and helping build internal production capacity as the company grows.</p></div>
+      <div class="partner-card"><span class="pc-role">Animation Partner</span><h4>Plus 3K &mdash; Lou Kneath</h4><p>A multi-award-winning independent animation studio founded by Pixar- and Disney-trained director Lou Kneath, based in Cumbria. Recent credits include My Friend Misty (Sky Kids Original, exec-produced by Fearne Cotton) and the BFI-archived short The Fell We Climb. Plus 3K leads the animation production using CelAction2D.</p></div>
+      <div class="partner-card"><span class="pc-role">Legal Partner</span><h4>Clintons</h4><p>An award-winning boutique law firm in London&rsquo;s West End with 60+ years of specialist experience in entertainment, digital media and the creative industries. Clintons handles corporate structuring, investment agreements, production and distribution contracts, licensing and trademark registration, ensuring the brand and all IP is correctly structured and legally secured.</p></div>
+      <div class="partner-card"><span class="pc-role">Bank Partner</span><h4>Coutts</h4><p>The King&rsquo;s bank and a B Corp-certified private bank with three centuries of heritage. For Wiggle Wood, Coutts provides banking services and, crucially, advance funding against the 39% UK Animation Tax Credit, improving capital efficiency and reducing investor risk by underpinning a substantial portion of production funding with the UK tax system.</p></div>
+      <div class="partner-card"><span class="pc-role">Production Insurance &amp; Completion Bond</span><h4>Paterson James &mdash; Bob Thompson</h4><p>A recognised specialist in animation completion bonding, 100% independently owned. A completion bond guarantees the series is delivered to a high standard by an agreed date, with over-costs becoming the guarantor&rsquo;s responsibility. Wiggle Wood has direct access to animation specialist Bob Thompson &mdash; ex-BBC, LEGO co-creator of BIONICLE &mdash; who acts as a senior production backstop on behalf of the underwriter.</p></div>
+      <div class="partner-card"><span class="pc-role">Collections Agency</span><h4>Fintage House</h4><p>A privately owned global film and TV rights company. Fintage House provides Collection Account Management: all income flows through a single, independently managed collection account, with pre-agreed shares distributed directly to every party &mdash; producer, investors and profit participants &mdash; transparently and without dispute.</p></div>
+      <div class="partner-card"><span class="pc-role">PR Partner</span><h4>Valerie Taylor PR</h4><p>The most trusted name in UK children&rsquo;s entertainment PR, with 30+ years&rsquo; experience. Retained PR agency for Sesame Workshop in the UK, European Licensing PR for The Pok&eacute;mon Company International, and a long-standing relationship with Crayola Studios. Previous and current clients include Teletubbies, Danger Mouse and The Wiggles.<a class="pc-link" href="https://valerietaylorpr.com/" target="_blank" rel="noopener">valerietaylorpr.com &rarr;</a></p></div>
+      <div class="partner-card"><span class="pc-role">Advertising Partner</span><h4>ViVV</h4><p>An AI-powered marketing platform and agency founded by Brandon Keenan and Nicola Cooper, both formerly senior leaders at Time Warner and CNN. ViVV manages the full marketing lifecycle in one place and has delivered a 49% cost saving for a Fortune 500 client and 26x audience growth for another. Recognised as one of TechRound&rsquo;s top 35 AI companies in 2025. ViVV leads Wiggle Wood&rsquo;s paid social strategy.</p></div>
+      <div class="partner-card"><span class="pc-role">Influencer Partner</span><h4>Hypefy</h4><p>An AI-powered influencer marketing platform that can identify and reach any of the 53 million content creators active worldwide. For Wiggle Wood it runs large-scale micro-influencer campaigns reaching parents, caregivers and educators across English- and Spanish-speaking territories. Clients include Philips, Samsung, McDonald&rsquo;s, PepsiCo and Sony.</p></div>
+      <div class="partner-card"><span class="pc-role">Gaming &amp; Interactive</span><h4>Territory Studio &mdash; David Sheldon-Hicks</h4><p>One of the world&rsquo;s leading specialist studios in gaming and interactive entertainment, having collaborated with major PlayStation titles and filmmakers including Steven Spielberg and Christopher Nolan. Territory is developing the strategy and budget for a tablet-based Wiggle Wood preschool game.</p></div>
     </div>
   </div>
 </section>
@@ -88,7 +90,7 @@
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="assets/img/logo/wigglewood.svg" alt="Wiggle Wood" />
+        <img src="assets/img/logo/company-600.webp" alt="The Wiggle Wood Company" />
         <p>A wholesome, music-led animated series promoting kindness, diversity and inclusion. A brand built to last.</p>
       </div>
       <div>
@@ -108,6 +110,7 @@
         <ul>
           <li><a href="/financials">Business &amp; Strategy</a></li>
           <li><a href="/research">Market Research</a></li>
+          <li><a href="/ip-legal">IP &amp; Legal</a></li>
           <li><a href="/ethics">Ethics &amp; Values</a></li>
           <li><a href="/foundation">Foundation</a></li>
           <li><a href="/documents">Documents</a></li>

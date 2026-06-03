@@ -23,13 +23,11 @@
 
 <!-- ===== LIVING FOREST WORLD ===== -->
 <div id="forest" aria-hidden="true"></div>
+<div class="forest-light" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="forest-haze" aria-hidden="true"></div>
 <div class="forest-vignette" aria-hidden="true"></div>
-<div class="canopy" aria-hidden="true">
-  <img class="canopy__branch canopy__branch--l" src="assets/img/world/branch1-1600.webp" alt="" />
-  <img class="canopy__branch canopy__branch--r" src="assets/img/world/branch2-1600.webp" alt="" />
-  <img class="canopy__sprig" src="assets/img/world/branch2-1600.webp" alt="" />
-</div>
 <div class="leaves" aria-hidden="true"></div>
+<div class="motes" aria-hidden="true"></div>
 
 <nav class="nav" id="top">
   <a class="nav__logo" href="/" aria-label="Wiggle Wood home">
@@ -61,7 +59,10 @@
     </div>
     <div class="page-hero__art" data-reveal>
       <div class="page-hero__halo" style="--c:var(--c-cosmo-soft)"></div>
-      <img class="actor actor--lead" src="assets/img/characters/cosmo.webp" alt="Cosmo, the leader caterpillar" loading="lazy" />
+      <div class="actor-stack actor--lead">
+        <img class="actor pose-a" src="assets/img/characters/cosmo.webp" alt="Cosmo, the leader caterpillar" loading="lazy" />
+        <img class="actor pose-b" src="assets/img/characters/cosmo-alt.webp" alt="" aria-hidden="true" loading="lazy" />
+      </div>
     </div>
   </div>
 </header>
@@ -112,6 +113,7 @@
       <p>Wiggle Wood exists to gently interrupt that pattern. At its heart are the lessons I wish I had known sooner: that we are good enough exactly as we are. That perfection is not the goal, authenticity is. That being different is not something to hide, it is our superpower. That failure is not the opposite of success, it is the path to it.</p>
       <p>Every episode carries one quiet truth: <em>To the child: You are enough. To the adult: You always were enough.</em></p>
       <p>Wiggle Wood is entertainment first. Always. We are joyful. Musical. Colourful. Funny. Warm. But woven through every story is emotional truth. We believe we can build one of the world&rsquo;s most trusted children&rsquo;s brands without losing our heart.</p>
+      <img class="signature" src="assets/img/signature.webp" alt="Aim&eacute;e Anderson signature" loading="lazy" />
       <p><em>&mdash; Aim&eacute;e Anderson, Founder and Creator of Wiggle Wood</em></p>
     </div>
   </div>
@@ -122,7 +124,7 @@
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="assets/img/logo/wigglewood.svg" alt="Wiggle Wood" />
+        <img src="assets/img/logo/company-600.webp" alt="The Wiggle Wood Company" />
         <p>A wholesome, music-led animated series promoting kindness, diversity and inclusion. A brand built to last.</p>
       </div>
       <div>
@@ -142,6 +144,7 @@
         <ul>
           <li><a href="/financials">Business &amp; Strategy</a></li>
           <li><a href="/research">Market Research</a></li>
+          <li><a href="/ip-legal">IP &amp; Legal</a></li>
           <li><a href="/ethics">Ethics &amp; Values</a></li>
           <li><a href="/foundation">Foundation</a></li>
           <li><a href="/documents">Documents</a></li>

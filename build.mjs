@@ -22,15 +22,22 @@ const HALO = {
   bellona: "var(--c-bellona-soft)", luna: "var(--c-luna-soft)", robin: "var(--c-robin-soft)",
 };
 
+/* characters that have a second pose we can cross-fade for real animation */
+const ALT_POSE = { cyd: "cyd-alt", cosmo: "cosmo-alt", chadwick: "chadwick-alt", luna: "luna-alt", robin: "robin-alt" };
+
 /* an actor = a character that lives on the page */
 function actor(spec) {
   const file = spec.img || spec.name;
-  const cls = [
-    "actor",
-    spec.role === "support" ? "actor--support" : "actor--lead",
-    spec.flip ? "actor--flip" : "",
-    spec.flutter ? "actor--flutter" : "",
-  ].filter(Boolean).join(" ");
+  const sizeCls = spec.role === "support" ? "actor--support" : "actor--lead";
+  const alt = ALT_POSE[spec.name];
+  // lead with a known alt pose (and no explicit pose override) → two-pose cross-fade
+  if (spec.role !== "support" && alt && !spec.img && !spec.flip) {
+    return `<div class="actor-stack ${sizeCls}${spec.flutter ? " actor--flutter" : ""}">
+        <img class="actor pose-a" src="assets/img/characters/${spec.name}.webp" alt="${ALT[spec.name] || spec.name}" loading="lazy" />
+        <img class="actor pose-b" src="assets/img/characters/${alt}.webp" alt="" aria-hidden="true" loading="lazy" />
+      </div>`;
+  }
+  const cls = ["actor", sizeCls, spec.flip ? "actor--flip" : "", spec.flutter ? "actor--flutter" : ""].filter(Boolean).join(" ");
   return `<img class="${cls}" src="assets/img/characters/${file}.webp" alt="${ALT[spec.name] || spec.name}" loading="lazy" />`;
 }
 
@@ -72,7 +79,8 @@ const FOOT = {
   ],
   "The Opportunity": [
     ["financials", "Business &amp; Strategy"], ["research", "Market Research"],
-    ["ethics", "Ethics &amp; Values"], ["foundation", "Foundation"], ["documents", "Documents"],
+    ["ip-legal", "IP &amp; Legal"], ["ethics", "Ethics &amp; Values"],
+    ["foundation", "Foundation"], ["documents", "Documents"],
   ],
   "The Company": [
     ["team", "Leadership &amp; Team"], ["partners", "Partners"],
@@ -117,7 +125,7 @@ function footHtml() {
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="assets/img/logo/wigglewood.svg" alt="Wiggle Wood" />
+        <img src="assets/img/logo/company-600.webp" alt="The Wiggle Wood Company" />
         <p>A wholesome, music-led animated series promoting kindness, diversity and inclusion. A brand built to last.</p>
       </div>
 ${cols}
@@ -134,13 +142,11 @@ ${cols}
 const WORLD = `
 <!-- ===== LIVING FOREST WORLD ===== -->
 <div id="forest" aria-hidden="true"></div>
+<div class="forest-light" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="forest-haze" aria-hidden="true"></div>
 <div class="forest-vignette" aria-hidden="true"></div>
-<div class="canopy" aria-hidden="true">
-  <img class="canopy__branch canopy__branch--l" src="assets/img/world/branch1-1600.webp" alt="" />
-  <img class="canopy__branch canopy__branch--r" src="assets/img/world/branch2-1600.webp" alt="" />
-  <img class="canopy__sprig" src="assets/img/world/branch2-1600.webp" alt="" />
-</div>
-<div class="leaves" aria-hidden="true"></div>`;
+<div class="leaves" aria-hidden="true"></div>
+<div class="motes" aria-hidden="true"></div>`;
 
 function layout(p) {
   const active = p.slug === "index" ? "index" : p.slug;
@@ -294,6 +300,7 @@ PAGES.push({
       <p>Wiggle Wood exists to gently interrupt that pattern. At its heart are the lessons I wish I had known sooner: that we are good enough exactly as we are. That perfection is not the goal, authenticity is. That being different is not something to hide, it is our superpower. That failure is not the opposite of success, it is the path to it.</p>
       <p>Every episode carries one quiet truth: <em>To the child: You are enough. To the adult: You always were enough.</em></p>
       <p>Wiggle Wood is entertainment first. Always. We are joyful. Musical. Colourful. Funny. Warm. But woven through every story is emotional truth. We believe we can build one of the world&rsquo;s most trusted children&rsquo;s brands without losing our heart.</p>
+      <img class="signature" src="assets/img/signature.webp" alt="Aim&eacute;e Anderson signature" loading="lazy" />
       <p><em>&mdash; Aim&eacute;e Anderson, Founder and Creator of Wiggle Wood</em></p>
     </div>
   </div>
@@ -528,14 +535,19 @@ PAGES.push({
     <p>Mel represents a strategically aligned choice on both creative and commercial grounds. As a member of the Spice Girls, one of the most successful and culturally influential girl groups of all time, she carries decades of global recognition and multi-generational appeal. Combined with her established solo career, she brings immediate cross-border awareness that directly supports Wiggle Wood&rsquo;s day-and-date global YouTube launch strategy.</p>
     <p>Creatively, she offers rare dual capability. An Olivier Awards nominee for her stunning performance in Blood Brothers, she combines proven acting credentials with exceptional vocal strength. Her soft Liverpudlian tone carries both warmth and authority, making her ideally suited to the nurturing, big-sister presence that Bellona embodies.</p>
 
+    <h3 class="h-label" style="margin-top:2rem">Voice Director &mdash; Dave Peacock</h3>
+    <div class="panel">
+      <p>Emmy-Award winning Dave Peacock has been voice directing and casting professionally for almost 20 years. Specialising in animation, he is one of the most in-demand voice directors in the UK, having directed over 70 TV series and a dozen features &mdash; including Hilda, Thunderbirds Are Go!, Moominvalley, The Octonauts, Dennis &amp; Gnasher Unleashed, Love, Death &amp; Robots and Go Jetters. He was Emmy-nominated for his voice direction on Hilda in 2021 and 2022, and won an Emmy in 2022 as Supervising Dialogue Editor on Octonauts: Ring of Fire.</p>
+    </div>
+
     <h3 class="h-label" style="margin-top:2rem">Principal Voice Cast</h3>
     <div class="cast-grid" data-reveal-stagger>
-      <div class="cast-card" style="--c:var(--c-bellona)"><div class="cast-char">Bellona Butterfly</div><div class="cast-who"><strong>Mel C</strong> (target)</div><div class="cast-note">Pilot voiced by Naomi McDonald</div></div>
-      <div class="cast-card" style="--c:var(--c-cosmo)"><div class="cast-char">Cosmo</div><div class="cast-who"><strong>Daisy Sequerra</strong></div><div class="cast-note">Belgravia: The Next Chapter, ITV. Yorkshire accent. Cosmo&rsquo;s grounded delivery captures her endearing honesty, assertive confidence and sharp observational wit.</div></div>
-      <div class="cast-card" style="--c:var(--c-cyd)"><div class="cast-char">Cyd</div><div class="cast-who"><strong>Blanche Anderson</strong></div><div class="cast-note">Viewfinder, PlayStation. Soft Edinburgh accent. Blanche&rsquo;s performance gives Cyd a dreamy charm, bringing a playful sensitivity to the world.</div></div>
-      <div class="cast-card" style="--c:var(--c-chadwick)"><div class="cast-char">Chadwick</div><div class="cast-who"><strong>Corinna Brown</strong></div><div class="cast-note">Heartstopper, Netflix. Lively South London accent. Corinna&rsquo;s performance captures Chadwick&rsquo;s bold spirit and big-hearted personality.</div></div>
-      <div class="cast-card" style="--c:var(--c-luna)"><div class="cast-char">Luna Glow-worm</div><div class="cast-who"><strong>Ellie Wallwork</strong></div><div class="cast-note">Doctor Who, BBC1. Ellie captures Luna&rsquo;s teenage mix of uncertainty and attitude, blending vulnerability with flashes of dry, slightly exasperated humour.</div></div>
-      <div class="cast-card" style="--c:var(--c-robin)"><div class="cast-char">Robin Robin</div><div class="cast-who"><strong>Shash Hira</strong></div><div class="cast-note">Thomas Edison&rsquo;s Secret Lab, Kartoon Channel. Transforms Robin into an endearingly theatrical, slightly grumpy elder of the woods.</div></div>
+      <div class="cast-card" style="--c:var(--c-bellona)"><div class="cast-char">Bellona Butterfly</div><div class="cast-who"><strong>Mel C</strong> (target) &middot; pilot voiced by <strong>Naomi McDonald</strong></div><div class="cast-note">Naomi is a British-American-Irish actor and voice artist with 20+ years&rsquo; experience, best known for voicing Jetpad in the BAFTA-winning CBeebies series Go Jetters. She brings warmth, authority and genuine emotional depth to Bellona.</div></div>
+      <div class="cast-card" style="--c:var(--c-cosmo)"><div class="cast-char">Cosmo</div><div class="cast-who"><strong>Daisy Sequerra</strong></div><div class="cast-note">A British actor and dancer from Sheffield. Plays Mawdie in Belgravia: The Next Chapter (MGM+); West End Veruca Salt in Charlie and the Chocolate Factory; joined the RSC for Matilda. Yorkshire accent &mdash; grounded, honest, with sharp observational wit.</div></div>
+      <div class="cast-card" style="--c:var(--c-cyd)"><div class="cast-char">Cyd</div><div class="cast-who"><strong>Blanche Anderson</strong></div><div class="cast-note">An award-winning Scottish voiceover artist with nearly fourteen years&rsquo; experience, and the BBC Radio Scotland female station voice for over six years. Her soft Edinburgh accent gives Cyd a dreamy charm and playful sensitivity.</div></div>
+      <div class="cast-card" style="--c:var(--c-chadwick)"><div class="cast-char">Chadwick</div><div class="cast-who"><strong>Corinna Brown</strong></div><div class="cast-note">English actress best known as Tara Jones in the Netflix series Heartstopper (2022&ndash;present). Trained with RADA&rsquo;s youth company and at East 15. Her lively South London delivery captures Chadwick&rsquo;s bold spirit and big-hearted personality.</div></div>
+      <div class="cast-card" style="--c:var(--c-luna)"><div class="cast-char">Luna Glow-worm</div><div class="cast-who"><strong>Ellie Wallwork</strong></div><div class="cast-note">An artist and performer who has been blind since birth, and an accomplished actor in film, TV and radio &mdash; well known for high-profile roles in Doctor Who and Call the Midwife. She captures Luna&rsquo;s mix of vulnerability and dry humour.</div></div>
+      <div class="cast-card" style="--c:var(--c-robin)"><div class="cast-char">Robin Robin</div><div class="cast-who"><strong>Shash Hira</strong></div><div class="cast-note">A versatile voice actor who has worked for Netflix, Disney, Nintendo, EA Games and the BBC. Able to perform across a wide range of UK regional and international accents, he transforms Robin into an endearingly theatrical, slightly grumpy elder of the woods.</div></div>
     </div>
 
     <h3 class="h-label" style="margin-top:2rem">Guest Voice Cast</h3>
@@ -682,6 +694,11 @@ PAGES.push({
         <p class="muted" style="margin-top:.8rem;font-size:.9rem">Projected views across Years 1&ndash;3. YouTube&rsquo;s primary role is to act as a powerful global discovery platform. As children and families fall in love with the characters, music and stories, audience growth drives revenue across the wider Wiggle Wood ecosystem.</p>
       </div>
     </div>
+
+    <figure class="diagram panel" data-reveal>
+      <img src="assets/img/youtube-ecosystem.webp" alt="Diagram: Shorts discovery feeds the Shows hub, which drives Merchandise and YouTube Music" loading="lazy" />
+      <figcaption>Wiggle Wood&rsquo;s presence across YouTube&rsquo;s ecosystem creates a self-reinforcing cycle of discovery, viewing and commercial engagement.</figcaption>
+    </figure>
 
     <h3 class="h-2" style="margin:3rem 0 1rem">Sales and Distribution</h3>
     <div class="two-col">
@@ -836,30 +853,37 @@ PAGES.push({
       <div class="role-card"><h4>Chief Brand Officer</h4><p>Builds and scales Wiggle Wood as a globally recognised consumer brand, translating the storytelling property into a culturally resonant brand across licensing, partnerships, publishing, music, retail and live experiences. Defines and protects strategic positioning as the IP expands beyond the screen, overseeing brand architecture and audience-growth frameworks. Reports to the COO.</p></div>
     </div>
 
-    <h3 class="h-2" style="margin:3rem 0 1rem">Production Team</h3>
-    <div class="two-col">
-      <div>
-        <h4 class="h-label">Writers</h4>
-        <p>The Wiggle Wood writers&rsquo; room is assembled from some of the most experienced and celebrated writers in UK children&rsquo;s television, with additional voices brought in to ensure diversity of perspective, regional representation, and fresh storytelling energy.</p>
-        <p>The writing team works within the established Wiggle Wood format structure while retaining creative freedom within each episode to deliver genuine originality, emotional authenticity, and comedic surprise. All scripts are reviewed against the series&rsquo; emotional and developmental framework before production.</p>
-        <h4 class="h-label">Animation Partner</h4>
-        <p>Wiggle Wood&rsquo;s animation is being produced by a specialist preschool animation studio with an established track record in delivering broadcast-quality content at scale. The animation partner is responsible for all character animation, background art, visual effects, and post-production, working in close collaboration with the creative team to maintain the visual integrity and emotional warmth of the Wiggle Wood world.</p>
-      </div>
-      <div>
-        <h4 class="h-label">Music Team</h4>
-        <p>The music team is led by Jax Jones as Musical Director, supported by Banks &amp; Wag as lead composers and songwriters. The team works in close collaboration with the writers and animation partner to ensure that music is fully integrated into the storytelling rather than added as a layer on top of it.</p>
-        <h4 class="h-label">International Dubbing</h4>
-        <p>Wiggle Wood is designed from the outset for international reach. The series will be produced with dubbing in mind, using clear, well-paced dialogue and musical cues that travel across language barriers. International dubbing will be handled by a specialist localisation partner with experience across preschool content in key markets.</p>
-        <h4 class="h-label">Operations</h4>
-        <p>Day-to-day operations are managed by a lean, experienced team with backgrounds in children&rsquo;s media production, rights management, and brand development. The operational framework is built to scale efficiently as production volumes increase and the business moves into full franchise development.</p>
-      </div>
+    <h3 class="h-2" style="margin:3rem 0 1rem">Creative Leadership</h3>
+    <div class="advisers-grid" data-reveal-stagger>
+      <div class="adviser-card"><span class="pc-role">Head Writer</span><h4>Jen Upton</h4><p>BAFTA and Emmy-nominated, Jen heads the Wiggle Wood writers&rsquo; room. With 15+ years across HIT, Chorion and Disney, she has been Head Writer for CBBC&rsquo;s Bottersnikes &amp; Gumbles, Dennis &amp; Gnasher: Unleashed and Digby Dragon, and has worked on Peppa Pig, Fireman Sam and Noddy. She specialises in bonkers, fast-paced comedy that is always full of heart.</p></div>
+      <div class="adviser-card"><span class="pc-role">Animation Director</span><h4>Nick Harrop</h4><p>30+ years of professional animation spanning Disney feature animation, Spielberg&rsquo;s Amblimation, and two decades of children&rsquo;s TV direction. Began at Walt Disney Feature Animation on Who Framed Roger Rabbit, worked on An American Tail: Fievel Goes West, and has directed Jungle Junction, The Little Princess and Jamie&rsquo;s Yoga Adventures.</p></div>
+      <div class="adviser-card"><span class="pc-role">Animation Producer</span><h4>Lou Kneath</h4><p>Pixar- and Disney-trained character animator and founder of multi-award-winning studio Plus 3K. Leads the animation production and pipeline, recommended CelAction2D for broadcast-quality output at scale, and is a passionate advocate for nurturing emerging UK animation talent.</p></div>
+      <div class="adviser-card"><span class="pc-role">International Dubbing Director</span><h4>Ray Gillon</h4><p>One of the most experienced dubbing directors in animation, speaking 16+ languages colloquially. Nearly 40 years at Warner Bros overseeing foreign-language versions across up to 37 languages &mdash; Harry Potter, Jurassic Park, Dune: Part Two and the Studio Ghibli catalogue. Recipient of a Spanish Academy Award and a Turkish Golden Orange.</p></div>
+      <div class="adviser-card"><span class="pc-role">Musical Director</span><h4>Jax Jones</h4><p>BRIT and Grammy-nominated producer, DJ and songwriter with 4bn+ global streams and 1.6M YouTube subscribers. Contributes one marquee original song per season &mdash; for Season 1, the Wiggle Wood theme.</p></div>
+      <div class="adviser-card"><span class="pc-role">Composers &amp; Songwriters</span><h4>Banks &amp; Wag</h4><p>Award-winning British composer duo, one of the most successful partnerships in UK children&rsquo;s TV music &mdash; Go Jetters, ZingZillas, Blue Peter, Newsround and Mighty Little Bheem &mdash; with multiple iTunes children&rsquo;s chart number ones.</p></div>
     </div>
 
-    <h3 class="h-2" style="margin:3rem 0 1rem">Industry &amp; Specialist Advisers</h3>
+    <h3 class="h-2" style="margin:3rem 0 1rem">Industry Advisors</h3>
     <div class="advisers-grid" data-reveal-stagger>
-      <div class="adviser-card"><h4>Dr Jacqueline Harding</h4><p>Child Development Adviser. International child development expert, former BBC Education Editor, and Government Adviser on children&rsquo;s media and education. Key part of the writing team.</p></div>
-      <div class="adviser-card"><h4>Ally Castle MBE</h4><p>Disability and Inclusion Adviser. Former BBC strategist awarded an MBE for services to inclusion in broadcasting. Specialist adviser on Chadwick&rsquo;s wheelchair-user representation.</p></div>
-      <div class="adviser-card"><h4>Mark Downes</h4><p>Sustainability Adviser. Chief Storyteller at Green Eyed Monster Films. Head of Content for the Earth Prize. Former Head of Sustainability at Ecoflix. Produced a trilogy with Sir David Attenborough for Generation Ocean.</p></div>
+      <div class="adviser-card"><h4>Stephen Johnstone</h4><p>Former Chief Executive of Cartoon Network, where he played a central role in building and scaling the channel across European markets. A deep authority on the children&rsquo;s broadcasting landscape and international distribution.</p></div>
+      <div class="adviser-card"><h4>Con Gornell</h4><p>Former Executive Vice President of EMEA Marketing at Warner Bros. Pictures, with decades of experience building and scaling major entertainment brands &mdash; most notably Harry Potter &mdash; across international markets.</p></div>
+      <div class="adviser-card"><h4>David Ravel</h4><p>Private Wealth Manager at LGT Bank, one of Europe&rsquo;s leading private banks, managing the affairs of prominent names in entertainment. His network across film, TV and music has helped connect Wiggle Wood with key talent and partners.</p></div>
+    </div>
+
+    <h3 class="h-2" style="margin:3rem 0 1rem">Specialist Advisers</h3>
+    <div class="advisers-grid" data-reveal-stagger>
+      <div class="adviser-card"><span class="pc-role">Child Development &amp; Education</span><h4>Dr Jacqueline Harding</h4><p>Award-winning child development expert, author of The Brain That Loves to Play, Chair of the Bright Start Foundation and former BBC Education Editor. She leads audience insight, conducts preschool focus groups, and reviews scripts through the lens of the Early Years Foundation Stage.</p></div>
+      <div class="adviser-card"><span class="pc-role">Creative Strategist &amp; Disability Consultant</span><h4>Ally Castle MBE</h4><p>Two decades of senior BBC experience across audience planning and commissioning. Awarded an MBE in 2024 for services to inclusivity and diversity in UK broadcasting, she advises on the authentic portrayal of Chadwick, who uses an acorn wheel as a mobility aid.</p></div>
+      <div class="adviser-card"><span class="pc-role">Animal &amp; Nature Advisor</span><h4>Ian Redmond OBE</h4><p>Tropical field biologist and conservationist renowned for his work with great apes and elephants. He introduced Sir David Attenborough to the gorillas for the famous Life on Earth sequences and has advised on or appeared in 100+ documentary films.</p></div>
+      <div class="adviser-card"><span class="pc-role">Sustainability Advisor</span><h4>Mark Downes</h4><p>Chief Storyteller at Green Eyed Monster Films, Head of Content for the Earth Prize and former Head of Sustainability at Ecoflix. Produced a trilogy with Sir David Attenborough for Generation Ocean. Leads Wiggle Wood&rsquo;s production sustainability (Albert / BAFTA framework).</p></div>
+    </div>
+
+    <h3 class="h-2" style="margin:3rem 0 1rem">Operations &mdash; Planned Hires</h3>
+    <p>Wiggle Wood&rsquo;s operational team will be recruited ahead of launch to ensure governance, commercial and audience infrastructure is in place before the series goes live.</p>
+    <div class="roles-grid" data-reveal-stagger>
+      <div class="role-card"><h4>Legal &amp; Compliance Manager</h4><p>Ensures a robust governance framework from the outset &mdash; company-wide data protection (including GDPR), oversight of all legal contracts, and internal policy. Primary liaison with Wiggle Wood&rsquo;s legal team at Clintons. Reports to the COO.</p></div>
+      <div class="role-card"><h4>Franchise Manager</h4><p>Supports long-term development of Wiggle Wood as a multi-platform IP, managing relationships across licensing, publishing, product partnerships and brand collaborations in alignment with creative integrity.</p></div>
+      <div class="role-card"><h4>Social Media &amp; Community Manager</h4><p>Owns day-to-day management of Wiggle Wood&rsquo;s social channels &mdash; TikTok, Instagram, Facebook and Snapchat &mdash; driving audience growth and a consistent brand voice from launch.</p></div>
     </div>
   </div>
 </section>`,
@@ -878,17 +902,18 @@ PAGES.push({
 <section class="section" data-reveal>
   <div class="container">
     <div class="partners-grid" data-reveal-stagger>
-      <div class="partner-card"><h4>YouTube and Digital Partner</h4><p>Wiggle Wood&rsquo;s primary distribution partner for digital content. YouTube provides the global platform, discovery algorithm, and monetisation infrastructure for the channel launch and ongoing content strategy.</p></div>
-      <div class="partner-card"><h4>International Distribution &amp; Sales</h4><p>Specialist children&rsquo;s content distributor responsible for licensing Wiggle Wood to traditional broadcasters, SVOD platforms, and educational distributors globally following the initial YouTube launch period.</p></div>
-      <div class="partner-card"><h4>Production Partner</h4><p>Specialist preschool animation studio responsible for all character animation, background art, visual effects, and post-production for the Wiggle Wood series.</p></div>
-      <div class="partner-card"><h4>Legal Partner</h4><p>Specialist media and entertainment law firm advising on IP protection, production agreements, licensing contracts, and investor documentation.</p></div>
-      <div class="partner-card"><h4>Bank Partner</h4><p>Banking partner providing financial infrastructure, treasury management, and production financing support for The Wiggle Wood Company.</p></div>
-      <div class="partner-card"><h4>PR Partner</h4><p>Specialist entertainment PR agency responsible for Wiggle Wood&rsquo;s media relations, talent PR, and brand communications strategy.</p></div>
-      <div class="partner-card"><h4>Advertising Partner</h4><p>Digital advertising and media buying partner responsible for paid audience development across Meta, YouTube, and programmatic channels.</p></div>
-      <div class="partner-card"><h4>Influencer Partner</h4><p>Influencer marketing partner managing relationships with parenting and family lifestyle creators to build organic awareness and trusted endorsement within parent communities.</p></div>
-      <div class="partner-card"><h4>Gaming &amp; Interactive</h4><p>Partner responsible for developing Wiggle Wood&rsquo;s interactive and gaming extensions, including mobile applications, interactive experiences, and educational games.</p></div>
-      <div class="partner-card"><h4>Production Insurance Partner</h4><p>Specialist production insurance partner providing comprehensive coverage for all aspects of Wiggle Wood&rsquo;s production and post-production activities.</p></div>
-      <div class="partner-card"><h4>Collections &mdash; Fintage House</h4><p>Independent collections agency responsible for all revenue collection, royalty distribution, and financial oversight across the Wiggle Wood IP portfolio, ensuring full financial transparency.</p></div>
+      <div class="partner-card"><span class="pc-role">YouTube &amp; Digital Distribution</span><h4>The Lasso Group</h4><p>A specialist digital distribution company expert in YouTube channel management, digital rights and anti-piracy, whose client roster includes the team behind Baby Shark, the most-watched video in YouTube history. Lasso will manage the Wiggle Wood channel end-to-end and distribute content through their own children&rsquo;s channel, Little Amigo (700,000+ subscribers), for immediate audience reach from launch.</p></div>
+      <div class="partner-card"><span class="pc-role">International Distribution &amp; Sales</span><h4>Canoe Film &mdash; Caroline Stern</h4><p>Wiggle Wood&rsquo;s international sales are led by Caroline Stern, founder of Canoe Film, with 20+ years of senior experience and global distribution on over 250 titles. Credits include Sky&rsquo;s The Penguin King (narrated by David Attenborough), the BBC&rsquo;s On Angel Wings and the emerging IP Master Moley. She leads territory strategy, broadcaster conversations and the phased global rollout.</p></div>
+      <div class="partner-card"><span class="pc-role">Production Partner</span><h4>Nest Productions</h4><p>One of the UK&rsquo;s most established production partnerships, with a community of 350+ production company partners. For Wiggle Wood, Nest manages the full production operation &mdash; budgeting, scheduling, hiring, pitching and negotiating &mdash; bringing genuine commercial weight and helping build internal production capacity as the company grows.</p></div>
+      <div class="partner-card"><span class="pc-role">Animation Partner</span><h4>Plus 3K &mdash; Lou Kneath</h4><p>A multi-award-winning independent animation studio founded by Pixar- and Disney-trained director Lou Kneath, based in Cumbria. Recent credits include My Friend Misty (Sky Kids Original, exec-produced by Fearne Cotton) and the BFI-archived short The Fell We Climb. Plus 3K leads the animation production using CelAction2D.</p></div>
+      <div class="partner-card"><span class="pc-role">Legal Partner</span><h4>Clintons</h4><p>An award-winning boutique law firm in London&rsquo;s West End with 60+ years of specialist experience in entertainment, digital media and the creative industries. Clintons handles corporate structuring, investment agreements, production and distribution contracts, licensing and trademark registration, ensuring the brand and all IP is correctly structured and legally secured.</p></div>
+      <div class="partner-card"><span class="pc-role">Bank Partner</span><h4>Coutts</h4><p>The King&rsquo;s bank and a B Corp-certified private bank with three centuries of heritage. For Wiggle Wood, Coutts provides banking services and, crucially, advance funding against the 39% UK Animation Tax Credit, improving capital efficiency and reducing investor risk by underpinning a substantial portion of production funding with the UK tax system.</p></div>
+      <div class="partner-card"><span class="pc-role">Production Insurance &amp; Completion Bond</span><h4>Paterson James &mdash; Bob Thompson</h4><p>A recognised specialist in animation completion bonding, 100% independently owned. A completion bond guarantees the series is delivered to a high standard by an agreed date, with over-costs becoming the guarantor&rsquo;s responsibility. Wiggle Wood has direct access to animation specialist Bob Thompson &mdash; ex-BBC, LEGO co-creator of BIONICLE &mdash; who acts as a senior production backstop on behalf of the underwriter.</p></div>
+      <div class="partner-card"><span class="pc-role">Collections Agency</span><h4>Fintage House</h4><p>A privately owned global film and TV rights company. Fintage House provides Collection Account Management: all income flows through a single, independently managed collection account, with pre-agreed shares distributed directly to every party &mdash; producer, investors and profit participants &mdash; transparently and without dispute.</p></div>
+      <div class="partner-card"><span class="pc-role">PR Partner</span><h4>Valerie Taylor PR</h4><p>The most trusted name in UK children&rsquo;s entertainment PR, with 30+ years&rsquo; experience. Retained PR agency for Sesame Workshop in the UK, European Licensing PR for The Pok&eacute;mon Company International, and a long-standing relationship with Crayola Studios. Previous and current clients include Teletubbies, Danger Mouse and The Wiggles.<a class="pc-link" href="https://valerietaylorpr.com/" target="_blank" rel="noopener">valerietaylorpr.com &rarr;</a></p></div>
+      <div class="partner-card"><span class="pc-role">Advertising Partner</span><h4>ViVV</h4><p>An AI-powered marketing platform and agency founded by Brandon Keenan and Nicola Cooper, both formerly senior leaders at Time Warner and CNN. ViVV manages the full marketing lifecycle in one place and has delivered a 49% cost saving for a Fortune 500 client and 26x audience growth for another. Recognised as one of TechRound&rsquo;s top 35 AI companies in 2025. ViVV leads Wiggle Wood&rsquo;s paid social strategy.</p></div>
+      <div class="partner-card"><span class="pc-role">Influencer Partner</span><h4>Hypefy</h4><p>An AI-powered influencer marketing platform that can identify and reach any of the 53 million content creators active worldwide. For Wiggle Wood it runs large-scale micro-influencer campaigns reaching parents, caregivers and educators across English- and Spanish-speaking territories. Clients include Philips, Samsung, McDonald&rsquo;s, PepsiCo and Sony.</p></div>
+      <div class="partner-card"><span class="pc-role">Gaming &amp; Interactive</span><h4>Territory Studio &mdash; David Sheldon-Hicks</h4><p>One of the world&rsquo;s leading specialist studios in gaming and interactive entertainment, having collaborated with major PlayStation titles and filmmakers including Steven Spielberg and Christopher Nolan. Territory is developing the strategy and budget for a tablet-based Wiggle Wood preschool game.</p></div>
     </div>
   </div>
 </section>`,
@@ -915,6 +940,46 @@ PAGES.push({
       <div>
         <p>The Foundation&rsquo;s programmes will include the distribution of free Wiggle Wood educational resources to early years settings in underserved communities, partnerships with children&rsquo;s mental health charities to develop mindfulness and emotional literacy resources, environmental education initiatives linked to the nature-based world of Wiggle Wood, and mentorship and career development programmes for young people from underrepresented backgrounds in the creative industries.</p>
         <p>The Wiggle Wood Foundation reflects the belief that a brand built on kindness must practice what it preaches. Commercial success and social impact are not in tension at Wiggle Wood. They are the same thing.</p>
+      </div>
+    </div>
+  </div>
+</section>`,
+});
+
+/* ---------- IP & LEGAL ---------- */
+PAGES.push({
+  slug: "ip-legal",
+  metaTitle: "IP &amp; Legal — Wiggle Wood",
+  metaDesc: "Wiggle Wood is a clean, single-owner IP asset: 100% owned by The Wiggle Wood Company, with a broad trademark strategy and the highest standards of child-safety compliance.",
+  eyebrow: "IP &amp; Legal",
+  h1: "A clean, single-owner IP asset",
+  lead: "100% of the intellectual property is owned outright by The Wiggle Wood Company &mdash; no co-owners, no third-party splits, no rights encumbrances.",
+  actors: [{ name: "cosmo", role: "lead" }],
+  html: `
+<section class="section" data-reveal>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <h3 class="h-label">Ownership</h3>
+        <p>The Wiggle Wood Company Limited (TWWC), wholly owned by Aim&eacute;e Anderson, holds 100% of the intellectual property rights to Wiggle Wood. There are no co-owners, no third-party splits and no rights encumbrances on any element of the brand. Every contributor &mdash; from writers and composers to designers and animators &mdash; operates under formal agreements assigning rights to the company, creating a clean, fully-documented chain of title. Wiggle Wood has been built from the outset as a single-owner asset, structured to maximise long-term IP value and protect investor returns across every monetisation channel.</p>
+        <h3 class="h-label">Trademark Strategy</h3>
+        <p>The brand was registered as a UK trademark in October 2023, filed deliberately across approximately 500 categories of goods and services &mdash; a considered choice that protects the full range of commercial activity the brand may extend into, from broadcast and digital content through publishing, music, toys, apparel, food and beverage, and live experiences. The registration carries through to October 2028 before active use must be demonstrated at renewal.</p>
+        <p>A phased international filing programme extends protection into priority territories. The first phase comprises the European Union, with the anchor application planned for September 2026 to trigger a six-month priority window, before extending into the United States, Mexico, Brazil, Canada and Australia, with India and other markets to follow. International registrations are timed to mature around late 2028 to early 2029, sequenced to be in place ahead of the merchandise launch. The strategy is led by specialist IP counsel at Clintons.</p>
+        <h3 class="h-label">Copyright &amp; Character Rights</h3>
+        <p>All characters, designs, scripts and story premises are owned outright by TWWC, with no creative collaborator retaining residual rights. The full character roster &mdash; Cyd, Chadwick, Cosmo, Bellona Butterfly and supporting characters such as Luna Glow-worm &mdash; is wholly owned by the company and protected by the trademark and copyright strategies set out here.</p>
+        <h3 class="h-label">Music Rights</h3>
+        <p>Music is a core pillar of the Wiggle Wood IP, and TWWC owns it outright, holding both the publishing rights and the master rights to every song in the series. This is unusual in children&rsquo;s content, where music is typically co-owned with publishers or co-writers, and it represents significant long-term value as the catalogue grows across streaming, sync, live performance and consumer products.</p>
+      </div>
+      <div>
+        <div class="panel">
+          <h3 class="h-label" style="margin-top:0">Compliance &amp; Safeguarding</h3>
+          <p>Wiggle Wood is built to the highest standards of child safety and regulatory compliance. The core production team is drawn from CBeebies, widely regarded as the gold standard for safeguarding in UK children&rsquo;s content. The company complies with COPPA, the ICO Age Appropriate Design Code, GDPR-K, and YouTube&rsquo;s Made for Kids framework, with safeguarding embedded at every stage of production rather than added as an afterthought.</p>
+          <p>Two named consultants reinforce this position. Dr Jacqueline Harding leads developmental advisory and audience insight, reviewing scripts through the lens of the Early Years Foundation Stage. Ally Castle MBE advises on inclusivity and representation, with particular focus on the portrayal of Chadwick, who uses an acorn wheel as a mobility aid.</p>
+        </div>
+        <div class="panel" style="margin-top:1rem">
+          <h3 class="h-label" style="margin-top:0">Counsel</h3>
+          <p>Wiggle Wood&rsquo;s IP and legal strategy is led by Clintons, an award-winning entertainment law firm with more than 60 years of specialist experience in audio-visual rights, financing and licensing. Luke Gornell, Principal and head of the IP division at Clintons, is personally and substantively involved, leading his team on day-to-day work and providing senior oversight across the trademark strategy, contributor agreements and the wider IP position.</p>
+        </div>
       </div>
     </div>
   </div>

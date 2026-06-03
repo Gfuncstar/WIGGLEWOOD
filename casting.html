@@ -23,13 +23,11 @@
 
 <!-- ===== LIVING FOREST WORLD ===== -->
 <div id="forest" aria-hidden="true"></div>
+<div class="forest-light" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="forest-haze" aria-hidden="true"></div>
 <div class="forest-vignette" aria-hidden="true"></div>
-<div class="canopy" aria-hidden="true">
-  <img class="canopy__branch canopy__branch--l" src="assets/img/world/branch1-1600.webp" alt="" />
-  <img class="canopy__branch canopy__branch--r" src="assets/img/world/branch2-1600.webp" alt="" />
-  <img class="canopy__sprig" src="assets/img/world/branch2-1600.webp" alt="" />
-</div>
 <div class="leaves" aria-hidden="true"></div>
+<div class="motes" aria-hidden="true"></div>
 
 <nav class="nav" id="top">
   <a class="nav__logo" href="/" aria-label="Wiggle Wood home">
@@ -74,14 +72,19 @@
     <p>Mel represents a strategically aligned choice on both creative and commercial grounds. As a member of the Spice Girls, one of the most successful and culturally influential girl groups of all time, she carries decades of global recognition and multi-generational appeal. Combined with her established solo career, she brings immediate cross-border awareness that directly supports Wiggle Wood&rsquo;s day-and-date global YouTube launch strategy.</p>
     <p>Creatively, she offers rare dual capability. An Olivier Awards nominee for her stunning performance in Blood Brothers, she combines proven acting credentials with exceptional vocal strength. Her soft Liverpudlian tone carries both warmth and authority, making her ideally suited to the nurturing, big-sister presence that Bellona embodies.</p>
 
+    <h3 class="h-label" style="margin-top:2rem">Voice Director &mdash; Dave Peacock</h3>
+    <div class="panel">
+      <p>Emmy-Award winning Dave Peacock has been voice directing and casting professionally for almost 20 years. Specialising in animation, he is one of the most in-demand voice directors in the UK, having directed over 70 TV series and a dozen features &mdash; including Hilda, Thunderbirds Are Go!, Moominvalley, The Octonauts, Dennis &amp; Gnasher Unleashed, Love, Death &amp; Robots and Go Jetters. He was Emmy-nominated for his voice direction on Hilda in 2021 and 2022, and won an Emmy in 2022 as Supervising Dialogue Editor on Octonauts: Ring of Fire.</p>
+    </div>
+
     <h3 class="h-label" style="margin-top:2rem">Principal Voice Cast</h3>
     <div class="cast-grid" data-reveal-stagger>
-      <div class="cast-card" style="--c:var(--c-bellona)"><div class="cast-char">Bellona Butterfly</div><div class="cast-who"><strong>Mel C</strong> (target)</div><div class="cast-note">Pilot voiced by Naomi McDonald</div></div>
-      <div class="cast-card" style="--c:var(--c-cosmo)"><div class="cast-char">Cosmo</div><div class="cast-who"><strong>Daisy Sequerra</strong></div><div class="cast-note">Belgravia: The Next Chapter, ITV. Yorkshire accent. Cosmo&rsquo;s grounded delivery captures her endearing honesty, assertive confidence and sharp observational wit.</div></div>
-      <div class="cast-card" style="--c:var(--c-cyd)"><div class="cast-char">Cyd</div><div class="cast-who"><strong>Blanche Anderson</strong></div><div class="cast-note">Viewfinder, PlayStation. Soft Edinburgh accent. Blanche&rsquo;s performance gives Cyd a dreamy charm, bringing a playful sensitivity to the world.</div></div>
-      <div class="cast-card" style="--c:var(--c-chadwick)"><div class="cast-char">Chadwick</div><div class="cast-who"><strong>Corinna Brown</strong></div><div class="cast-note">Heartstopper, Netflix. Lively South London accent. Corinna&rsquo;s performance captures Chadwick&rsquo;s bold spirit and big-hearted personality.</div></div>
-      <div class="cast-card" style="--c:var(--c-luna)"><div class="cast-char">Luna Glow-worm</div><div class="cast-who"><strong>Ellie Wallwork</strong></div><div class="cast-note">Doctor Who, BBC1. Ellie captures Luna&rsquo;s teenage mix of uncertainty and attitude, blending vulnerability with flashes of dry, slightly exasperated humour.</div></div>
-      <div class="cast-card" style="--c:var(--c-robin)"><div class="cast-char">Robin Robin</div><div class="cast-who"><strong>Shash Hira</strong></div><div class="cast-note">Thomas Edison&rsquo;s Secret Lab, Kartoon Channel. Transforms Robin into an endearingly theatrical, slightly grumpy elder of the woods.</div></div>
+      <div class="cast-card" style="--c:var(--c-bellona)"><div class="cast-char">Bellona Butterfly</div><div class="cast-who"><strong>Mel C</strong> (target) &middot; pilot voiced by <strong>Naomi McDonald</strong></div><div class="cast-note">Naomi is a British-American-Irish actor and voice artist with 20+ years&rsquo; experience, best known for voicing Jetpad in the BAFTA-winning CBeebies series Go Jetters. She brings warmth, authority and genuine emotional depth to Bellona.</div></div>
+      <div class="cast-card" style="--c:var(--c-cosmo)"><div class="cast-char">Cosmo</div><div class="cast-who"><strong>Daisy Sequerra</strong></div><div class="cast-note">A British actor and dancer from Sheffield. Plays Mawdie in Belgravia: The Next Chapter (MGM+); West End Veruca Salt in Charlie and the Chocolate Factory; joined the RSC for Matilda. Yorkshire accent &mdash; grounded, honest, with sharp observational wit.</div></div>
+      <div class="cast-card" style="--c:var(--c-cyd)"><div class="cast-char">Cyd</div><div class="cast-who"><strong>Blanche Anderson</strong></div><div class="cast-note">An award-winning Scottish voiceover artist with nearly fourteen years&rsquo; experience, and the BBC Radio Scotland female station voice for over six years. Her soft Edinburgh accent gives Cyd a dreamy charm and playful sensitivity.</div></div>
+      <div class="cast-card" style="--c:var(--c-chadwick)"><div class="cast-char">Chadwick</div><div class="cast-who"><strong>Corinna Brown</strong></div><div class="cast-note">English actress best known as Tara Jones in the Netflix series Heartstopper (2022&ndash;present). Trained with RADA&rsquo;s youth company and at East 15. Her lively South London delivery captures Chadwick&rsquo;s bold spirit and big-hearted personality.</div></div>
+      <div class="cast-card" style="--c:var(--c-luna)"><div class="cast-char">Luna Glow-worm</div><div class="cast-who"><strong>Ellie Wallwork</strong></div><div class="cast-note">An artist and performer who has been blind since birth, and an accomplished actor in film, TV and radio &mdash; well known for high-profile roles in Doctor Who and Call the Midwife. She captures Luna&rsquo;s mix of vulnerability and dry humour.</div></div>
+      <div class="cast-card" style="--c:var(--c-robin)"><div class="cast-char">Robin Robin</div><div class="cast-who"><strong>Shash Hira</strong></div><div class="cast-note">A versatile voice actor who has worked for Netflix, Disney, Nintendo, EA Games and the BBC. Able to perform across a wide range of UK regional and international accents, he transforms Robin into an endearingly theatrical, slightly grumpy elder of the woods.</div></div>
     </div>
 
     <h3 class="h-label" style="margin-top:2rem">Guest Voice Cast</h3>
@@ -94,7 +97,7 @@
   <div class="container">
     <div class="footer__top">
       <div class="footer__brand">
-        <img src="assets/img/logo/wigglewood.svg" alt="Wiggle Wood" />
+        <img src="assets/img/logo/company-600.webp" alt="The Wiggle Wood Company" />
         <p>A wholesome, music-led animated series promoting kindness, diversity and inclusion. A brand built to last.</p>
       </div>
       <div>
@@ -114,6 +117,7 @@
         <ul>
           <li><a href="/financials">Business &amp; Strategy</a></li>
           <li><a href="/research">Market Research</a></li>
+          <li><a href="/ip-legal">IP &amp; Legal</a></li>
           <li><a href="/ethics">Ethics &amp; Values</a></li>
           <li><a href="/foundation">Foundation</a></li>
           <li><a href="/documents">Documents</a></li>

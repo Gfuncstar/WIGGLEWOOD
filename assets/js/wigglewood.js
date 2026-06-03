@@ -97,6 +97,41 @@
     }
   }
 
+  /* ---- Floating forest air: pollen motes + drifting seeds ---- */
+  var moteField = document.querySelector(".motes");
+  if (moteField && !reduce) {
+    var MN = window.innerWidth < 680 ? 14 : 26;
+    for (var m = 0; m < MN; m++) {
+      var mote = document.createElement("span");
+      mote.className = "mote";
+      var ms = 3 + Math.random() * 7;
+      mote.style.width = mote.style.height = ms.toFixed(1) + "px";
+      mote.style.left = (Math.random() * 100).toFixed(2) + "%";
+      mote.style.bottom = "-" + (Math.random() * 20).toFixed(0) + "px";
+      mote.style.setProperty("--dx", (Math.random() * 120 - 60).toFixed(0) + "px");
+      mote.style.animationDuration = (16 + Math.random() * 18).toFixed(1) + "s";
+      mote.style.animationDelay = "-" + (Math.random() * 26).toFixed(1) + "s";
+      moteField.appendChild(mote);
+    }
+    // a few dandelion seeds drifting through
+    var seedSvg = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg stroke='%23eef7e6' stroke-width='1.2' opacity='.9'%3E%3Cline x1='20' y1='20' x2='20' y2='38'/%3E%3Cg stroke-linecap='round'%3E%3Cline x1='20' y1='14' x2='20' y2='3'/%3E%3Cline x1='20' y1='14' x2='12' y2='5'/%3E%3Cline x1='20' y1='14' x2='28' y2='5'/%3E%3Cline x1='20' y1='14' x2='8' y2='12'/%3E%3Cline x1='20' y1='14' x2='32' y2='12'/%3E%3Cline x1='20' y1='14' x2='14' y2='3'/%3E%3Cline x1='20' y1='14' x2='26' y2='3'/%3E%3C/g%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='2' fill='%23d8c89a'/%3E%3C/svg%3E\")";
+    var SN = window.innerWidth < 680 ? 2 : 4;
+    for (var s = 0; s < SN; s++) {
+      var seed = document.createElement("span");
+      seed.className = "seed";
+      var ss = 22 + Math.random() * 18;
+      seed.style.width = seed.style.height = ss.toFixed(0) + "px";
+      seed.style.left = (Math.random() * 100).toFixed(2) + "%";
+      seed.style.top = "-6%";
+      seed.style.backgroundImage = seedSvg;
+      seed.style.setProperty("--dx", (Math.random() * 260 - 80).toFixed(0) + "px");
+      seed.style.setProperty("--dr", (180 + Math.random() * 460).toFixed(0) + "deg");
+      seed.style.animationDuration = (22 + Math.random() * 20).toFixed(1) + "s";
+      seed.style.animationDelay = "-" + (Math.random() * 30).toFixed(1) + "s";
+      moteField.appendChild(seed);
+    }
+  }
+
   /* ---- Year in footer ---- */
   var yr = document.querySelector("[data-year]");
   if (yr) yr.textContent = new Date().getFullYear();
