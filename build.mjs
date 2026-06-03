@@ -1,5 +1,5 @@
 /* =========================================================================
-   Wiggle Wood — static multi-page generator
+   Wiggle Wood -- static multi-page generator
    Run: node build.mjs   (writes *.html into the project root)
    Each page shares the living-world chrome (forest bg, canopy, leaves,
    fireflies, nav, footer) and stages characters that interact on the page.
@@ -22,38 +22,31 @@ const HALO = {
   bellona: "var(--c-bellona-soft)", luna: "var(--c-luna-soft)", robin: "var(--c-robin-soft)",
 };
 
-/* characters that have a second pose we can cross-fade for real animation */
-const ALT_POSE = { cyd: "cyd-alt", cosmo: "cosmo-alt", chadwick: "chadwick-alt", luna: "luna-alt", robin: "robin-alt" };
-
-/* an actor = a character that lives on the page */
+/* an actor = a single character image -- no stacking, no duplication */
 function actor(spec) {
   const file = spec.img || spec.name;
-  const sizeCls = spec.role === "support" ? "actor--support" : "actor--lead";
-  const alt = ALT_POSE[spec.name];
-  // lead with a known alt pose (and no explicit pose override) → two-pose cross-fade
-  if (spec.role !== "support" && alt && !spec.img && !spec.flip) {
-    return `<div class="actor-stack ${sizeCls}${spec.flutter ? " actor--flutter" : ""}">
-        <img class="actor pose-a" src="assets/img/characters/${spec.name}.webp" alt="${ALT[spec.name] || spec.name}" loading="lazy" />
-        <img class="actor pose-b" src="assets/img/characters/${alt}.webp" alt="" aria-hidden="true" loading="lazy" />
-      </div>`;
-  }
-  const cls = ["actor", sizeCls, spec.flip ? "actor--flip" : "", spec.flutter ? "actor--flutter" : ""].filter(Boolean).join(" ");
+  const cls = [
+    "actor",
+    spec.role === "support" ? "actor--support" : "",
+    spec.flip ? "actor--flip" : "",
+    spec.flutter ? "actor--flutter" : "",
+  ].filter(Boolean).join(" ");
   return `<img class="${cls}" src="assets/img/characters/${file}.webp" alt="${ALT[spec.name] || spec.name}" loading="lazy" />`;
 }
 
 function pageHero(p) {
   const actors = p.actors || [];
   const halo = HALO[(actors[0] || {}).name] || "rgba(255,224,122,.4)";
-  const duo = actors.length > 1 ? " is-duo" : "";
+  const scene = SCENE[p.slug] || "";
   return `
-<header class="page-hero">
+<header class="page-hero${scene ? " scene-bg " + scene : ""}">
   <div class="page-hero__inner">
     <div class="page-hero__text" data-reveal>
       <p class="eyebrow">${p.eyebrow}</p>
       <h1 class="h-1">${p.h1}</h1>
       <p class="lead">${p.lead}</p>
     </div>
-    <div class="page-hero__art${duo}" data-reveal>
+    <div class="page-hero__art" data-reveal>
       <div class="page-hero__halo" style="--c:${halo}"></div>
       ${actors.map(actor).join("\n      ")}
     </div>
@@ -150,9 +143,11 @@ const WORLD = `
 
 function layout(p) {
   const active = p.slug === "index" ? "index" : p.slug;
-  const peekers = (p.peekers || []).map(pk =>
-    `<div class="peeker peeker--${pk.pos}"><img src="assets/img/characters/${pk.img || pk.name}.webp" alt="" /></div>`
-  ).join("\n");
+  // One ambient peeker per page -- picks from actors list
+  const peekChar = (p.peekers && p.peekers[0]) || (p.actors && p.actors[0] ? { name: p.actors[p.actors.length-1].name, img: p.actors[p.actors.length-1].name + "-alt", pos:"bl" } : null);
+  var peekPos = peekChar ? (peekChar.pos || 'bl') : '';
+  var peekSrc = peekChar ? (peekChar.img || peekChar.name) : '';
+  var peekers = peekChar ? '<div class="peeker peeker--' + peekPos + '"><img src="assets/img/characters/' + peekSrc + '.webp" alt="" /></div>' : '';
   return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -196,7 +191,7 @@ const PAGES = [];
 /* ---------- HOME ---------- */
 PAGES.push({
   slug: "index",
-  metaTitle: "Wiggle Wood — Discover Delightful Animation",
+  metaTitle: "Wiggle Wood -- Discover Delightful Animation",
   metaDesc: "Wiggle Wood is a music-led animated series for children aged three to five, promoting kindness, diversity and inclusion. A global brand and investment opportunity.",
   html: `
 <header class="hero">
@@ -242,10 +237,29 @@ PAGES.push({
 </section>`,
 });
 
+/* Scene class helper -- maps page slug to a video frame backdrop */
+const SCENE = {
+  overview:    "scene-cubby",
+  series:      "scene-forest",
+  characters:  "scene-cast",
+  world:       "scene-forest",
+  design:      "scene-cubby-warm",
+  casting:     "scene-cast",
+  music:       "scene-glow",
+  ethics:      "scene-hug",
+  financials:  "scene-night",
+  research:    "scene-night",
+  team:        "scene-cubby",
+  partners:    "scene-night",
+  foundation:  "scene-hug",
+  "ip-legal":  "scene-night",
+  documents:   "scene-forest",
+};
+
 /* ---------- OVERVIEW ---------- */
 PAGES.push({
   slug: "overview",
-  metaTitle: "Overview — Wiggle Wood",
+  metaTitle: "Overview -- Wiggle Wood",
   metaDesc: "The vision, the brand, the company and the opportunity behind Wiggle Wood.",
   eyebrow: "Overview",
   h1: "By 2035, Wiggle Wood will be the number one children&rsquo;s IP in the world.",
@@ -280,7 +294,7 @@ PAGES.push({
   </div>
 </section>
 
-<section class="section section-alt" data-reveal>
+<section class="section section-alt scene-bg scene-hug" data-reveal>
   <div class="container">
     <p class="eyebrow">Origin Story</p>
     <h2 class="h-2">Foreword from the Founder and Creator of Wiggle Wood</h2>
@@ -310,7 +324,7 @@ PAGES.push({
 /* ---------- SERIES ---------- */
 PAGES.push({
   slug: "series",
-  metaTitle: "The Series — Wiggle Wood",
+  metaTitle: "The Series -- Wiggle Wood",
   metaDesc: "The synopsis, the repeatable episode format, and the first stories of Wiggle Wood.",
   eyebrow: "The Animation Series",
   h1: "Synopsis",
@@ -347,7 +361,7 @@ PAGES.push({
   <div class="container">
     <p class="eyebrow">Episode Stories</p>
     <h2 class="h-2">A glimpse into the storytelling</h2>
-    <p>Each story is built around a simple emotional truth, brought to life through character, humour, and the natural world. Twenty episodes have been developed at springboard stage, with the full document available in the Documents section. The five stories below represent the breadth and emotional range of the series, with the remaining 52 episodes per season developed as we move into pre-production.</p>
+    <p style="margin-bottom:1.4rem">Each story is built around a simple emotional truth, brought to life through character, humour, and the natural world. Twenty episodes have been developed at springboard stage, with the full document available in the Documents section. The five stories below represent the breadth and emotional range of the series, with the remaining 52 episodes per season developed as we move into pre-production.</p>
     <div class="episode-grid" data-reveal-stagger>
       <div class="episode-card"><span class="ep-label">Pilot Episode</span><h4>Show Your Glow</h4><p>Cyd is determined to make the perfect gift for Bellona&rsquo;s Butterversary, but when the Wigglers meet shy Luna Glow-worm, who refuses to shine because she believes her light is not bright enough, Cyd begins to see perfection differently. Through friendship and song, the Wigglers discover that beauty is not about being flawless, but about being proud of who you are and letting your own unique light shine. Together, they learn that your best is beautiful.</p></div>
       <div class="episode-card"><span class="ep-label">Episode 2</span><h4>Don&rsquo;t Yuck my Dung</h4><p>Bruno the dung beetle needs help rolling his dung ball, but Cosmo is not exactly thrilled about touching poo. Bruno sets about teaching the Wigglers about the wonders of dung, and that just because you do not like something, it does not mean everyone feels the same way. And that is perfectly fine.</p></div>
@@ -362,7 +376,7 @@ PAGES.push({
 /* ---------- CHARACTERS ---------- */
 PAGES.push({
   slug: "characters",
-  metaTitle: "Meet Our Characters — Wiggle Wood",
+  metaTitle: "Meet Our Characters -- Wiggle Wood",
   metaDesc: "Say hello to the Wigglers: Cyd, Cosmo and Chadwick, their guardian Bellona Butterfly, and the woodland friends they meet.",
   eyebrow: "Meet Our Characters",
   h1: "Say Hello to The Wigglers!",
@@ -446,7 +460,7 @@ PAGES.push({
 /* ---------- WORLD ---------- */
 PAGES.push({
   slug: "world",
-  metaTitle: "The Wiggle Wood World — Wiggle Wood",
+  metaTitle: "The Wiggle Wood World -- Wiggle Wood",
   metaDesc: "Caterpillar Cubby, Wiggle Wood Way, Pebble Brook and the changing seasons of a rich, nature-based world.",
   eyebrow: "The Wiggle Wood World",
   h1: "Welcome to the World of Wiggle Wood",
@@ -486,7 +500,7 @@ PAGES.push({
 /* ---------- DESIGN ---------- */
 PAGES.push({
   slug: "design",
-  metaTitle: "Design — Wiggle Wood",
+  metaTitle: "Design -- Wiggle Wood",
   metaDesc: "The visual language and art direction of Wiggle Wood: warmth, energy and emotional clarity.",
   eyebrow: "Design",
   h1: "Visual Language &amp; Art Direction",
@@ -519,7 +533,7 @@ PAGES.push({
 /* ---------- CASTING ---------- */
 PAGES.push({
   slug: "casting",
-  metaTitle: "Casting — Wiggle Wood",
+  metaTitle: "Casting -- Wiggle Wood",
   metaDesc: "The voice cast of Wiggle Wood, combining endearing performances with talent-led recognition.",
   eyebrow: "Casting",
   h1: "Voice Cast",
@@ -559,7 +573,7 @@ PAGES.push({
 /* ---------- MUSIC ---------- */
 PAGES.push({
   slug: "music",
-  metaTitle: "Music — Wiggle Wood",
+  metaTitle: "Music -- Wiggle Wood",
   metaDesc: "Original music led by Jax Jones is a core differentiator of Wiggle Wood, embedded into the storytelling of every episode.",
   eyebrow: "Music",
   h1: "Music as a Market Differentiator",
@@ -606,7 +620,7 @@ PAGES.push({
 /* ---------- ETHICS ---------- */
 PAGES.push({
   slug: "ethics",
-  metaTitle: "Ethics &amp; Values — Wiggle Wood",
+  metaTitle: "Ethics &amp; Values -- Wiggle Wood",
   metaDesc: "A purpose-driven series committed to emotional, social and environmental wellbeing, built on best practice and transparency.",
   eyebrow: "Ethics",
   h1: "Values",
@@ -645,7 +659,7 @@ PAGES.push({
 /* ---------- FINANCIALS ---------- */
 PAGES.push({
   slug: "financials",
-  metaTitle: "Financials &amp; Strategy — Wiggle Wood",
+  metaTitle: "Financials &amp; Strategy -- Wiggle Wood",
   metaDesc: "The business model, YouTube-first distribution strategy, profit centres and projected growth of Wiggle Wood.",
   eyebrow: "Financials",
   h1: "The Opportunity",
@@ -768,7 +782,7 @@ PAGES.push({
   </div>
 </section>
 
-<section class="section section-alt" data-reveal>
+<section class="section section-alt scene-bg scene-forest" data-reveal>
   <div class="container">
     <p class="eyebrow">Production Timeline</p>
     <h2 class="h-2">From completed pilot to global franchise</h2>
@@ -789,7 +803,7 @@ PAGES.push({
 /* ---------- RESEARCH ---------- */
 PAGES.push({
   slug: "research",
-  metaTitle: "Market Research — Wiggle Wood",
+  metaTitle: "Market Research -- Wiggle Wood",
   metaDesc: "Independent market research validating audience appetite for Wiggle Wood among parents and children.",
   eyebrow: "Market Research",
   h1: "Audience Insights",
@@ -821,7 +835,7 @@ PAGES.push({
 /* ---------- TEAM ---------- */
 PAGES.push({
   slug: "team",
-  metaTitle: "The Team — Wiggle Wood",
+  metaTitle: "The Team -- Wiggle Wood",
   metaDesc: "The leadership, production team and specialist advisers behind Wiggle Wood.",
   eyebrow: "The Team",
   h1: "Leadership",
@@ -892,7 +906,7 @@ PAGES.push({
 /* ---------- PARTNERS ---------- */
 PAGES.push({
   slug: "partners",
-  metaTitle: "Partners — Wiggle Wood",
+  metaTitle: "Partners -- Wiggle Wood",
   metaDesc: "The strategic partners supporting Wiggle Wood across distribution, production, legal, finance and marketing.",
   eyebrow: "Partners",
   h1: "Strategic Partners",
@@ -922,7 +936,7 @@ PAGES.push({
 /* ---------- FOUNDATION ---------- */
 PAGES.push({
   slug: "foundation",
-  metaTitle: "The Wiggle Wood Foundation — Wiggle Wood",
+  metaTitle: "The Wiggle Wood Foundation -- Wiggle Wood",
   metaDesc: "The charitable arm of The Wiggle Wood Company, extending its social impact mission beyond the screen.",
   eyebrow: "Wiggle Wood Foundation",
   h1: "The Wiggle Wood Foundation",
@@ -949,7 +963,7 @@ PAGES.push({
 /* ---------- IP & LEGAL ---------- */
 PAGES.push({
   slug: "ip-legal",
-  metaTitle: "IP &amp; Legal — Wiggle Wood",
+  metaTitle: "IP &amp; Legal -- Wiggle Wood",
   metaDesc: "Wiggle Wood is a clean, single-owner IP asset: 100% owned by The Wiggle Wood Company, with a broad trademark strategy and the highest standards of child-safety compliance.",
   eyebrow: "IP &amp; Legal",
   h1: "A clean, single-owner IP asset",
@@ -994,7 +1008,7 @@ function doc(title, desc) {
 }
 PAGES.push({
   slug: "documents",
-  metaTitle: "Investor Data Room — Wiggle Wood",
+  metaTitle: "Investor Data Room -- Wiggle Wood",
   metaDesc: "Documents available to approved investors: series bible, certifications, financial model, scripts and more.",
   eyebrow: "Documents",
   h1: "Investor Data Room",
@@ -1039,4 +1053,5 @@ for (const p of PAGES) {
   writeFileSync(new URL(`./${file}`, import.meta.url), layout(p));
   console.log("wrote", file);
 }
-console.log(`\nDone — ${PAGES.length} pages generated.`);
+console.log(`\nDone: ${PAGES.length} pages generated.`);
+
