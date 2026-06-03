@@ -1,0 +1,88 @@
+# overview-1
+- title: Origin Story | Discover & Engage Today — .
+- description: Explore Wiggle Wood, a heartwarming children's animation series focused on kindness and environmental themes, designed for ages 3-5 with a digital-first approach.
+
+## Headings
+- h4: Foreword from the Founder and Creator of Wiggle Wood
+- h4: How Wiggle Wood Began
+- h4: The Butterfly
+- h4: Why This Matters
+- h4: Who We Are
+- h4: Building Wiggle Wood
+
+## Body copy
+- If you are reading this, it means something about Wiggle Wood has caught your attention.
+- Thank you for being here and for taking the time.
+- Before the financial model. Before the production schedule. Before the pitch deck.
+- This is my story.
+- Wiggle Wood did not begin in a boardroom. It did not begin with a five-year plan. It did not begin with funding.
+- It began at a moment when everything felt like it was falling apart.
+- I left home in Scotland at seventeen with very big dreams. I wanted to see the world. I wanted to work in film and television. I wanted, if I am honest, to be important. Like Dorothy stepping into Oz, I believed there was something bigger waiting for me beyond where I started.
+- Over the years I built a career in London, New York and Los Angeles. I worked in global PR. I moved into film publicity. I became Managing Director of an international agency. I pioneered new brand divisions. I launched my own company. I worked with major studios, global brands and film festivals.
+- It looked exciting from the outside.
+- Inside, it was relentless. Competitive. Brutal at times. I fought for everything.
+- Then came the collapse. Deals fell apart. Covid hit. One final opportunity unravelled. I was nearly forty. No partner. No children. No financial cushion. I thought I might lose my home. I felt I had nothing to show for years of work.
+- I was exhausted. I was broken. And for the first time, I surrendered to the possibility that everything I knew might have to change.
+- And then, three weeks later, Wiggle Wood arrived.
+- At the time, Marks and Spencer and Aldi were in the middle of their now infamous caterpillar cake war. Colin and Cuthbert were suddenly everywhere, full of personality, humour and public affection. I remember waking up one morning and thinking, there is a children’s story in the caterpillars. There is something here about transformation, about identity, about becoming.
+- That spark was small.
+- But it was electric.
+- At the same time, there was a story I had learned many years earlier that had always stayed with me.
+- A little boy sees a butterfly struggling to emerge from its cocoon. Wanting to help, he carefully cuts it free. The butterfly survives. But it never flies.
+- Why?
+- Because it needed the struggle. The pressure strengthens the wings. The difficulty builds the muscles required to soar.
+- Without the struggle, there is no flight.
+- Wiggle Wood was born from that truth.
+- We do not rescue our characters from their feelings. We do not remove the wobble. We help them wiggle through it.
+- Every episode begins with a worry, a misunderstanding, a fear or a wobble. Through friendship, humour, music and movement, our little caterpillars shift perspective. They realise the problem is not what they first thought. Or that they already have what they need inside.
+- The transformation may be small.
+- But it is powerful.
+- Because that is how resilience is built.
+- Wiggle Wood is deeply personal to me.
+- It carries the life lessons I learned the hard way. Lessons about identity. About self-worth. About coming home to yourself.
+- Because somewhere along the way, many of us learn that fitting in matters more than being ourselves.
+- And that is where the wobble begins.
+- As children, we are trying to make sense of a very big world with very big feelings. We are learning social cues. Navigating friendships. Testing who we are. Measuring ourselves against others. Wondering if we are too loud, too quiet, too sensitive, too different.
+- Childhood can be overwhelming.
+- And in the effort to belong, many of us quietly put parts of ourselves away.
+- Wiggle Wood exists to gently interrupt that pattern.
+- At its heart are the lessons I wish I had known sooner:
+- That we are good enough exactly as we are
+- That perfection is not the goal, authenticity is
+- That being different is not something to hide, it is our superpower
+- That no two people on this planet think alike, look alike, or experience the world alike, and that is by design
+- That failure is not the opposite of success, it is the path to it
+- That sometimes you get lost on the way to one dream, only to discover a better one waiting around the corner
+- Every episode carries one quiet truth:
+- To the child: You are enough. To the adult: You always were enough.
+- And if you ever ask, what if I fail? Remember, that might be the moment you fly.
+- Wiggle Wood is entertainment first. Always.
+- We are joyful. Musical. Colourful. Funny. Warm.
+- But woven through every story is emotional truth.
+- We believe:
+- Kindness starts with how we speak to ourselves
+- Resilience can be modelled through play
+- Movement helps release overwhelm
+- Stories shape identity
+- Transformation is possible for everyone
+- And we believe we can build one of the world’s most trusted children’s brands without losing our heart.
+- If you are here, you are not here by accident.
+- Something in this story has spoken to you.
+- Officially, I am the Creator and Chief Executive. Unofficially, I am the Head Wiggler.
+- My role is simple:
+- To protect the heart of Wiggle Wood.
+- To build the business so it can fly.
+- To assemble and empower an exceptional team.
+- To ensure we leave the world better than we found it.
+- But Wiggle Wood is not built by one person.
+- It is built by an extraordinary collective of creatives, producers, musicians and commercial leaders. Emmy, BAFTA and Grammy nominees and winners. Market specialists. Strategic thinkers. People at the top of their game.
+- We are united by shared values and a common ambition: to build something joyful, disciplined and lasting.
+- We take excellence seriously. We take joy seriously.
+- We are intentionally creating a culture where high performance thrives alongside warmth. Where standards are high. Where talent is respected. Where people feel safe to create, challenge and grow.
+- Yes, we wiggle. But we also deliver.
+- Wiggle Wood is being built as a legacy IP.
+- A brand children will grow up with. A world families can return to. A story to be shared across generations to come.
+- If Wiggle Wood speaks to you, if the ambition excites you, if the discipline reassures you, and if the heart behind it all moves you,
+- then this may be something you want to help bring to life.
+- Our wings are ready.
+- Now it is time to fly.

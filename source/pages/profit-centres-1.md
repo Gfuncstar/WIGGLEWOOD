@@ -1,0 +1,16 @@
+# profit-centres-1
+- title: Industry Trends and Opportunities — .
+- description: 
+
+## Headings
+- h4: Industry Trends & Opportunities
+
+## Body copy
+- The children’s content landscape is undergoing a profound shift. YouTube has won the children's audience, and the industry has accepted it. Not as a passing disruption, but as a permanent structural shift. Every major broadcaster is now responding to a world in which young children watch YouTube first, and television is no longer their default.
+- In a move that has sent shockwaves through the UK’s creative industry, in July 2025 Sky announced it will no longer commission original programming for children, opting instead to license cheaper, pre-made series. With Channel 5’s Milkshake operating on limited budgets and the BBC now standing as the only major commissioner of UK children’s content, the market for original, values-led programming is rapidly narrowing.
+- At the same time, demand from families has never been higher. Over 4 million children in the UK are living in poverty, and for many households, YouTube is the most accessible platform for children’s entertainment. But while the content is free and abundant, much of that content is unregulated, addictive, and lacking the care, creativity and emotional nourishment that young minds deserve.
+- This creates a rare window of opportunity for independent creators like Wiggle Wood.
+- Wiggle Wood steps into the space left behind by traditional broadcasters, offering something original, joyful, and deeply intentional: a nature-based animated series that entertains, uplifts, and supports healthy early development. With each 10-minute episode delivering music, life lessons, and genuine emotional warmth, the series is built for both the developmental needs of young children and the content expectations of modern parents.
+- For Wiggle Wood, this isn’t just a mission, it’s also smart business.
+- Historically, a new global preschool IP tends to emerge every four to six years, reflecting the constant renewal of young audiences and the need for fresh storytelling. Major breakout brands include Peppa Pig (2004), PAW Patrol (2013), CoComelon (2015), and Bluey (2019), each achieving significant global scale through distinctive storytelling and commercial strategies. Industry experts widely recognise that the market is now due the next major original preschool brand, particularly as reliance on legacy franchises continues to increase. Wiggle Wood is designed specifically for this window of opportunity, combining digital-first distribution, repeat-viewing accessibility, and sustained marketing investment to accelerate audience growth and long-term brand value.
+- As the appetite for wholesome, high-quality children’s IP grows, particularly on digital platforms, Wiggle Wood is positioned to lead. When buyers, platforms, and broadcasters seek to rebuild their offering with meaningful, British-made content, Wiggle Wood will be ready: established, audience-proven, and acquisition-ready.

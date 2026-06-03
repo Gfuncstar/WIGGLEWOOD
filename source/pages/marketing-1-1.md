@@ -1,0 +1,34 @@
+# marketing-1-1
+- title: Voices — .
+- description: 
+
+## Headings
+- h3: Voice Director
+- h4: Dave Peacock
+- h3: Cast
+- h4: Chadwick – Corinna Brown
+- h4: Cosmo – Daisy Sequerra
+- h4: Cyd - Blanche Anderson
+- h4: Bellona – Naomi McDonald
+- h4: Luna Glow-worm - Ellie Wallwork
+- h4: Robin Robin – Shash Hira
+
+## Body copy
+- Emmy-Award winning Dave Peacock has been voice directing and casting professionally for almost 20 years. Working across all sectors but specialising in animation, he has become one of the most in demand voice directors in the UK having directed over 70 TV series and a dozen features.
+- He’s worked all over the world on titles such as Hilda, Thunderbirds are Go!, Moominvalley, The Octonauts, Dennis & Gnasher Unleashed, 101 Dalmatian Street, Love, Death & Robots, Kiya & The Kimoja Heroes, The Creature Cases, Go Jetters, Scream Street, Supa Team 4, The House and KIngsglaive: Final Fantasy XV.
+- Shows he’s directed have won many awards, and in 2021 and 2022 he was nominated for Emmys for his voice direction on Hilda.
+- In 2022 he won an Emmy as Supervising Dialogue Editor on Octonauts: Ring of Fire.
+- Corinna Brown is an English actress. She is best known for her role as Tara Jones in the Netflix series Heartstopper (2022–present).
+- Corinna was born in the East London Borough of Waltham Forest. She began performing as a child, enrolling in Saturday dance and later musical theatre classes at the local Anna Fiorentini Theatre and Film School. Through this, she performed in variety shows at the Hackney Empire and was signed to their agency books. Corinna also performed with the Royal Academy of Dramatic Art's youth company. She acted in commercials and made her television debut in the 2012 BBC Three film My Murder with John Boyega. She also appeared in the Disney Channel spin-off Even More Evermoor .
+- Corinna enrolled at East 15 Acting School, graduating in 2020. She specialised in acting and stage combat. Afterwards, she was signed to MacFarlane Chard.
+- After graduating from drama school, Corinna played Swanhilde in Coppélia at the New Vic Theatre. She then returned to television when she was cast in the main role of Tara Jones in the Netflix adaptation of Alice Oseman's Heartstopper . The first season aired in 2022, the second season aired in 2023, and the third season aired in 2024. She also made a guest appearance as Chelsea Craig in an episode of the British medical soap opera Doctors .
+- Daisy Sequerra is a British actor and dancer from Sheffield, England. Daisy played Posy Fossil in National Theatre's stage adaptation of Noel Streatfield's novel Ballet Shoes. Daisy plays Mawdie in Belgravia: The Next Chapter for MGM+ / Carnival and will be seen in upcoming movie Embers alongside Ruth Bradley and Christian Cooke, which has just been nominated for Best UK Feature Film at Raindance Film Festival. She has also played the titular character in new film Ruby. She made her professional stage debut aged 6 in Whistle Down The Wind and as Molly in the UK tour of Annie at the Sheffield Lyceum Theatre. Daisy later played Veruca Salt in the Olivier Award nominated West End production of Warner Bros' Musical Charlie and the Chocolate Factory at Theatre Royal Drury Lane. After playing Veruca Salt in the West End, she was then chosen to star as her character Veruca in a BBC Television Comedy spoof of the hit show The Apprentice. In 2018, Daisy joined the Royal Shakespeare Company in the role of Hortensia for Tim Minchin and Dennis Kelly's UK touring production of the hit award-winning musical Matilda. Female Arts' review said "Daisy Sequerra has a fantastic presence onstage - definitely one to watch". Daisy is also an accomplished dancer and out of 7500 entries successfully won the IDTA Theatrecraft awards, along with being selected to train with the prestigious Northern Ballet. Daisy trains at DMA London where she attends the Elite Masterclasses and is mentored by Dominique Moore.
+- Blanche is an award-winning Scottish Voiceover Artist with nearly fourteen years of professional experience.
+- Blanche was the BBC Radio Scotland female station voice for over six years. She has worked across most voiceover genres from radio, TV and cinema commercials, to corporate training videos, radio drama productions, IVR, gaming, audio description, animation and crowd ADR.
+- Naomi McDonald is a British-American-Irish actor, voice artist, comedian and impressionist currently based in London, England. She trained with the National Youth Theatre and her professional career began at the tender age of 9, providing voices for TV, film, radio and animation. Naomi has over 20 years of experience across every genre of the voice-over world, with particular expertise in accents, character voices and children's performance. She is best known for voicing Jetpad in the BAFTA-winning CBeebies series Go Jetters. Further credits include a lead role in the Sky drama Kiss of Death and the voice of Frankie in the Cartoon Network animated series Elliott from Earth.
+- Naomi voices Bellona Butterfly in the Wiggle Wood pilot episode, bringing warmth, authority and genuine emotional depth to the role.
+- Ellie is an artist and performer who has been blind since birth.
+- She is an accomplished actor in Film, TV and Radio, and has been a singer/songwriter for many years. Ellie is well known for her high profile roles in Doctor Who and Call The Midwife .
+- Shash started his voice acting career providing voices and sound effects for anime being produced in the UK, something he enjoyed so much that he decided to pursue voice acting as a career. After studying drama and speech he looked to stage acting to help develop his techniques and has worked in several theatre productions including The Crucible, Trainspotting and Sarah Kane’s Blasted , at the same time studying radio acting, commercial voiceover, microphone technique and sound production.
+- These experiences have enabled Shash to perform as an actor and not just a voice over. From performances as off the wall characters in animation, radio plays and online advertising campaigns, audio books and video games to straight factual reads and narrations for audio tour guides, educational material, or corporate and phone services, his experience as a voice actor is varied and diverse. Shash is able to perform in a variety of accents (UK regional and international), across different age ranges in a number of voice types for comedy, impressions, fresh, quirky, upbeat, urban and energetic to name a few.
+- Shash has worked on commercials, animation, promos and narration for companies such as Netflix, Disney, Nintendo, EA Games, BBC, Honda and HSBC to name a few. He has worked on numerous projects for American, Asian, European and Australian companies, working for McDonalds in Dubai, Learning guides in Australia and narrations for Indian documentaries being produced for English audiences.

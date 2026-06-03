@@ -1,0 +1,74 @@
+# market-research-1-1-1
+- title: Pilot Testing Results: Children — .
+- description: 
+
+## Headings
+- h2: Independent Research
+- h4: Conducted by Dr Jacqueline Harding
+- h3: ABOUT DR JACQUELINE HARDING
+- h3: THE HEADLINE RESULT
+- h3: COMPREHENSION AND NARRATIVE UNDERSTANDING
+- h3: WHAT THE RESEARCH TELLS US ABOUT THE SHOW
+- h3: HUMOUR AND MUSIC
+- h3: THE WIND-DOWN AND EMOTIONAL REGULATION
+- h3: EMOTIONAL DEPTH
+- h3: SEND REPRESENTATION
+- h3: CHARACTER CONNECTION
+- h3: WHAT EDUCATORS AND PARENTS SAID
+- h3: DR HARDING'S CONCLUSION
+- h3: CONTEXT FOR INVESTORS
+- h3: REPORT ACCESS AND VIDEO
+
+## Body copy
+- Wiggle Wood has been independently tested with 130 children by one of the UK's most respected child development researchers. The findings are remarkable, and they speak for themselves.
+- In May 2026, Dr Jacqueline Harding conducted a formal mixed-method study evaluating the developmental, emotional, and educational impact of our pilot episode, Show Your Glow , on children aged 3 to 8 years. The research was conducted across two schools and a home setting, with over 130 children participating, alongside 10 educators, 5 parents, and 3 grandparents.
+- Dr Jacqueline Harding MA, Cert Ed, Cert Clinical Neurophysiology, SFHEA
+- Dr Jacqueline Harding is an international child development and education expert, recognised for her work advising the UK government, practitioners, and parents. She is an Honorary Visiting Research Fellow at Middlesex University and Chair of the Bright Start Foundation.
+- Jacqueline has worked on some of the most celebrated children's television productions in the world, including Peter Rabbit, Teletubbies, Clangers, Bing, and BeddyByes, and is a contributor to CBeebies Parenting. She is a former BBC Education Editor, Government Consultant, and Headteacher. She also represented the UK in developing digital criteria and best practice standards for broadcasters, parents, and teachers across Europe.
+- Dr Harding's research used the Tomorrow's Child Assessment Tool - her proprietary methodology, applied internationally across more than 30 television productions to assess developmental suitability and engagement.
+- Notably, Dr Harding is selective about the productions she agrees to assess. In her own words: "My heart is: is this going to help children or not? If it's just screen fodder, I'm not interested." The fact that Wiggle Wood was accepted for formal research, and the results it produced, reflects the genuine quality of the content.
+- 60/60
+- A perfect engagement score. The first in over 20 years of testing.
+- The Tomorrow's Child Assessment Tool measures attention and engagement at five stages across an episode: Introduction, Building Narrative, Mid Sequence, Climax, and Ending. Each stage is scored out of 12. The maximum total score is 60.
+- A successful, high-performing children's television show typically scores between 49 and 50.
+- Wiggle Wood scored 12/12 at every stage . A total of 60/60. According to Dr Harding, this is the first time a perfect score has been awarded across her 20-plus years of research.
+- Observational evidence recorded throughout included sustained visual focus, strong emotional mirroring, consistent postural engagement, minimal distraction, and continued attention during the reflective closing sequence and credits. Engagement remained stable even during emotionally reflective, dialogue-heavy scenes, a significant finding.
+- Children demonstrated unusually high comprehension on a single, first viewing, with no prior exposure to the characters or world.
+- Ages 4–5: 80% comprehension
+- Ages 5–6: 75% comprehension
+- Ages 6–7: 80% comprehension
+- Children were able to recall narrative structure, describe emotional themes, explain character motivations, and articulate the concept of "wiggling it out" as emotional self-regulation. Researchers noted that children moved easily between narrative stages without confusion.
+- From the documentary film produced alongside the formal report, Dr Harding observes:
+- "Right from the very start, one thing became clear: this programme truly understands children. Not simply as viewers, not simply as consumers, but as young human beings whose brains, emotions and sense of self are still under construction. And that matters enormously."
+- On the central concept of "wiggling it out":
+- "Children regulate through movement long before they regulate through reasoning. Their bodies help organise their brains. So when a child is invited to wiggle it out, they're being given a practical, emotionally safe strategy their nervous system can genuinely use. That's where the gold dust lies."
+- On what happens to children as they watch:
+- "Wiggle Wood holds up a mirror to the child, and then something powerful happens. The brain feels safer. The nervous system begins to settle. Stress chemistry reduces. Cognitive load decreases."
+- And on the programme's broader significance:
+- "Ultimately, this show understands something we cannot afford to ignore. Children deserve media that protects their developing brains while nurturing their emotional wellbeing. Media that values how moments of transformation truly happen."
+- Humour sequences consistently generated spontaneous, contagious laughter across all age groups and settings, with children mimicking moments and turning to each other to share the reaction. Dr Harding notes that this is developmentally significant: after genuine laughter, the nervous system settles and children become more receptive to learning. Children returned immediately to focused attention after each humorous moment.
+- Music emerged as a major strength. Children responded physically throughout, moving, wiggling, singing along. During slower, reflective sequences, researchers observed a shift to quiet stillness. The closing song, "Your Best Is Beautiful," produced visible emotional responses in both children and the adult educators present. The closing music appeared to actively support emotional processing and calm.
+- The mindful wind-down sequence at the close of the episode was identified as one of the programme's most important differentiators.
+- Researchers observed reduced post-viewing dysregulation compared to typical screen content, calm transitions following the episode, an absence of "screen fatigue" or overstimulation, and increased emotional stillness and reflective behaviour in children.
+- One educator described the value directly:
+- "Just to have those little tricks up their sleeve to help them transform from one phase and feeling to another is a good strength for them to have. I love the fact that at the end of the programme it asks the children to close their eyes, to think of something, to listen. All emotions are real and valid, and being able to name them is important. But just as importantly, children need ways to deal with their emotions."
+- The programme's core emotional message, that it is safe to feel your feelings, and that you can move through them, was widely and spontaneously understood.
+- One child experiencing emotional distress at the time of viewing described what the programme gave them as:
+- "Taking the bad stuff out of my head."
+- This moment was not filmed, out of respect for the child. It was noted by Dr Harding as one of the most significant findings of the entire study.
+- The research included meaningful representation of children with Special Educational Needs and Disabilities. In one placement, SEND representation reached 49% of the children present. The programme performed strongly across this group, with no meaningful difference in engagement or response compared to the wider cohort.
+- Children formed strong attachments to the characters on a single viewing. Bellona emerged as the most consistently preferred character across all age groups, followed closely by Chadwick. Younger children recalled character names readily; older children engaged more with personality, motivation, and narrative role, all indicators of genuine connection rather than surface recognition.
+- Adult responses were overwhelmingly positive. Representative comments included:
+- "Strong messaging for supporting mental health."
+- "Perfect content for discussion about not needing to be perfect."
+- "I could use Wiggle Wood to support PSHE plans."
+- "The music is outstanding."
+- Most adults described the programme as developmentally valuable, emotionally intelligent, distinct from mainstream children's programming, and well suited to co-viewing.
+- From the formal research report, May 2026:
+- "The evidence strongly suggests that Wiggle Wood has significant developmental and educational potential and represents a valuable contribution to children's broadcasting."
+- And in her personal reflection:
+- "Wiggle Wood occupies a unique and valuable place within contemporary children's media. Children deserve media experiences that respect their intelligence, emotional depth, and developmental capacity."
+- Independent research of this quality is rare at any stage of production, let alone at pilot. The fact that a single episode, produced as a prototype, achieved a perfect engagement score, demonstrated comprehension rates of 75–80% across all tested age groups on first viewing, and created immediate emotional connection across children from diverse socioeconomic and SEN backgrounds, is a direct proof of concept.
+- The creative and emotional architecture of Wiggle Wood is working exactly as intended. It is the foundation on which 156 episodes will be built.
+- The full formal research report by Dr Jacqueline Harding is available to download from the Documents section of this data room website.
+- The observational film produced alongside the research is available on request. Please contact the Wiggle Wood team directly and a timed, non-downloadable viewing link will be provided.

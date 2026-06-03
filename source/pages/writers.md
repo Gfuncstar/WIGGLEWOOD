@@ -1,0 +1,31 @@
+# writers
+- title: Writers — .
+- description: 
+
+## Headings
+- h4: Head Writer - Jen Upton
+- h4: Animal and Nature Advisor - Ian Redmond, OBE
+- h4: Ally Castle MBECreative Strategist and Disability Consultant
+- h4: Dr Jacqueline HardingChild Development and Education Consultant
+
+## Body copy
+- BAFTA and Emmy-nominated Jen Upton is Head Writer for Wiggle Wood and will head up our writers room.
+- With more than 15 years’ experience, it’s safe to say that Jen’s a Children’s Media veteran, albeit a very young one. She has worked in development and production at HIT, Chorion and Disney, acting as creative executive on preschool shows for 6- to 12-year olds.
+- Always a screenwriter in the background, on the birth of her second child, she turned to writing full time, Head Writer for CBBC’s Bottersnikes and Gumbles, Dennis and Gnasher: Unleashed, and Digby Dragon for Nickelodeon.
+- Jen has been responsible for some of the most familiar names in children’s TV, such as Peppa Pig, Fireman Sam, Noddy and Dennis the Menace. She has worked with industry leaders including Disney, BBC, Aardman, HIT, Chorion and Milkshake developing, writing and producing as well as working on her own feature film scripts.
+- Jen specialises in bonkers, fast-paced comedy that is always full of heart.
+- Writers' Room
+- Producing 52 episodes per season requires a strong collective of writers working in close collaboration. Wiggle Wood will build a dedicated writers' room ahead of full series production, with Jen will help lead the process of identifying and bringing in writers whose voices align with the emotional tone and storytelling values of the series. The writers' room will be assembled in close partnership with Jen and the wider production team, ensuring creative consistency across the full episode run.
+- Ian Redmond is our animal and nature advisor for Wiggle Wood. He is a tropical field biologist and conservationist. An animal and nature expert he is most renowned for his work with great apes and elephants.
+- Born in Malaysia, Ian’s passion for animals developed during his boyhood in Yorkshire, and after University, took him in 1976 to Africa. There he joined Dian Fossey, studying and protecting the mountain gorillas of Rwanda and Zaire (now DRC). This work also led him into documentary film-making. Ian is the man who introduced Sir David Attenborough to the gorillas in 1978, for the famous BBC ‘Life on Earth’ sequences, and who taught Sigourney Weaver to grunt like a gorilla in 1987, for her award-winning role in the film ‘Gorillas in the Mist’ (in which he is characterised as ‘The Worm Boy’).
+- He has advised in the making of, and/or appeared in, more than 100 documentary films for the BBC, National Geographic (most recently ‘Secrets in the Mist’ a mini-series about Dian Fossey), Discovery Channel, TF1, etc. and the 3D movie ‘The Last of the Great Apes’. His books have been translated into many languages and he is in demand as an entertaining and thought-provoking public speaker and interviewee.
+- Ally Castle MBE is a creative strategist specialising in content, communication and corporate strategy across broadcasting, digital and emerging platforms. With more than two decades of senior experience at the BBC across audience planning, commissioning and corporate strategy, she brings both creative sensitivity and analytical rigour to content development.
+- Her expertise lies in introducing structure and clarity to the creative process, ensuring that ideas and innovation flourish while strong editorial decisions are confidently made. She is particularly skilled in using market and audience insight to unlock both cultural impact and commercial opportunity.
+- Ally has a long-standing commitment to diversity and inclusion, particularly in relation to the authentic portrayal of underrepresented groups within the screen media and entertainment industries, including audiences with disabilities. In 2024, she was awarded an MBE for services to inclusivity and diversity in UK broadcasting.
+- As a contracted advisor to Wiggle Wood, Ally provides strategic guidance on inclusive storytelling across the series. She is advising specifically on the portrayal of Chadwick, who uses his acorn wheel as a mobility aid, ensuring that his character is integrated naturally and respectfully within the narrative. Her role supports Wiggle Wood’s core belief that differences are acknowledged and valued, while creating space for every character to belong and thrive.
+- Her input ensures that inclusivity is not an added layer to Wiggle Wood, but embedded at the heart of its scripts, storytelling and emotional framework as the brand grows.
+- Dr Jacqueline Harding is an award-winning writer, researcher and child development expert specialising in early years education and children’s media. She is the author of The Brain That Loves to Play , Chair of the Bright Start Foundation, Director of Tomorrow’s Child, Visiting Research Fellow at Middlesex University, and former BBC Education Editor.
+- Through her company Tomorrow’s Child, a children’s film production and research consultancy, Jacqueline has supported the development of children’s television for international audiences, combining academic research with practical media expertise.
+- For Wiggle Wood, Jacqueline leads audience insight and developmental advisory. She conducts focus groups with preschool children to assess engagement, character relatability, music response and narrative clarity. She advises on scripts and story beats through the lens of the Early Years Foundation Stage, ensuring that each episode reflects the real emotional challenges faced by three to five year olds.
+- Her work helps ground Wiggle Wood’s stories in authentic childhood experience, supporting themes such as emotional regulation, resilience, transition and understanding change. While the series remains entertainment-led, her input ensures that its emotional arcs genuinely support children as they navigate big feelings and developmental milestones.
+- Her involvement provides confidence that Wiggle Wood is not only joyful and imaginative, but psychologically attuned to its audience at a formative stage of life.

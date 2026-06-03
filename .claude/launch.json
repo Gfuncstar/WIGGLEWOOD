@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wigglewood",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [".claude/preview-server.py"],
+      "port": 8931,
+      "autoPort": true
+    }
+  ]
+}

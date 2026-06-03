@@ -1,0 +1,68 @@
+# profit-centres
+- title: Profit Centres — .
+- description: 
+
+## Headings
+- h4: Profit Centres
+- h4: How Wiggle Wood converts global audience engagement into scalable revenue
+- h4: Merchandise and Consumer Products
+- h4: Music
+- h4: Gaming
+- h4: Brand Partner and Retail Collaborations
+- h4: Brand Sponsorship
+- h4: Digital Experiences and Innovation
+- h4: Education
+
+## Body copy
+- Wiggle Wood is designed from the outset as a multi-revenue global children's brand. While YouTube enables the series to reach large international audiences quickly, the majority of long-term enterprise value is created through the commercial ecosystem that grows around the characters and stories.
+- As the audience expands, Wiggle Wood monetises its global reach through a range of scalable profit centres including consumer products and merchandise, music and soundtracks, brand partnerships and retail collaborations, gaming and interactive entertainment, digital experiences and emerging platforms, and educational products and learning partnerships.
+- Together, these revenue streams transform audience engagement into a diversified commercial platform, allowing families to bring Wiggle Wood into their homes, schools, and everyday lives while building long-term brand value.
+- Consumer products and merchandise represent the largest commercial opportunity for most successful children’s brands.
+- When young audiences form strong emotional connections with characters and stories, they naturally want to bring those characters into their everyday lives. Toys, books, clothing, and bedroom products allow children to continue engaging with the worlds they love beyond the screen.
+- For many of the world’s most successful children’s properties, the majority of brand value is generated through merchandise and licensing rather than the original television or streaming content itself. The global success of brands such as Peppa Pig and PAW Patrol has been driven largely by their extensive consumer product ecosystems.
+- Wiggle Wood’s distinctive characters, colourful natural world, and emotionally resonant storytelling create strong potential across a broad range of merchandise categories.
+- These may include:
+- Toys and Plush Character figures, plush toys, playsets, musical toys, and interactive learning toys.
+- Publishing Storybooks, picture books, early learning books, sticker books, and activity books.
+- Apparel Children’s clothing, sleepwear, seasonal collections, and character accessories.
+- Home and Bedroom Products Children’s bedding, crockery, wall art, night lights, and decorative items.
+- School and Everyday Products Lunchboxes, backpacks, stationery, pencil cases, and educational accessories.
+- Accessories Jewellery, bags, hair accessories, and character-themed lifestyle products.
+- Healthy Food and Snack Licensing Licensed food products aligned with Wiggle Wood’s positive and wholesome brand values.
+- As Wiggle Wood’s global audience grows through YouTube, licensing partnerships will enable these products to be distributed internationally across retail and e-commerce platforms, transforming brand engagement into a scalable consumer products business.
+- Music is a central part of the Wiggle Wood storytelling experience and a significant long-term commercial opportunity.
+- Each episode features original songs designed to engage children through rhythm, movement, and emotional storytelling, including the recurring signature track “Wiggle It Out”, which encourages children to release worry or overwhelm through music and movement.
+- Because music is embedded into the heart of the series, Wiggle Wood will steadily build a growing catalogue of original children’s songs as new episodes are produced. Over time, this creates a valuable and evergreen music library capable of generating revenue across multiple platforms and formats.
+- Children’s music performs exceptionally strongly on digital platforms. For example, the viral hit Baby Shark became the most viewed video in YouTube history, surpassing 15 billion views and generating millions in advertising revenue from YouTube alone, before accounting for music royalties, licensing deals, and brand extensions.
+- Children’s music libraries can generate recurring revenue for decades, with successful songs continuing to accumulate streams, licensing income, and brand integrations long after their initial release.
+- For Wiggle Wood, music revenue may include:
+- Streaming revenue across platforms such as Spotify, Apple Music and Amazon Music
+- YouTube music streams driven by episodes and standalone music videos
+- Music publishing income from song-writing and composition rights
+- Sync licensing for use in advertising, games, television, and films
+- Soundtrack and compilation albums featuring Wiggle Wood songs
+- Music-driven consumer products including sing-along toys and musical play experiences Artist collaborations or remixes that extend Wiggle Wood songs to wider audiences
+- As the Wiggle Wood catalogue grows, the music library becomes a long-term intellectual property asset capable of generating recurring revenue across multiple channels for many years.
+- Importantly, Wiggle Wood’s YouTube distribution partner, The Lasso Group, played a key role in the global growth of children’s music properties such as Baby Shark on YouTube.
+- Gaming represents a significant and fast-growing commercial opportunity for children's IP, with tablet-based games offering preschool audiences an immersive, interactive way to engage with the characters and worlds they love beyond the screen.
+- Wiggle Wood is developing a tablet-based game designed specifically for the preschool age group, combining the emotional warmth and playful spirit of the series with age-appropriate interactive gameplay. This digital product will allow young audiences to explore the Wiggle Wood world in a new format, deepening character connection while creating an additional revenue stream and extending brand reach across digital platforms.
+- Wiggle Wood's gaming strategy is being developed in partnership with Territory Studio, one of the world's leading specialist gaming and creative studios. With deep expertise across interactive entertainment, Territory Studio brings both the creative vision and commercial understanding required to develop a gaming proposition that is true to the Wiggle Wood brand while maximising its potential as a scalable digital product.
+- Strategic brand partnerships and retail collaborations can significantly accelerate both the visibility and commercial reach of Wiggle Wood.
+- Major retailers increasingly seek trusted family brands that can anchor co-marketing campaigns, exclusive product launches, and in-store experiences. For children's properties with strong audience engagement, these partnerships create powerful opportunities to introduce characters and products directly into millions of households.
+- As Wiggle Wood's audience grows through YouTube, the brand will pursue selected retail partnerships that combine licensing, product distribution, and joint marketing initiatives. These collaborations may include exclusive merchandise ranges developed with key retail partners, co-branded marketing campaigns across digital and in-store channels, seasonal retail promotions and product launches, and in-store displays and immersive brand experiences for families.
+- Retail collaborations allow Wiggle Wood to move beyond the screen and into everyday family environments, strengthening brand recognition while supporting merchandise sales.
+- The Wiggle Wood team already has relationships with senior marketing leaders across major retail groups, including Boots UK, part of Walgreens Boots Alliance. As the brand develops, these relationships provide a strong foundation for future retail partnerships and licensing opportunities.
+- Aviation and Travel Partnerships
+- Airlines represent a distinctive and high-value partnership opportunity for Wiggle Wood. Families travelling with young children face some of their most challenging parenting moments in transit, and brands that can genuinely support those moments build deep, lasting loyalty.
+- Wiggle Wood is exploring a strategic partnership with British Airways that would operate across multiple touchpoints. As an in-flight entertainment partner, Wiggle Wood episodes would be available to young passengers across the BA network, building brand familiarity with families at a premium moment of engagement. Beyond content, the partnership would position Wiggle Wood as BA's children's club partner, creating a branded family experience that enhances the journey for parents and children alike.
+- A distinctive element of the partnership concept is a character lending programme, in which each flight carries a selection of Wiggle Wood characters available for young children to borrow for the duration of their journey. For children who are distressed or unsettled during travel, having a familiar, comforting character to hold provides genuine emotional support. Parents who wish to take the character home at the end of the flight can purchase it directly, creating an in-journey merchandise opportunity that is both commercially meaningful and entirely in keeping with Wiggle Wood's values.
+- Merchandise sales through the in-flight retail channel provide a further revenue stream, introducing Wiggle Wood products to families in a high-attention, low-distraction environment.
+- While British Airways is the anchor partnership being explored, Wiggle Wood's ambition extends to airline partnerships across multiple carriers, maximising in-flight reach for the brand across international routes.
+- Brand sponsorship represents a meaningful secondary revenue stream for Wiggle Wood, sitting alongside the primary commercial ecosystem of YouTube monetisation, music, licensing, and consumer products. As the audience grows and the brand builds recognition, sponsorship income becomes an increasingly material contribution to the overall revenue picture, while also validating Wiggle Wood's commercial appeal to partners and investors alike.
+- How Sponsorship Works in Preschool Entertainment
+- Preschool content operates within a carefully regulated sponsorship environment. Under Ofcom, BCAP, and YouTube's Made for Kids policy, brand promotion cannot be embedded within episodes or placed inside child-facing content. Wiggle Wood is structured to work fully within these boundaries, using a model that is well-established across the industry.
+- Rather than embedding brand partners within the series itself, Wiggle Wood enables sponsors to fund and associate with original content that surrounds the core episodes. This surrounding content is distributed unbranded across Wiggle Wood's own child-facing platforms, keeping the child's experience entirely clean and compliant. The sponsor then activates the partnership as branded content across their own channels, including social media, email marketing, paid media, and in-store activations, with a "presented by" credit used in parent-facing distribution only.
+- This is the established model for premium preschool IP. CoComelon's brand partnerships, formalised at scale through Moonbug Partner Solutions, operate on this basis, as do the partnership programmes of Sesame Workshop. The underlying principle is consistent across all of them: brands reach parents through a trusted children's IP, rather than advertising directly to children.
+- The Primary Sponsorship Opportunity
+- The anchor sponsorship opportunity for Wiggle Wood is an integrated audio partnership: a single category-exclusive presenting partner across the full Wiggle Wood audio ecosystem. This encompasses the Winddown Time bedtime audio series, the original album and lullaby releases, and parent-facing music campaigns across platforms including Spotify Kids, Amazon Music Kids, and dedicated family audio hardware such as Yoto and Tonies.
+- Audio is particularly well-suited to sponsorship. The format is parent-mediated, carries natural moments for sponsor credits, and allows podcast and music to be packaged together into a single, commercially attractive proposition. Combining both formats into one partnership is more compelling to a brand than either element alone.

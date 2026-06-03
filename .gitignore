@@ -26,3 +26,15 @@ dist/
 build/
 .next/
 out/
+
+# Large design source files (kept locally, not in git)
+*.psd
+
+# Local Claude settings
+.claude/settings.local.json
+
+# Scratch / crawl + processing artifacts (regenerable)
+source/raw/
+source/assets/
+source/previews/
+source/contact_sheets/

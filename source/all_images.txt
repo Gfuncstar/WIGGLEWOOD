@@ -1,0 +1,31 @@
+102	//images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/b7c78f47-1211-4bd4-9776-613bae7183c1/wwlogo.png	.
+51	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/eb897bf7-4b45-4c3d-99ce-44e7d65efa8c/Screenshot+2025-07-03+at+09.50.23.png	
+51	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/bd68c5f6-a152-40fc-af4c-db435425b627/ww_company.png	
+51	https://images.squarespace-cdn.com/content/6846992eea5e917bb4ab7b0f/f9354b60-9627-455c-95ee-7ced10c2be1c/Screenshot+2025-07-09+at+13.49.52.webp	
+39	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/242777b5-3ffb-4aec-8fef-af9ee01b9556/Main+Branch.png	
+17	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/a84d6c7f-fc34-467b-a045-12b59023ad1e/Main+Branch2.png	
+9	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/5b19e4bc-28af-4fa4-b904-9ab2e3d097ab/RWiggleWood_HeroImage_v8.png	A digital painting of a partially opened yellowish-green flower with petals and green leaves.
+8	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/f5c4d072-c6a0-47cb-974e-b9b9ade1d4d0/Cosmo.png	
+5	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/1bdd7f6a-9f37-4b05-9bb4-b53fe72c211e/Cyd-Pose2.png	
+5	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/4d4419c6-724e-4bad-85c7-ea40995cf4ab/Cyd_PoseSheet6.png	A cute cartoon bee with a yellow and purple body, large eyes, wearing round glasses, and standing with hands on hips.
+5	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/96cff97a-4bf6-4977-80f9-6b044a0d90d9/Cyd_PoseSheet5.png	
+4	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/21c792d0-7bab-4305-8d9f-8d0e4c13e462/Cyd_PoseSheet1.png	
+3	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/0f425aa4-c9cd-4460-a264-ea8cb930af28/Chadwick_PoseSheet3.png	Cartoon character resembling a mixture of a chick and a plant, with bright yellow and red feathers, sitting cross-legged with arms crossed, wearing brown shorts, and having green leaves and lightning bolts on top of its head.
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/0712366e-e927-40ce-a7e9-b9028a9444de/Cosmo_PoseSheet1.png	
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/3044379f-92ed-4644-b14b-4b2f89976032/Chadwick_PoseSheet1.png	A cartoon bird with a yellow body and red head, wearing a green cap with a lightning bolt, and carrying a backpack.
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/2ccb0f0c-95f9-4553-abee-5e980d9c00ec/Cyd_PoseSheet2.png	A cartoon illustration of a yellow, fuzzy, duck-like creature with purple hair, eyes closed, smiling, and hugging itself.
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/6cb9eb68-e7ac-46c7-a149-9e9b6fa0a732/Bellona.png	
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/af5f446e-8419-4a06-94c7-e95550bfc9e2/BELLONA_1.png	
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/a2d454fb-b870-4895-aad0-68b51c2d1545/Bellona_PoseSheet2.png	
+2	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/8185dd24-0a95-43ea-8455-aeda784c2607/Cosmo_PoseSheet2.png	A cartoon character resembling a small plant with features of a chick, with a bright yellow and green body, orange beak and feet, carrying a green backpack, and giving a thumbs-up with a smiling expression.
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/78f916fe-7acd-4934-9217-b37b894b17a5/Bellona_PoseSheet2.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/aa38e4a4-a805-45f8-b9fb-a7d3afa47cba/Bellona_PoseSheet3.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/d43a6658-4e03-4ba2-8d2e-05010e937d6c/Chadwick_PoseSheet2.png	Cartoon lion dressed as a squirrel performing a side roll.
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/8ae50f6d-ed36-48c5-843d-97eddc84bcde/sig.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/34d0347a-41e3-4b7d-91b9-c2657100e505/CYD_01.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/6cd2efee-bfa8-410a-8152-b0096e104d04/COSMO_04.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/a3c82818-60f8-417d-8c3d-8000f08f0a69/CHADWICK_01.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/071623a6-dad8-4fba-9f32-44760db11b0e/CYD_06.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/03a47ac4-ae89-4817-a5ca-ad1271949b7e/Cosmo_PoseSheet4.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/e9004c65-4199-4f16-8289-2e0b055c5e4b/Chadwick_PoseSheet4.png	
+1	https://images.squarespace-cdn.com/content/v1/6846992eea5e917bb4ab7b0f/96bb8a19-93f1-4123-bf7d-98c55491e1e7/WhatsApp+Image+2025-08-08+at+09.31.56.png	
