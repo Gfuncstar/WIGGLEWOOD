@@ -60,16 +60,13 @@ function pageHero(p) {
   return `
 <header class="page-hero">
   ${scene ? sceneVideo(scene) : ""}
-  <div class="page-hero__inner">
-    <div class="page-hero__text" data-reveal>
+  <div class="page-hero__inner page-hero__inner--text">
+    <div class="page-hero__text">
       <p class="eyebrow">${p.eyebrow}</p>
       <h1 class="h-1">${p.h1}</h1>
       <p class="lead">${p.lead}</p>
     </div>
-    <div class="page-hero__art" data-reveal>
-      <div class="page-hero__halo" style="--c:${halo}"></div>
-      ${actors.map(actor).join("\n      ")}
-    </div>
+
   </div>
 </header>
 <div class="page-hero-fade" aria-hidden="true"></div>`;
@@ -217,7 +214,7 @@ PAGES.push({
   html: `
 <header class="hero">
   <video class="scene-vid" autoplay muted loop playsinline preload="auto" style="z-index:-1">
-    <source src="assets/img/scenes/scene-forest.mp4" type="video/mp4" />
+    <source src="assets/img/scenes/scene-ensemble.mp4" type="video/mp4" />
   </video>
   <div class="hero__bg">
     <picture>
@@ -227,12 +224,17 @@ PAGES.push({
   </div>
   <div class="hero__scrim"></div>
   <div class="hero__inner">
-    <img class="hero__logo" src="assets/img/logo/wigglewood.svg" alt="Wiggle Wood" />
-    <h1 class="hero__title">Discover Delightful Animation</h1>
-    <p class="hero__sub">A music-led animated series for children aged three to five, promoting kindness, diversity and inclusion. Step inside the world of Wiggle Wood.</p>
-    <div class="hero__cta">
-      <a class="btn" href="/overview">Explore the world &rarr;</a>
-      <a class="btn btn-ghost" href="/documents">Investor access</a>
+    <div class="hero__top">
+      <img class="hero__logo" src="assets/img/logo/wigglewood.svg" alt="Wiggle Wood" />
+    </div>
+    <div class="hero__mid" aria-hidden="true"></div>
+    <div class="hero__bottom">
+      <h1 class="hero__title">Discover Delightful Animation</h1>
+      <p class="hero__sub">A music-led animated series for children aged three to five, promoting kindness, diversity and inclusion. Step inside the world of Wiggle Wood.</p>
+      <div class="hero__cta">
+        <a class="btn" href="/overview">Explore the world &rarr;</a>
+        <a class="btn btn-ghost" href="/documents">Investor access</a>
+      </div>
     </div>
   </div>
   <a class="scroll-cue" href="#enter" aria-label="Scroll down">Enter<span></span></a>

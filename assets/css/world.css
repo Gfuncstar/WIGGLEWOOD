@@ -167,29 +167,42 @@
 
 /* ---------- Home hero ---------- */
 .hero{align-items:flex-start;overflow:hidden}
-/* The home hero carries its own scene-vid */
-.hero .scene-vid{z-index:-1;filter:brightness(.7) saturate(1.08)}
+.hero .scene-vid{z-index:-1;filter:brightness(.72) saturate(1.1)}
+
+/* Three-zone: logo top | characters visible mid | text+CTA bottom */
 .hero__inner{
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  padding-top:clamp(4rem,8vh,6rem);padding-bottom:0;position:relative;z-index:2;
+  position:relative;z-index:2;
+  width:min(var(--container,1200px),92vw);margin:0 auto;
+  display:flex;flex-direction:column;
+  min-height:100svh;
+  padding-top:clamp(4.5rem,9vh,7rem);
+  padding-bottom:clamp(2rem,5vh,4rem);
+  text-align:center;align-items:center;
 }
-.hero__logo{width:clamp(160px,18vw,280px)}
-.hero__title{max-width:26ch;margin:.3rem auto .3rem;font-size:clamp(1.35rem,2.6vw,2.1rem)}
+.hero__top{flex:0 0 auto}
+.hero__mid{flex:1}
+.hero__bottom{flex:0 0 auto;width:100%;max-width:56ch}
+.hero__logo{width:clamp(170px,20vw,310px);display:block}
+.hero__title{font-size:clamp(1.5rem,3vw,2.4rem);max-width:26ch;margin:.4rem auto .3rem;color:#fff}
 .hero__sub{margin:0 auto;max-width:42ch;font-size:clamp(.96rem,1.25vw,1.12rem)}
-.hero__cta{justify-content:center;margin-top:1rem}
-/* scrim: top-heavy so text is readable, open in the middle for characters */
+.hero__cta{justify-content:center;margin-top:1.1rem}
+/* scrim: open in the middle so characters read through the video */
 .hero__scrim{
   z-index:1;
   background:linear-gradient(180deg,
-    rgba(7,28,29,.65) 0%, rgba(7,28,29,.22) 22%, transparent 38%,
-    transparent 58%, rgba(8,24,25,.38) 78%, rgba(9,26,27,.72) 90%, rgba(10,28,29,.95) 100%)
+    rgba(7,24,25,.72) 0%, rgba(7,24,25,.18) 16%, transparent 30%,
+    transparent 62%, rgba(8,24,25,.5) 80%, rgba(9,26,27,.88) 94%, rgba(10,28,29,.98) 100%)
 }
-/* bottom of hero fades out — the .page-hero-fade strip handles the seam */
 .hero::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:26vh;
   z-index:2;pointer-events:none;
-  background:linear-gradient(180deg, transparent 0%, rgba(10,28,30,.7) 70%, rgba(10,28,30,.9) 100%)
+  background:linear-gradient(180deg, transparent 0%, rgba(10,28,30,.7) 65%, rgba(10,28,30,.9) 100%)
 }
+
+/* ---------- Page hero: text only (video is the visual) ---------- */
+.page-hero__inner--text{grid-template-columns:1fr;max-width:760px}
+.page-hero__text .h-1{font-size:clamp(2rem,4.5vw,3.4rem);margin-bottom:.5rem}
+.page-hero__text .lead{max-width:52ch}
 
 /* ---------- Two-column default for all prose sections ---------- */
 /* Force no single-column walls of text on desktop */
