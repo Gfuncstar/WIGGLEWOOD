@@ -200,6 +200,14 @@ strong{font-weight:700;color:#fff}
   opacity:1;visibility:visible;pointer-events:auto;
   transform:translateX(-50%) translateY(0);
 }
+/* Right-align last 3 dropdowns so they don't overflow off-screen edge */
+.nav__group:nth-last-child(-n+3) .nav__dropdown{
+  left:auto;right:0;transform:translateY(-6px);
+}
+.nav__group:nth-last-child(-n+3):hover .nav__dropdown,
+.nav__group:nth-last-child(-n+3) .nav__group-btn[aria-expanded="true"] ~ .nav__dropdown{
+  transform:translateY(0);
+}
 .nav__dropdown a{
   display:block;padding:.52em 1em;border-radius:var(--r-sm);
   font-family:var(--font-eyebrow);font-weight:600;font-size:.84rem;
