@@ -120,7 +120,7 @@
 /* ---------- Page hero layout ---------- */
 .page-hero{position:relative;z-index:1;
   padding:clamp(6rem,10vh,8rem) 0 clamp(1rem,3vw,2rem);
-  min-height:clamp(560px,75vh,900px)}
+  min-height:max(620px,80svh)}
 .page-hero__inner{
   width:min(var(--container,1200px),92vw);margin-inline:auto;
   display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);
