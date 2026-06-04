@@ -204,14 +204,9 @@
 .hero__scrim{
   z-index:1;
   background:linear-gradient(180deg,
-    rgba(7,24,25,.72) 0%, rgba(7,24,25,.18) 16%, transparent 30%,
-    transparent 62%, rgba(8,24,25,.5) 80%, rgba(9,26,27,.88) 94%, rgba(10,28,29,.98) 100%)
+    rgba(7,24,25,.72) 0%, rgba(7,24,25,.18) 16%, transparent 30%, transparent 100%)
 }
-.hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:26vh;
-  z-index:2;pointer-events:none;
-  background:linear-gradient(180deg, transparent 0%, rgba(10,28,30,.7) 65%, rgba(10,28,30,.9) 100%)
-}
+.hero::after{display:none}
 
 /* ---------- Page hero: text only (video is the visual) ---------- */
 .page-hero__inner--text{grid-template-columns:1fr;max-width:760px}
