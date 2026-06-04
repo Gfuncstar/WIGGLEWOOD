@@ -162,8 +162,8 @@
 .peeker{position:fixed;z-index:0;pointer-events:none;
   filter:drop-shadow(0 18px 22px rgba(0,0,0,.5))}
 .peeker img{display:block;height:auto;animation:wiggleAlive 8s ease-in-out infinite}
-.peeker--bl{left:-1vw;bottom:-1vh;width:clamp(110px,14vw,190px)}
-.peeker--br{right:-1vw;bottom:-1vh;width:clamp(110px,14vw,190px);transform:scaleX(-1)}
+.peeker--bl{left:-1vw;bottom:-1vh;width:clamp(330px,42vw,570px)}
+.peeker--br{right:-1vw;bottom:-1vh;width:clamp(330px,42vw,570px);transform:scaleX(-1)}
 
 /* ---------- Home hero ---------- */
 .hero{align-items:flex-start;overflow:hidden}
@@ -221,7 +221,6 @@
 /* ---------- Two-column default for all prose sections ---------- */
 /* Force no single-column walls of text on desktop */
 .prose-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
 
 /* ---------- Keep all real content above backdrop layers ---------- */
 .page-body{position:relative;z-index:1}
@@ -330,7 +329,7 @@
   .page-hero__text .lead{margin-inline:auto}
   .page-hero__art{min-height:auto;order:-1}
   .actor--support{position:relative;right:auto;bottom:auto;height:clamp(200px,28vw,320px)}
-  .prose-wrap{grid-template-columns:1fr}
+  .prose-wrap,.two-col{grid-template-columns:1fr}
 }
 @media(max-width:680px){
   .portal{grid-template-columns:1fr}
@@ -338,7 +337,7 @@
   .tl{grid-template-columns:1fr;gap:.3rem}
   .actor{height:clamp(260px,70vw,380px)}
   .actor--support{height:clamp(200px,55vw,300px)}
-  .peeker--bl,.peeker--br{width:80px}
+  .peeker--bl,.peeker--br{width:240px}
 }
 @media(prefers-reduced-motion:reduce){
   .actor,.peeker,.leaf,.mote,.seed,.forest-light span,.forest-haze,
