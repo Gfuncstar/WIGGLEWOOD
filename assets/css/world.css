@@ -398,8 +398,8 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   /* ensure CTA buttons are centred column on mobile */
   .hero__bottom{padding-inline:clamp(.5rem,3vw,1rem)}
 
-  /* ---------- First section after page hero: tighter top padding ---------- */
-  .page-body .section:first-of-type{padding-top:clamp(1.2rem,3vw,2rem)}
+  /* ---------- First section after page hero: enough breathing room from hero ---------- */
+  .page-body .section:first-of-type{padding-top:clamp(3.5rem,7vw,5rem)}
 
   /* ---------- Prose wrap ---------- */
   .prose-wrap{grid-template-columns:1fr}
