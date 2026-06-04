@@ -549,7 +549,7 @@ html.js [data-reveal-stagger].in>*:nth-child(6){transition-delay:.45s}
 }
 @media(max-width:680px){
   /* ---------- Navigation ---------- */
-  .nav__cta{display:none} /* hamburger gives access; avoids logo/CTA/toggle crowding */
+  .nav__cta{font-size:.78rem;padding:.5em .9em} /* keep but shrink for mobile */
   .nav__links{
     position:fixed;inset:0 0 0 auto;width:min(82vw,320px);flex-direction:column;justify-content:flex-start;gap:0;
     background:rgba(8,26,27,.96);backdrop-filter:blur(16px);padding:5rem 1.5rem 2rem;overflow-y:auto;
@@ -570,7 +570,7 @@ html.js [data-reveal-stagger].in>*:nth-child(6){transition-delay:.45s}
   .nav__dropdown::before{display:none}
   .nav__dropdown.open{display:block}
   .nav__dropdown a{font-size:.98rem;padding:.45em .8em}
-  .nav__toggle{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:rgba(9,28,29,.5);border:1px solid var(--glass-border)}
+  .nav__toggle{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:rgba(9,28,29,.7);border:1px solid rgba(255,255,255,.25);box-shadow:0 4px 14px rgba(0,0,0,.35)}
 
   /* ---------- Stats ---------- */
   .stats{grid-template-columns:repeat(2,1fr);gap:1.4rem 1rem}
