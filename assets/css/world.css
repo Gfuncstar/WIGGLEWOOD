@@ -231,6 +231,10 @@
 /* nav active state */
 .nav__links a.is-active{background:rgba(255,255,255,.14);color:var(--gold-glow)}
 
+/* ---------- Global word-break for long text ---------- */
+h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
+.lead,.prose p{overflow-wrap:break-word}
+
 /* ---------- Named partners / people ---------- */
 .pc-role{display:block;font-family:var(--font-eyebrow,sans-serif);font-weight:700;
   font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-glow);margin-bottom:.3rem}
@@ -344,27 +348,32 @@
   .tl__when{font-size:.92rem}
 
   /* ---------- Actors ---------- */
-  .actor{height:clamp(240px,65vw,360px)}
-  .actor--support{height:clamp(180px,50vw,280px)}
+  .actor{height:clamp(220px,60vw,320px)}
+  .actor--support{height:clamp(160px,45vw,240px)}
 
   /* ---------- Peeker: reduced so it doesn't crowd bottom content ---------- */
-  .peeker--bl,.peeker--br{width:200px}
+  /* Shrink to 160px so it doesn't eat into readable content area */
+  .peeker--bl,.peeker--br{width:160px}
+  /* Prevent peeker from overlapping footer on short pages */
+  .peeker{max-height:40vh;overflow:hidden}
 
   /* ---------- Page hero ---------- */
-  /* 620px min-height can exceed the viewport on short phones; let it be at least 85svh but no smaller than 480px */
-  .page-hero{min-height:max(480px,75svh)}
+  /* Tighten min-height so it doesn't create excessive scroll on mobile */
+  .page-hero{min-height:max(420px,65svh);padding-bottom:clamp(1.5rem,4vh,3rem)}
   /* ensure text hero inner doesn't run to edges */
   .page-hero__inner--text{max-width:100%}
-  .page-hero__text .h-1{font-size:clamp(1.7rem,5.5vw,2.8rem)}
-  .page-hero__text .lead{font-size:clamp(.95rem,3.4vw,1.15rem)}
+  /* Smaller h1 in page heroes on mobile */
+  .page-hero__text .h-1{font-size:clamp(1.6rem,5vw,2.5rem)}
+  .page-hero__text .lead{font-size:clamp(.92rem,3.2vw,1.1rem)}
+  /* Tighten page hero inner padding */
+  .page-hero__inner{gap:1rem}
 
   /* ---------- Home hero ---------- */
   /* ensure CTA buttons are centred column on mobile */
   .hero__bottom{padding-inline:clamp(.5rem,3vw,1rem)}
 
-  /* ---------- Prose wrap: already single col via prose-wrap at 1080px,
-     confirm section-first padding is ok on mobile ---------- */
-  .page-body .section:first-of-type{padding-top:clamp(1.5rem,3vw,2.5rem)}
+  /* ---------- First section after page hero: tighter top padding ---------- */
+  .page-body .section:first-of-type{padding-top:clamp(1.2rem,3vw,2rem)}
 
   /* ---------- Prose wrap ---------- */
   .prose-wrap{grid-template-columns:1fr}
@@ -373,8 +382,25 @@
   .section .container::before{border-radius:16px;inset:-2% -2%}
 
   /* ---------- CTA band on mobile ---------- */
-  .cta-band{padding:clamp(2rem,6vw,3rem);border-radius:var(--r-lg)}
+  .cta-band{padding:clamp(1.5rem,5vw,2.5rem);border-radius:var(--r-lg)}
   .cta-band .btn{display:flex;width:100%;justify-content:center}
+  .cta-band h2{font-size:clamp(1.3rem,5vw,2rem)}
+
+  /* ---------- Portal cards: comfortable padding ---------- */
+  .portal__card{padding:1.2rem 1.1rem 1.3rem}
+
+  /* ---------- Two-col prose-wrap inside page sections ---------- */
+  .two-col{gap:1.4rem}
+
+  /* ---------- Diagram: constrain width and padding ---------- */
+  .diagram{margin-top:1.2rem}
+
+  /* ---------- Page-hero-fade: tighten ---------- */
+  .page-hero-fade{height:32px;margin-top:-32px}
+
+  /* ---------- Fund / fig grids: spacing ---------- */
+  .fund-grid,.fig-grid{gap:.7rem}
+  .fund-card,.fig{padding:.9rem}
 }
 @media(prefers-reduced-motion:reduce){
   .actor,.peeker,.leaf,.mote,.seed,.forest-light span,.forest-haze,
