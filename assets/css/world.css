@@ -75,8 +75,13 @@
 .page-hero::after{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(90deg, rgba(6,22,23,.68) 0%, rgba(6,22,23,.16) 50%, transparent 78%),
-    linear-gradient(180deg, rgba(6,22,23,.18) 0%, transparent 20%, transparent 60%, rgba(9,28,30,.85) 90%);
+    linear-gradient(90deg, rgba(6,22,23,.72) 0%, rgba(6,22,23,.22) 55%, transparent 80%),
+    linear-gradient(180deg, rgba(6,22,23,.55) 0%, rgba(6,22,23,.28) 35%, transparent 60%, rgba(9,28,30,.85) 90%);
+}
+/* Text-only heroes: scrim the whole width since text is centred */
+.page-hero__inner--text ~ * , .page-hero:has(.page-hero__inner--text)::after{
+  background:
+    linear-gradient(180deg, rgba(6,22,23,.65) 0%, rgba(6,22,23,.35) 40%, transparent 65%, rgba(9,28,30,.85) 90%);
 }
 .page-hero > *:not(.scene-vid){position:relative;z-index:2}
 
@@ -115,7 +120,7 @@
 /* ---------- Page hero layout ---------- */
 .page-hero{position:relative;z-index:1;
   padding:clamp(6rem,10vh,8rem) 0 clamp(1rem,3vw,2rem);
-  min-height:clamp(480px,65vh,800px)}
+  min-height:clamp(560px,75vh,900px)}
 .page-hero__inner{
   width:min(var(--container,1200px),92vw);margin-inline:auto;
   display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);
