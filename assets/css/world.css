@@ -329,12 +329,48 @@
   .prose-wrap,.two-col{grid-template-columns:1fr}
 }
 @media(max-width:680px){
+  /* ---------- Portal ---------- */
   .portal{grid-template-columns:1fr}
+
+  /* ---------- Financial grids ---------- */
   .fund-grid,.fig-grid{grid-template-columns:1fr}
+
+  /* ---------- Timeline: single column, remove fixed left-column width ---------- */
   .tl{grid-template-columns:1fr;gap:.3rem}
-  .actor{height:clamp(260px,70vw,380px)}
-  .actor--support{height:clamp(200px,55vw,300px)}
-  .peeker--bl,.peeker--br{width:240px}
+  .tl__when{font-size:.92rem}
+
+  /* ---------- Actors ---------- */
+  .actor{height:clamp(240px,65vw,360px)}
+  .actor--support{height:clamp(180px,50vw,280px)}
+
+  /* ---------- Peeker: reduced so it doesn't crowd bottom content ---------- */
+  .peeker--bl,.peeker--br{width:200px}
+
+  /* ---------- Page hero ---------- */
+  /* 620px min-height can exceed the viewport on short phones; let it be at least 85svh but no smaller than 480px */
+  .page-hero{min-height:max(480px,75svh)}
+  /* ensure text hero inner doesn't run to edges */
+  .page-hero__inner--text{max-width:100%}
+  .page-hero__text .h-1{font-size:clamp(1.7rem,5.5vw,2.8rem)}
+  .page-hero__text .lead{font-size:clamp(.95rem,3.4vw,1.15rem)}
+
+  /* ---------- Home hero ---------- */
+  /* ensure CTA buttons are centred column on mobile */
+  .hero__bottom{padding-inline:clamp(.5rem,3vw,1rem)}
+
+  /* ---------- Prose wrap: already single col via prose-wrap at 1080px,
+     confirm section-first padding is ok on mobile ---------- */
+  .page-body .section:first-of-type{padding-top:clamp(1.5rem,3vw,2.5rem)}
+
+  /* ---------- Prose wrap ---------- */
+  .prose-wrap{grid-template-columns:1fr}
+
+  /* ---------- Container reading veil: reduce border-radius on mobile ---------- */
+  .section .container::before{border-radius:16px;inset:-2% -2%}
+
+  /* ---------- CTA band on mobile ---------- */
+  .cta-band{padding:clamp(2rem,6vw,3rem);border-radius:var(--r-lg)}
+  .cta-band .btn{display:flex;width:100%;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){
   .actor,.peeker,.leaf,.mote,.seed,.forest-light span,.forest-haze,
