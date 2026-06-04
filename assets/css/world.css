@@ -206,6 +206,7 @@
 .hero__title{animation:heroTextIn .6s ease-out 2.7s both}
 .hero__sub{animation:heroTextIn .6s ease-out 2.95s both}
 .hero__cta{animation:heroTextIn .6s ease-out 3.15s both}
+.hero__welcome{animation:heroTextIn .7s ease-out 3.4s both}
 /* scrim: open in the middle so characters read through the video */
 .hero__scrim{
   z-index:1;
