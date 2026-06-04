@@ -22,6 +22,28 @@
     });
   }
 
+  /* ---- Dropdown groups ---- */
+  document.querySelectorAll(".nav__group-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var isMobile = window.innerWidth <= 680;
+      if (isMobile) {
+        /* mobile: toggle accordion */
+        var dropdown = btn.nextElementSibling;
+        var isOpen = dropdown.classList.toggle("open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
+    });
+  });
+
+  /* Desktop: close dropdowns on outside click */
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav__group")) {
+      document.querySelectorAll(".nav__group-btn").forEach(function (btn) {
+        btn.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
   /* ---- Scroll reveal ---- */
   var revealEls = document.querySelectorAll("[data-reveal],[data-reveal-stagger]");
   if ("IntersectionObserver" in window && !reduce) {
