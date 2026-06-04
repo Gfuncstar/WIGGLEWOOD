@@ -353,6 +353,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
 }
 
 /* ---------- Responsive ---------- */
+/* Peekers are depth-of-field decorations that only work on large desktops.
+   At ≤900px they're too large (330px+ = 43%+ of viewport) and compete with text. */
+@media(max-width:900px){
+  .peeker{display:none !important}
+}
 @media(max-width:1080px){
   .page-hero__inner{grid-template-columns:1fr}
   .page-hero__text{text-align:center}
@@ -377,15 +382,19 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   .actor{height:clamp(220px,60vw,320px)}
   .actor--support{height:clamp(160px,45vw,240px)}
 
-  /* ---------- Peeker: reduced so it doesn't crowd bottom content ---------- */
-  /* Shrink to 160px so it doesn't eat into readable content area */
-  .peeker--bl,.peeker--br{width:160px}
-  /* Prevent peeker from overlapping footer on short pages */
-  .peeker{max-height:40vh;overflow:hidden}
+  /* Peekers hidden at ≤680px — also handled by the ≤900px rule below */
+  .peeker{display:none !important}
 
   /* ---------- Page hero ---------- */
   /* Tighten min-height so it doesn't create excessive scroll on mobile */
   .page-hero{min-height:max(420px,65svh);padding-bottom:clamp(1.5rem,4vh,3rem)}
+  /* Text sits at the hero bottom where the gradient fades to transparent on mobile.
+     Add a stronger bottom anchor so heading + lead are always legible. */
+  .page-hero::after,
+  .page-hero:has(.page-hero__inner--text)::after{
+    background:
+      linear-gradient(180deg, rgba(6,22,23,.62) 0%, rgba(6,22,23,.30) 30%, rgba(6,22,23,.18) 50%, rgba(6,22,23,.68) 78%, rgba(6,22,23,.85) 100%);
+  }
   /* ensure text hero inner doesn't run to edges */
   .page-hero__inner--text{max-width:100%}
   /* Smaller h1 in page heroes on mobile */
@@ -404,8 +413,18 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   /* ---------- Prose wrap ---------- */
   .prose-wrap{grid-template-columns:1fr}
 
-  /* ---------- Container reading veil: reduce border-radius on mobile ---------- */
-  .section .container::before{border-radius:16px;inset:-2% -2%}
+  /* ---------- Container reading veil: stronger + tighter on mobile ---------- */
+  /* Radial gradient fades to 10% at edges on desktop — too thin on 375px screens.
+     Boost outer stops so full-width text always has usable contrast. */
+  .section .container::before{
+    border-radius:16px;inset:-2% -2%;
+    background:radial-gradient(130% 110% at 50% 50%, rgba(6,22,23,.80), rgba(6,22,23,.60) 60%, rgba(6,22,23,.40) 100%);
+    backdrop-filter:blur(8px) saturate(1.05);
+    -webkit-backdrop-filter:blur(8px) saturate(1.05);
+  }
+
+  /* ---------- Section ambient haze: slightly denser on mobile ---------- */
+  .section::before{background:rgba(5,15,16,.28)}
 
   /* ---------- CTA band on mobile ---------- */
   .cta-band{padding:clamp(1.5rem,5vw,2.5rem);border-radius:var(--r-lg)}
