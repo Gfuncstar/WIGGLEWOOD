@@ -23,7 +23,7 @@
 .section .container{position:relative;z-index:1}
 .section .container::before{
   content:"";position:absolute;inset:-3% -4%;z-index:-1;border-radius:40px;
-  background:radial-gradient(110% 90% at 50% 50%, rgba(6,22,23,.50), rgba(6,22,23,.16) 78%, transparent);
+  background:radial-gradient(110% 90% at 50% 50%, rgba(6,22,23,.78), rgba(6,22,23,.52) 70%, rgba(6,22,23,.18) 100%);
   pointer-events:none;
 }
 
@@ -165,7 +165,7 @@
 .actor--flutter{animation:bellonaFly 7s ease-in-out infinite}
 
 /* peeker (edge character) */
-.peeker{position:fixed;z-index:0;pointer-events:none;
+.peeker{position:fixed;z-index:-1;pointer-events:none;
   filter:drop-shadow(0 18px 22px rgba(0,0,0,.5))}
 .peeker img{display:block;height:auto;animation:wiggleAlive 8s ease-in-out infinite}
 .peeker--bl{left:-1vw;bottom:-1vh;width:clamp(330px,42vw,570px)}
