@@ -181,14 +181,20 @@ strong{font-weight:700;color:#fff}
 .nav__group-btn svg{transition:transform .22s var(--ease);flex-shrink:0}
 .nav__group:hover .nav__group-btn svg,.nav__group-btn[aria-expanded="true"] svg{transform:rotate(180deg)}
 .nav__dropdown{
-  position:absolute;top:calc(100% + .4rem);left:50%;transform:translateX(-50%);
-  background:rgba(9,28,30,.92);backdrop-filter:blur(18px) saturate(1.2);
-  border:1px solid var(--glass-border);border-radius:var(--r-md);
-  padding:.45rem;min-width:180px;
+  position:absolute;top:100%;left:50%;
+  /* padding-top bridges the gap so hover doesn't break mid-travel */
+  padding:.5rem .45rem .45rem;min-width:180px;
   opacity:0;visibility:hidden;pointer-events:none;
   transform:translateX(-50%) translateY(-6px);
   transition:opacity .18s var(--ease),transform .18s var(--ease),visibility .18s;
-  box-shadow:0 12px 40px rgba(0,0,0,.45);z-index:100;
+  z-index:100;
+}
+/* The visible card sits inside the padding bridge */
+.nav__dropdown::before{
+  content:"";position:absolute;inset:.5rem 0 0 0;
+  background:rgba(9,28,30,.92);backdrop-filter:blur(18px) saturate(1.2);
+  border:1px solid var(--glass-border);border-radius:var(--r-md);
+  box-shadow:0 12px 40px rgba(0,0,0,.45);z-index:-1;
 }
 .nav__group:hover .nav__dropdown,.nav__group-btn[aria-expanded="true"] ~ .nav__dropdown{
   opacity:1;visibility:visible;pointer-events:auto;
