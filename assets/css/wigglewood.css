@@ -244,10 +244,11 @@ strong{font-weight:700;color:#fff}
   text-shadow:0 2px 22px rgba(5,22,18,.7);
 }
 .hero__welcome{
-  margin-top:1.1rem;
-  font-family:var(--font-eyebrow);font-weight:600;font-size:clamp(.8rem,1vw,.95rem);
-  letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);text-shadow:0 1px 10px rgba(4,18,16,.6);
+  margin-top:1rem;
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(.95rem,1.3vw,1.2rem);
+  color:var(--gold);
+  text-shadow:0 2px 16px rgba(4,18,16,.55);
 }
 .hero__cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.9rem}
 .hero__badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.7rem}
