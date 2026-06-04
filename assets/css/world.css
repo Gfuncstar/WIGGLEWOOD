@@ -114,12 +114,13 @@
 
 /* ---------- Page hero layout ---------- */
 .page-hero{position:relative;z-index:1;
-  padding:clamp(6rem,10vh,8rem) 0 clamp(1rem,3vw,2rem);
+  display:flex;align-items:flex-end;
+  padding:0 0 clamp(2.5rem,5vh,4rem);
   min-height:max(620px,80svh)}
 .page-hero__inner{
   width:min(var(--container,1200px),92vw);margin-inline:auto;
   display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);
-  align-items:center;
+  align-items:flex-end;flex-shrink:0;
 }
 .page-hero__text .eyebrow{margin-bottom:.9rem}
 .page-hero__text .lead{margin-top:.7rem;max-width:46ch}
