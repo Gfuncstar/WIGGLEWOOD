@@ -63,25 +63,20 @@
   z-index:0;pointer-events:none;
 }
 
-/* cross-section fade strip — sits at the very bottom of .page-hero and
-   extends 120px INTO the section below using negative margin, killing the line */
-.page-hero-fade{
-  position:relative;z-index:10;
-  height:140px;margin-top:-140px;pointer-events:none;
-  background:linear-gradient(180deg, transparent 0%, #0a1c1e 100%);
-}
+/* cross-section fade strip — hidden, no bottom fade wanted */
+.page-hero-fade{display:none}
 
-/* dark overlay: readable text left, fade to dark at bottom for seamless join */
+/* dark overlay: scrim behind text only, no bottom fade */
 .page-hero::after{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
     linear-gradient(90deg, rgba(6,22,23,.72) 0%, rgba(6,22,23,.22) 55%, transparent 80%),
-    linear-gradient(180deg, rgba(6,22,23,.55) 0%, rgba(6,22,23,.28) 35%, transparent 60%, rgba(9,28,30,.85) 90%);
+    linear-gradient(180deg, rgba(6,22,23,.55) 0%, rgba(6,22,23,.28) 35%, transparent 60%);
 }
-/* Text-only heroes: scrim the whole width since text is centred */
-.page-hero__inner--text ~ * , .page-hero:has(.page-hero__inner--text)::after{
+/* Text-only heroes: scrim behind centred text, no bottom fade */
+.page-hero:has(.page-hero__inner--text)::after{
   background:
-    linear-gradient(180deg, rgba(6,22,23,.65) 0%, rgba(6,22,23,.35) 40%, transparent 65%, rgba(9,28,30,.85) 90%);
+    linear-gradient(180deg, rgba(6,22,23,.65) 0%, rgba(6,22,23,.35) 40%, transparent 65%);
 }
 .page-hero > *:not(.scene-vid){position:relative;z-index:2}
 
