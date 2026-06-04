@@ -19,12 +19,37 @@
     linear-gradient(180deg, rgba(8,28,29,.30) 0%, rgba(9,28,29,.12) 38%, rgba(8,26,27,.34) 100%);
 }
 
-/* soft reading veil so light type stays crisp over artwork */
+/* ---- Depth-of-field layered transparency ----
+   Layer 1 (deepest): forest + leaves — fixed, z-index:-1
+   Layer 2: section ambient haze — wide, very light, slight blur so
+            leaves behind it read as 'mid-distance'
+   Layer 3: container reading veil — tighter glass pane, frosted blur
+   Layer 4: panels (fund-card, fig, panel) — closest, sharpest glass
+   Layer 5: text — crisp foreground                                    */
+
+/* Layer 2 — section-level ambient haze (leaves show through this) */
+.section{overflow:visible}
+.section::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:rgba(5,15,16,.18);
+  backdrop-filter:blur(1.5px);
+  -webkit-backdrop-filter:blur(1.5px);
+}
+
+/* Layer 3 — container reading veil: frosted glass pane */
 .section .container{position:relative;z-index:1}
 .section .container::before{
   content:"";position:absolute;inset:-3% -4%;z-index:-1;border-radius:40px;
-  background:radial-gradient(110% 90% at 50% 50%, rgba(6,22,23,.78), rgba(6,22,23,.52) 70%, rgba(6,22,23,.18) 100%);
+  background:radial-gradient(110% 90% at 50% 50%, rgba(6,22,23,.72), rgba(6,22,23,.44) 70%, rgba(6,22,23,.10) 100%);
+  backdrop-filter:blur(6px) saturate(1.05);
+  -webkit-backdrop-filter:blur(6px) saturate(1.05);
   pointer-events:none;
+}
+
+/* Layer 4 — panels: closest glass, sharpest frost */
+.fund-card,.fig,.panel,.panel-prose,.doc-item{
+  -webkit-backdrop-filter:blur(16px) saturate(1.1);
+  backdrop-filter:blur(16px) saturate(1.1);
 }
 
 /* ---------- Living light: moving colour over the static painting ---------- */
