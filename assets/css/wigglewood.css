@@ -442,6 +442,7 @@ strong{font-weight:700;color:#fff}
 .section-rule{border-bottom:1px solid var(--glass-border);padding-bottom:.6rem;margin-bottom:1.4rem}
 .h-label{font-family:var(--font-eyebrow);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--gold-glow);margin:1.6rem 0 .5rem}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.two-col>*>:first-child{margin-top:0}
 .prose{max-width:900px}
 .prose h4{font-family:var(--font-eyebrow);font-weight:700;color:var(--gold-glow);text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;margin:1.4rem 0 .4rem}
 .prose p{color:var(--paper-dim)}
