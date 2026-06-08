@@ -422,7 +422,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   .diagram{margin-top:1.2rem}
 
   /* ---------- Page-hero-fade: tighten ---------- */
-  .page-hero-fade{height:32px;margin-top:-32px}
+  .page-hero-fade{height:8px;margin-top:-8px}
 
   /* ---------- Fund / fig grids: spacing ---------- */
   .fund-grid,.fig-grid{gap:.7rem}
