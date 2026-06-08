@@ -1,5 +1,5 @@
-/* =========================================================================
-   WIGGLE WOOD — Living World layer v2
+﻿/* =========================================================================
+   WIGGLE WOOD â€” Living World layer v2
    Video-sourced scene backgrounds, big bold characters, moving forest air.
    ========================================================================= */
 
@@ -20,14 +20,14 @@
 }
 
 /* ---- Depth-of-field layered transparency ----
-   Layer 1 (deepest): forest + leaves — fixed, z-index:-1
-   Layer 2: section ambient haze — wide, very light, slight blur so
+   Layer 1 (deepest): forest + leaves â€” fixed, z-index:-1
+   Layer 2: section ambient haze â€” wide, very light, slight blur so
             leaves behind it read as 'mid-distance'
-   Layer 3: container reading veil — tighter glass pane, frosted blur
-   Layer 4: panels (fund-card, fig, panel) — closest, sharpest glass
-   Layer 5: text — crisp foreground                                    */
+   Layer 3: container reading veil â€” tighter glass pane, frosted blur
+   Layer 4: panels (fund-card, fig, panel) â€” closest, sharpest glass
+   Layer 5: text â€” crisp foreground                                    */
 
-/* Layer 2 — section-level ambient haze (leaves show through this) */
+/* Layer 2 â€” section-level ambient haze (leaves show through this) */
 .section{overflow:visible}
 .section::before{
   content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
@@ -36,7 +36,7 @@
   -webkit-backdrop-filter:blur(1.5px);
 }
 
-/* Layer 3 — container reading veil: frosted glass pane */
+/* Layer 3 â€” container reading veil: frosted glass pane */
 .section .container{position:relative;z-index:1}
 .section .container::before{
   content:"";position:absolute;inset:0 -4%;z-index:-1;border-radius:40px;
@@ -46,7 +46,7 @@
   pointer-events:none;
 }
 
-/* Layer 4 — panels: closest glass, sharpest frost */
+/* Layer 4 â€” panels: closest glass, sharpest frost */
 .fund-card,.fig,.panel,.panel-prose,.doc-item{
   -webkit-backdrop-filter:blur(16px) saturate(1.1);
   backdrop-filter:blur(16px) saturate(1.1);
@@ -88,7 +88,7 @@
   z-index:0;pointer-events:none;
 }
 
-/* subtle seam strip — just enough to soften the video-to-content edge */
+/* subtle seam strip â€” just enough to soften the video-to-content edge */
 .page-hero-fade{
   position:relative;
   height:8px;margin-top:-8px;pointer-events:none;
@@ -156,7 +156,7 @@
 .page-hero__text .lead{margin-top:.7rem;max-width:46ch}
 
 /* ---------- Character: BIG, BOLD, ONE image, consistent size ---------- */
-/* The actor is a single img — NO stacking, NO duplicates.
+/* The actor is a single img â€” NO stacking, NO duplicates.
    All hero characters across every page sit at the same height. */
 .page-hero__art{
   position:relative;
@@ -169,7 +169,7 @@
   background:radial-gradient(closest-side, var(--c,rgba(255,224,122,.4)), transparent 70%);
   filter:blur(14px);opacity:.7;z-index:0;
 }
-/* THE single actor — same height sitewide, drop-shadow, gentle live motion */
+/* THE single actor â€” same height sitewide, drop-shadow, gentle live motion */
 .actor{
   position:relative;z-index:1;
   height:clamp(320px,38vw,460px);   /* consistent across ALL pages */
@@ -179,7 +179,7 @@
   will-change:transform;
   animation:wiggleAlive 7s ease-in-out infinite;
 }
-/* support character (secondary, beside lead) — same height, offset */
+/* support character (secondary, beside lead) â€” same height, offset */
 .actor--support{
   height:clamp(280px,34vw,420px);
   position:absolute;right:-8%;bottom:0;
@@ -405,7 +405,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   .hero__bottom{padding-inline:clamp(.5rem,3vw,1rem)}
 
   /* ---------- First section after page hero: enough breathing room from hero ---------- */
-  .page-body .section:first-of-type{padding-top:clamp(3.5rem,7vw,5rem)}
+  .page-body .section:first-of-type{padding-top:clamp(5rem,9vw,8rem)}
 
   /* ---------- Prose wrap ---------- */
   .prose-wrap{grid-template-columns:1fr}
@@ -439,3 +439,4 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   .scene-bg::before{animation:none !important}
   .leaves,.motes{display:none}
 }
+
