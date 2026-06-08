@@ -253,7 +253,7 @@
 /* ---------- Keep all real content above backdrop layers ---------- */
 .page-body{position:relative;z-index:1}
 .footer{z-index:2;position:relative}
-.page-body .section:first-of-type{padding-top:clamp(5rem,9vw,8rem)}
+.page-body .section:first-of-type{padding-top:clamp(2rem,4vw,3rem)}
 
 /* nav active state */
 .nav__links a.is-active{background:rgba(255,255,255,.14);color:var(--gold-glow)}
@@ -405,7 +405,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   .hero__bottom{padding-inline:clamp(.5rem,3vw,1rem)}
 
   /* ---------- First section after page hero: enough breathing room from hero ---------- */
-  .page-body .section:first-of-type{padding-top:clamp(5rem,9vw,8rem)}
+  .page-body .section:first-of-type{padding-top:clamp(3.5rem,7vw,5rem)}
 
   /* ---------- Prose wrap ---------- */
   .prose-wrap{grid-template-columns:1fr}
