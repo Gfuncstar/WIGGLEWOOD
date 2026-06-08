@@ -280,7 +280,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;word-break:break-word}
   max-width:62ch;margin-inline:auto}
 
 /* ---------- Section card grid ---------- */
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:1.2rem}
+.card-grid{display:grid;grid-template-columns:1fr;gap:1.2rem}
 .card-grid .panel{margin:0}
 .card-grid .panel .h-label:first-child{margin-top:0}
 
