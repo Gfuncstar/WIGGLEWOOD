@@ -4,13 +4,13 @@
 <script>document.documentElement.classList.add('js');</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Series Bible -- Wiggle Wood</title>
-<meta name="description" content="The Wiggle Wood Series Bible: the creative foundation that unites the storytelling team, defining the world, the characters, and the rules of Wiggle Wood." />
+<title>Series Bible &mdash; Wiggle Wood</title>
+<meta name="description" content="The complete Wiggle Wood Series Bible: characters, world, format, music, creative team and the storytelling rules that unite everything." />
 <meta name="theme-color" content="#0e2a2b" />
 <link rel="icon" href="assets/img/logo/wigglewood.svg" type="image/svg+xml" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Series Bible -- Wiggle Wood" />
-<meta property="og:description" content="The Wiggle Wood Series Bible: the creative foundation that unites the storytelling team, defining the world, the characters, and the rules of Wiggle Wood." />
+<meta property="og:title" content="Series Bible &mdash; Wiggle Wood" />
+<meta property="og:description" content="The complete Wiggle Wood Series Bible: characters, world, format, music, creative team and the storytelling rules that unite everything." />
 <meta property="og:image" content="assets/img/hero/hero-1600.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,6 +18,150 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Pontano+Sans:wght@400;500;600;700&family=Epilogue:wght@500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/wigglewood.css?v=12" />
 <link rel="stylesheet" href="assets/css/world.css?v=12" />
+<style>
+/* ---- Series Bible page extras ---- */
+.sb-nav{
+  position:sticky;top:72px;z-index:40;
+  background:rgba(9,28,29,.88);backdrop-filter:blur(18px) saturate(1.2);
+  border-bottom:1px solid rgba(180,228,214,.13);
+  overflow-x:auto;scrollbar-width:none;
+}
+.sb-nav::-webkit-scrollbar{display:none}
+.sb-nav__inner{
+  display:flex;gap:0;
+  width:min(1200px,92vw);margin-inline:auto;
+}
+.sb-nav__link{
+  font-family:var(--font-eyebrow);font-weight:600;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.12em;
+  color:rgba(244,234,212,.62);
+  padding:.75rem 1rem;white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .18s,border-color .18s;
+  flex-shrink:0;
+}
+.sb-nav__link:hover,.sb-nav__link.active{color:var(--gold-glow);border-bottom-color:var(--gold)}
+
+/* Character cards */
+.char-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem;margin-top:2.5rem}
+.char-card{
+  background:var(--glass);backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);border-radius:var(--r-lg);
+  padding:2rem 1.8rem;
+  transition:transform .28s var(--ease),box-shadow .28s var(--ease);
+}
+.char-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.char-card__badge{
+  display:inline-flex;align-items:center;gap:.5em;
+  font-family:var(--font-eyebrow);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;
+  padding:.3em .85em;border-radius:var(--r-pill);margin-bottom:1.2rem;
+}
+.char-card__name{font-family:var(--font-display);font-size:1.55rem;font-weight:800;margin:0 0 .2rem;color:#fff}
+.char-card__trait{font-family:var(--font-eyebrow);font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.15em;opacity:.65;margin-bottom:1rem}
+.char-card__body{font-size:.92rem;line-height:1.68;color:var(--paper-dim)}
+.char-card__facts{margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(180,228,214,.14)}
+.char-fact{font-size:.82rem;line-height:1.55;margin-bottom:.5rem;color:var(--paper-dim)}
+.char-fact strong{color:#fff;font-weight:600}
+.char-quote{
+  font-style:italic;font-size:.84rem;
+  border-left:2px solid;padding-left:.9rem;margin-top:.9rem;
+  opacity:.78;
+}
+
+/* Guest character list */
+.guest-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:2rem}
+.guest-item{
+  background:var(--glass-soft);backdrop-filter:blur(10px);
+  border:1px solid var(--glass-border);border-radius:var(--r-md);
+  padding:1.4rem 1.5rem;
+}
+.guest-item h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin:0 0 .55rem;color:#fff}
+.guest-item p{font-size:.86rem;line-height:1.6;color:var(--paper-dim);margin:0}
+
+/* Running order timeline */
+.runorder{margin-top:2rem;display:flex;flex-direction:column;gap:0}
+.ro-item{display:grid;grid-template-columns:5rem 1fr;gap:1.2rem;padding:1.2rem 0;border-bottom:1px solid rgba(180,228,214,.1)}
+.ro-item:last-child{border-bottom:none}
+.ro-time{font-family:var(--font-eyebrow);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);padding-top:.15rem;text-align:right}
+.ro-title{font-family:var(--font-display);font-weight:700;font-size:1rem;color:#fff;margin-bottom:.3rem}
+.ro-desc{font-size:.88rem;line-height:1.62;color:var(--paper-dim);margin:0}
+
+/* Locations grid */
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem;margin-top:2rem}
+.loc-card{
+  background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);
+  padding:1.6rem 1.5rem;
+}
+.loc-card h4{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--gold-glow);margin:0 0 .65rem}
+.loc-card p{font-size:.88rem;line-height:1.65;color:var(--paper-dim);margin:0}
+
+/* Rules */
+.rules-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.6rem;margin-top:2rem}
+@media(max-width:800px){.rules-col{grid-template-columns:1fr}}
+.rule-group h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--gold);margin:0 0 1rem}
+.rule-group ul{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:.55rem}
+.rule-group li{font-size:.88rem;line-height:1.62;color:var(--paper-dim)}
+
+/* Story cards */
+.story-cards{display:flex;flex-direction:column;gap:1.8rem;margin-top:2rem}
+.story-card{
+  background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-lg);
+  padding:2rem 2.2rem;
+}
+.story-card__num{
+  font-family:var(--font-eyebrow);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--gold);margin-bottom:.5rem;
+}
+.story-card h3{font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 1rem}
+.story-card p{font-size:.92rem;line-height:1.7;color:var(--paper-dim);margin-bottom:.8rem}
+.story-card p:last-child{margin-bottom:0}
+
+/* Team grid */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.6rem;margin-top:2.5rem}
+.team-card{
+  background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r-lg);
+  padding:1.8rem 1.8rem;
+}
+.team-card__role{
+  font-family:var(--font-eyebrow);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--gold);margin-bottom:.4rem;
+}
+.team-card h4{font-family:var(--font-display);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .9rem}
+.team-card p{font-size:.84rem;line-height:1.68;color:var(--paper-dim);margin-bottom:.7rem}
+.team-card p:last-child{margin-bottom:0}
+
+/* Brand expansions */
+.expand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;margin-top:2rem}
+.expand-item{
+  background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);
+  padding:1.4rem 1.5rem;
+}
+.expand-item h4{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--gold-glow);margin:0 0 .65rem}
+.expand-item ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.35rem}
+.expand-item li{font-size:.82rem;line-height:1.58;color:var(--paper-dim)}
+
+/* Song verse block */
+.verse{
+  font-style:italic;font-size:.9rem;line-height:1.8;
+  border-left:2px solid var(--green);padding-left:1.2rem;
+  margin:1rem 0;color:var(--paper-dim);
+}
+
+/* Pillar badges */
+.pillars{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.pillar{
+  background:var(--glass-soft);border:1px solid var(--glass-border-hi);border-radius:var(--r-pill);
+  padding:.55em 1.2em;
+  font-family:var(--font-eyebrow);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--gold-glow);
+}
+
+@media(max-width:700px){
+  .char-grid{grid-template-columns:1fr}
+  .rules-col{grid-template-columns:1fr}
+  .ro-item{grid-template-columns:4rem 1fr}
+}
+</style>
 </head>
 <body>
 
@@ -96,6 +240,7 @@
   </button>
 </nav>
 <div class="peeker peeker--br"><img src="assets/img/characters/cosmo.webp" alt="" /></div>
+
 <main class="page-body">
 
 <header class="page-hero">
@@ -106,70 +251,635 @@
     <div class="page-hero__text">
       <p class="eyebrow">The Animation Series</p>
       <h1 class="h-1">The Series Bible</h1>
-      <p class="lead">The creative foundation of Wiggle Wood. Everything the team needs to know about the world, the characters, the stories we tell, and the ones we never will.</p>
+      <p class="lead">52 &times; 10 minutes. 2D animation for children aged 3&ndash;5 and families.<br>Everything the team needs to know about the world, the characters, and the stories we tell.</p>
     </div>
   </div>
 </header>
 <div class="page-hero-fade" aria-hidden="true"></div>
 
-<section class="section" data-reveal>
+<!-- ---- Sticky section nav ---- -->
+<nav class="sb-nav" aria-label="Series bible sections">
+  <div class="sb-nav__inner">
+    <a class="sb-nav__link" href="#overview">Overview</a>
+    <a class="sb-nav__link" href="#characters">Characters</a>
+    <a class="sb-nav__link" href="#format">Format</a>
+    <a class="sb-nav__link" href="#music">Music</a>
+    <a class="sb-nav__link" href="#world">The World</a>
+    <a class="sb-nav__link" href="#look">Look &amp; Feel</a>
+    <a class="sb-nav__link" href="#rules">Rules</a>
+    <a class="sb-nav__link" href="#stories">Stories</a>
+    <a class="sb-nav__link" href="#expansions">Expansions</a>
+    <a class="sb-nav__link" href="#team">Creative Team</a>
+  </div>
+</nav>
+
+<!-- ===================== OVERVIEW ===================== -->
+<section class="section" id="overview" data-reveal>
   <div class="container">
     <div class="two-col">
       <div>
-        <p class="eyebrow">What is the Series Bible?</p>
-        <p>The Wiggle Wood Series Bible is the single creative document that holds the world together. It is the first thing every new member of the creative team reads, and the reference point every writer, director, and designer returns to throughout production.</p>
-        <p>The bible defines what Wiggle Wood is and what it is not. It sets out the rules of the world, the emotional logic of the storytelling, the voice and spirit of each character, and the values that run through every episode. It is not a rigid rulebook, but a living creative compass: as the world and characters grow and evolve across seasons, the bible evolves alongside them.</p>
-        <p>When everyone on the team has read and understood the bible, a shared creative language emerges. Writers working independently produce scripts that feel consistent. Directors approach scenes with the same emotional instincts. New team members can join at any stage of production and quickly understand not just what Wiggle Wood looks like, but how it thinks, how it feels, and why it matters.</p>
+        <p class="eyebrow">Overview</p>
+        <h2 class="h-2">A groundbreaking musical animation</h2>
+        <p>WIGGLE WOOD is a truly independent production and a groundbreaking musical animation. But most important of all, it&rsquo;s home to three adventurous young caterpillars named <strong>Cyd, Chadwick &amp; Cosmo</strong>.</p>
+        <p>Just like our target audience of 3&ndash; to 5&ndash;year&ndash;olds, these little &lsquo;Wigglers&rsquo; are taking their first steps into an exciting world, learning how to manage their emotions, meeting new friends and uncovering nature&rsquo;s best kept secrets.</p>
+        <p>Guided by <strong>Bellona</strong>, their guardian butterfly, the Wigglers discover that it&rsquo;s their differences that make them successful &mdash; and that being unique can be their very own superpower&hellip; just so long as they can work together.</p>
+        <p>The series is a modern take on Aesop&rsquo;s fables, where every adventure offers a mirror into Cyd, Chadwick and Cosmo&rsquo;s own lives. By helping others, they develop their own skills and learn to navigate their emotions, abilities and friendships.</p>
+        <p>Children and families will come for the comedy and music, but they will stay for the lovable characters and valuable insights into their own emotional well-being.</p>
       </div>
       <div>
-        <h3 class="h-label">What the Bible Covers</h3>
-        <div class="format-steps">
-          <div class="format-step"><span class="step-num">1</span><div><strong>The World</strong><p>A complete portrait of Wiggle Wood: its geography, its atmosphere, its seasons, and the unspoken rules that govern life among the trees. What thrives here, what does not, and what makes this woodland unlike any other.</p></div></div>
-          <div class="format-step"><span class="step-num">2</span><div><strong>The Characters</strong><p>In-depth character profiles for each of the lead characters and key recurring figures. How they think, how they speak, what drives them, what frightens them, and how they relate to one another. Their individual emotional signatures and the arc of their development across the series.</p></div></div>
-          <div class="format-step"><span class="step-num">3</span><div><strong>Tone &amp; Voice</strong><p>The emotional register of the series: warm, witty, and genuinely heartfelt. What humour is appropriate and what is not. How we speak to a preschool audience without talking down to them. The line between gentle tension and anything that might unsettle a young viewer.</p></div></div>
-          <div class="format-step"><span class="step-num">4</span><div><strong>The Rules of the World</strong><p>What happens in Wiggle Wood and what does not. The creative guardrails that keep the series coherent across seasons and across different writers. The bible makes clear what the world permits and what it categorically does not, so that every story decision is made with confidence.</p></div></div>
-          <div class="format-step"><span class="step-num">5</span><div><strong>The Long-term Vision</strong><p>Where the characters are heading. How the world will expand. The emotional milestones that the series is building toward across three seasons, and the principles that will guide every creative decision along the way.</p></div></div>
+        <h3 class="h-label">The Four Pillars</h3>
+        <div class="pillars">
+          <span class="pillar">Heart-warming stories</span>
+          <span class="pillar">Iconic design</span>
+          <span class="pillar">Original music</span>
+          <span class="pillar">Smart commissioning</span>
+        </div>
+        <div style="margin-top:2.4rem">
+          <div class="fig-grid" data-reveal-stagger>
+            <div class="fig"><div class="fig__num">52</div><div class="fig__lab">Episodes across Series One</div></div>
+            <div class="fig"><div class="fig__num">156</div><div class="fig__lab">Total episodes across three seasons</div></div>
+            <div class="fig"><div class="fig__num">10<span style="font-size:.55em;vertical-align:middle">min</span></div><div class="fig__lab">Runtime per episode</div></div>
+            <div class="fig"><div class="fig__num">3&ndash;5</div><div class="fig__lab">Core audience age range</div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" data-reveal>
+<!-- ===================== CHARACTERS ===================== -->
+<section class="section section-alt" id="characters" data-reveal>
   <div class="container">
-    <p class="eyebrow">A Living Document</p>
-    <h2 class="h-2">The bible grows as the world grows</h2>
-    <p style="max-width:70ch;margin-bottom:2rem">The series bible is not written once and filed away. As Wiggle Wood develops, with new characters introduced, new locations explored, and the Wigglers growing, the bible is updated to reflect that evolution. Every addition is made deliberately, with the same care as the original. The creative team always has access to the most current version, so the shared understanding of the world remains complete and consistent, no matter how far the story travels.</p>
-    <div class="fig-grid" data-reveal-stagger>
-      <div class="fig"><div class="fig__num">1</div><div class="fig__lab">Single document that unites the entire creative team</div></div>
-      <div class="fig"><div class="fig__num">3</div><div class="fig__lab">Seasons of storytelling planned and guided by the bible</div></div>
-      <div class="fig"><div class="fig__num">4</div><div class="fig__lab">Lead characters with fully developed emotional profiles</div></div>
-      <div class="fig"><div class="fig__num">156</div><div class="fig__lab">Episodes, each shaped by the same creative foundation</div></div>
+    <p class="eyebrow">Meet the Cast</p>
+    <h2 class="h-2">The Wigglers &amp; their world</h2>
+    <p class="lead" style="max-width:72ch;margin-bottom:2.5rem">All three of our little caterpillars are inquisitive and resourceful, but they each have a very different approach that doesn&rsquo;t always gel with one another, making their friendships tricky to navigate.</p>
+
+    <div class="char-grid">
+
+      <!-- CYD -->
+      <div class="char-card" style="border-color:rgba(176,123,224,.35)">
+        <div class="char-card__badge" style="background:var(--c-cyd-soft);color:var(--c-cyd)">Lead Wiggler</div>
+        <div class="char-card__name" style="color:var(--c-cyd)">Cyd</div>
+        <div class="char-card__trait">Innovative / Procrastinator</div>
+        <div class="char-card__body">
+          <p>A thoughtful dreamer, Cyd (pronounced &lsquo;Sid&rsquo;) doesn&rsquo;t just think outside the box &mdash; she imagines a world where there isn&rsquo;t one. She approaches problems from a completely unexpected angle, and her solutions are equally convoluted&hellip; but they work&hellip; sort of.</p>
+          <p>She is the most emotionally aware Wiggler and always considers her friends&rsquo; feelings, so much so that she overthinks everything. In her mind, no problem is too big, but she must work through every possible outcome before she fixes it.</p>
+          <p style="font-style:italic;font-size:.88rem">&ldquo;She paints with a broad brush and dances like NOBODY is watching.&rdquo;</p>
+        </div>
+        <div class="char-card__facts">
+          <div class="char-fact"><strong>Likes:</strong> Mysteries, puzzles, big ideas and Wiggle-pops (popcorn)</div>
+          <div class="char-fact"><strong>Dislikes:</strong> Feeling rushed, failure &mdash; because everything has to be perfect</div>
+          <div class="char-fact"><strong>Signature move:</strong> Back spin &mdash; it looks cool and helps her see the world from a different angle</div>
+          <div class="char-quote" style="border-color:var(--c-cyd)">&ldquo;Slow and steady&hellip; leaves more time for fun!&rdquo;</div>
+        </div>
+      </div>
+
+      <!-- COSMO -->
+      <div class="char-card" style="border-color:rgba(143,207,82,.35)">
+        <div class="char-card__badge" style="background:var(--c-cosmo-soft);color:var(--c-cosmo)">Lead Wiggler</div>
+        <div class="char-card__name" style="color:var(--c-cosmo)">Cosmo</div>
+        <div class="char-card__trait">Proactive / Impatient</div>
+        <div class="char-card__body">
+          <p>Determined, knowledgeable and never a minute late, Cosmo is a natural leader who always says what&rsquo;s on her mind and has everything planned out before the others have even found their shoes.</p>
+          <p>She is older than the other Wigglers (if only by a few minutes) and loves to remind Cyd and Chadwick that she&rsquo;s been around the branch a couple more times than them. She can be very proactive, but her single-mindedness often causes her to race past the emotional and magical moments along the way.</p>
+          <p style="font-style:italic;font-size:.88rem">&ldquo;She paints with a fine brush and dances like EVERYONE is watching.&rdquo;</p>
+        </div>
+        <div class="char-card__facts">
+          <div class="char-fact"><strong>Likes:</strong> Buttercup nectar, plants and ecology, giving a good lecture</div>
+          <div class="char-fact"><strong>Dislikes:</strong> Waste, inefficiency, thoughtlessness that impacts the natural world</div>
+          <div class="char-fact"><strong>Signature move:</strong> The belly buster &mdash; a caterpillar version of &lsquo;the worm&rsquo;</div>
+          <div class="char-quote" style="border-color:var(--c-cosmo)">&ldquo;If you want something done properly&hellip;&rdquo;</div>
+        </div>
+      </div>
+
+      <!-- CHADWICK -->
+      <div class="char-card" style="border-color:rgba(255,122,60,.35)">
+        <div class="char-card__badge" style="background:var(--c-chadwick-soft);color:var(--c-chadwick)">Lead Wiggler</div>
+        <div class="char-card__name" style="color:var(--c-chadwick)">Chadwick</div>
+        <div class="char-card__trait">Headstrong / Emotional</div>
+        <div class="char-card__body">
+          <p>Chadwick is the high-energy, high-spirited joker of the group. Born without back legs, Chadwick uses a wheelchair, but he is always first to the finish line. Fast-talking, fast-moving, and independent, he is driven by instinct, confidence, and a love of making people laugh.</p>
+          <p>His emotions run at full volume. When things go well, it is the best day ever. When they do not, it is a total disaster, at least in his mind. Passionate, messy, and a bit impulsive, he is the most expressive of the Wigglers.</p>
+          <p style="font-style:italic;font-size:.88rem">&ldquo;He paints with a roller and dances like EVERYONE SHOULD be watching!&rdquo;</p>
+        </div>
+        <div class="char-card__facts">
+          <div class="char-fact"><strong>Likes:</strong> Practical jokes (especially peekaboo), racing, and blueberry juice</div>
+          <div class="char-fact"><strong>Dislikes:</strong> Being ignored, coming last, rainy days (if he has to stay inside)</div>
+          <div class="char-fact"><strong>Signature move:</strong> Caterpillar Curl &mdash; rolls into a ball and backspins like a pinball</div>
+          <div class="char-quote" style="border-color:var(--c-chadwick)">&ldquo;Someone needs a hug!&rdquo; &nbsp;&bull;&nbsp; &ldquo;Race you&hellip; I won!&rdquo;</div>
+        </div>
+      </div>
+
+      <!-- BELLONA -->
+      <div class="char-card" style="border-color:rgba(58,160,239,.35)">
+        <div class="char-card__badge" style="background:var(--c-bellona-soft);color:var(--c-bellona)">Guardian Butterfly</div>
+        <div class="char-card__name" style="color:var(--c-bellona)">Bellona</div>
+        <div class="char-card__trait">Caring / Nurturing</div>
+        <div class="char-card__body">
+          <p>Bellona is the warm, wise heart of Wiggle Wood. Calm, compassionate, and endlessly kind, she helps the Wigglers reflect, grow, and find their own way. Like a cool big sister, she is always nearby but never overbearing, giving the Wigglers space to &lsquo;wiggle out&rsquo; problems for themselves without ever making them feel led.</p>
+          <p>She seems to know everyone in Wiggle Wood. Through her many friendships, we glimpse her own colourful past, reminding us that even the wisest butterflies were once little wigglers finding their way in the world.</p>
+          <p>Above all, Bellona loves a good song and dance &mdash; because she knows that there is no problem so big that it can&rsquo;t be solved with a big production number&hellip; and this is one butterfly that knows how to rock!</p>
+        </div>
+        <div class="char-card__facts">
+          <div class="char-fact"><strong>Likes:</strong> Mentoring, learning, growth, singing and dancing</div>
+          <div class="char-fact"><strong>Signature move:</strong> The Butterfly Flutterby &mdash; an airborne pirouette that captures her grace, energy, and joy</div>
+          <div class="char-quote" style="border-color:var(--c-bellona)">&ldquo;What can we learn?&rdquo; &nbsp;&bull;&nbsp; &ldquo;Tell us your story.&rdquo; &nbsp;&bull;&nbsp; &ldquo;You teach me.&rdquo;</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Guest Characters -->
+    <div style="margin-top:3.5rem">
+      <p class="eyebrow">Recurring &amp; Guest Characters</p>
+      <h3 class="h-2" style="font-size:clamp(1.2rem,2.2vw,1.8rem);margin-bottom:.5rem">The wider world of Wiggle Wood</h3>
+      <p style="max-width:66ch;color:var(--paper-dim);margin-bottom:0">Each episode introduces a woodland resident or creature passing through whose problem mirrors what the Wigglers are experiencing &mdash; giving the audience empathy and insight through a fresh perspective.</p>
+    </div>
+    <div class="guest-list">
+      <div class="guest-item">
+        <h4>Luna Glow-worm</h4>
+        <p>Shy, sweet, and quietly determined. A glow-worm with stage fright who doesn&rsquo;t believe her glow is good enough. Luna is the kind of character children and parents identify with and want to protect &mdash; already a series fan favourite.</p>
+      </div>
+      <div class="guest-item">
+        <h4>Robin Robin</h4>
+        <p>Theatrical, opinionated, and ever so slightly pompous. Robin carries himself with the air of a retired stage actor who has never quite retired. Tender beneath his bluster, and endlessly entertaining.</p>
+      </div>
+      <div class="guest-item">
+        <h4>Oliver Owl</h4>
+        <p>Robin Robin&rsquo;s nocturnal neighbour. Oliver loves to DJ through the night with the joy and innocence of someone who has never once been told to keep it down. He means no harm. He simply has no idea what time it is.</p>
+      </div>
+      <div class="guest-item">
+        <h4>Flora the Honeybee</h4>
+        <p>Always busy, always buzzing, and never quite stopping long enough to think things through. Flora means well, but her relentless busyness is often the cause of the very problems she&rsquo;s too busy to notice.</p>
+      </div>
+      <div class="guest-item">
+        <h4>Nancy Weaver</h4>
+        <p>A mischievous spider with a genuine gift for spinning stories. Nancy is not exactly dishonest &mdash; she just has a very creative relationship with the truth.</p>
+      </div>
+      <div class="guest-item">
+        <h4>Admiral Butterfly</h4>
+        <p>A gruff old friend of Bellona&rsquo;s who is too proud to ask for help. His grumpy exterior hides a friendly soul who is desperate for a friend.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FORMAT ===================== -->
+<section class="section" id="format" data-reveal>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="eyebrow">Episode Format</p>
+        <h2 class="h-2">A repeatable emotional journey</h2>
+        <p>Every 10-minute episode of Wiggle Wood follows the same carefully considered structure &mdash; a repeatable emotional journey designed to resonate with preschool children and build genuine developmental value through storytelling, music, and reflection.</p>
+
+        <div style="margin-top:2rem;display:flex;flex-direction:column;gap:1.4rem">
+          <div class="format-step"><span class="step-num">1</span><div><strong>The Emotional Trigger</strong><p>Each episode begins with one or more of the Wigglers experiencing a moment of emotional difficulty: worry, frustration, anxiety, anger, or uncertainty. The episode begins where the child already is.</p></div></div>
+          <div class="format-step"><span class="step-num">2</span><div><strong>Wiggle It Out</strong><p>Rather than moving straight into action, the Wigglers pause and wiggle it out &mdash; a recurring musical centrepiece: an uplifting, transitional music video moment in which the characters sing, move, and release their feelings.</p></div></div>
+          <div class="format-step"><span class="step-num">3</span><div><strong>The Guest Character</strong><p>In a new location, the Wigglers encounter a woodland resident facing a problem that mirrors their own. Children learn through empathy, not instruction. Success is not always guaranteed, but teamwork, empathy, and listening lead the Wigglers closer to what really matters.</p></div></div>
+          <div class="format-step"><span class="step-num">4</span><div><strong>Return to Caterpillar Cubby</strong><p>The Wigglers return home and reflect on what they have experienced. The episode closes with a reflective song that reinforces the emotional arc of the story, often led by Bellona. The emotional lesson is gently consolidated &mdash; never prescribed.</p></div></div>
+          <div class="format-step"><span class="step-num">5</span><div><strong>The Mindfulness Moment</strong><p>Every episode ends with a short mindfulness segment during the credits, offering simple, age-appropriate meditations focused on self-worth, calm, and gratitude &mdash; designed to ease the transition toward bedtime.</p></div></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="eyebrow">Running Order</p>
+        <div class="runorder">
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;10&rdquo;</div>
+            <div><div class="ro-title">Short Opening Titles</div></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;20&rdquo;</div>
+            <div><div class="ro-title">Character Intro / Scene Setter</div><p class="ro-desc">A laugh-out-loud moment to hook the audience as they discover what their on-screen friends are up to this time.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;40&rdquo;</div>
+            <div><div class="ro-title">Main Character Challenge</div><p class="ro-desc">Something goes right or wrong; there is a disagreement, a challenge, or a question that needs to be answered &mdash; something to drive their emotional learning.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;45&rdquo;</div>
+            <div><div class="ro-title">Wiggle It Out</div><p class="ro-desc">The trigger for their adventure. Bellona takes them on a journey to leave their frustrations behind &mdash; this flows into a musical sequence. Think: &lsquo;A Spoonful of Sugar&rsquo; sung by Lady Gaga.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;30&rdquo;</div>
+            <div><div class="ro-title">Guest Character Intro</div><p class="ro-desc">The Wigglers meet a friend and learn about them and their current predicament &mdash; putting aside personal concerns to help.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">1&rsquo;10&rdquo;</div>
+            <div><div class="ro-title">Chaos Ensues</div><p class="ro-desc">Lots of comedy, slapstick, and music as the Wigglers put their learning into practice and find their initial plan does not work.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;30&rdquo;</div>
+            <div><div class="ro-title">The Accidental Lesson</div><p class="ro-desc">The Wigglers stumble across inspiration that brings them back on track. The learning always comes through their actions &mdash; never an on-the-nose lesson.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">1&rsquo;20&rdquo;</div>
+            <div><div class="ro-title">Emotional Payoff</div><p class="ro-desc">The Wigglers help their friend and have a realisation about their own situation.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">1&rsquo;00&rdquo;</div>
+            <div><div class="ro-title">Bespoke Song</div><p class="ro-desc">Back at Caterpillar Cubby, the Wigglers recall their adventure with a song.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;10&rdquo;</div>
+            <div><div class="ro-title">Comedy Button</div><p class="ro-desc">Always end on a short comedy beat to keep the audience coming back for more.</p></div>
+          </div>
+          <div class="ro-item">
+            <div class="ro-time">0&rsquo;25&rdquo;</div>
+            <div><div class="ro-title">End Titles / Mindfulness Sequence</div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" data-reveal>
+<!-- ===================== MUSIC ===================== -->
+<section class="section section-alt" id="music" data-reveal>
   <div class="container">
     <div class="two-col">
       <div>
-        <p class="eyebrow">The Heart of It</p>
-        <h2 class="h-2">United by the same story</h2>
-        <p>The most important thing the series bible does is answer the question every new team member asks when they arrive: <em>what kind of show is this?</em></p>
-        <p>Wiggle Wood is not just a preschool animation. It is a carefully considered, emotionally grounded series built to give young children the language and the space to understand their own feelings. Every creative decision: every character beat, every piece of dialogue, every song, flows from that intention.</p>
-        <p>The bible makes that intention explicit, so it is never lost in the process of making 156 episodes across three seasons. It is the north star of the creative team: always there, always pointing in the same direction.</p>
-        <p>The full Series Bible is available to download in the <a href="/documents" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Documents section</a>.</p>
+        <p class="eyebrow">Music</p>
+        <h2 class="h-2">The series USP is its musical heart</h2>
+        <p>Wiggle Wood will feature many original songs, some written by Musical Director <strong>Jax Jones</strong>, others by children&rsquo;s songwriting duo <strong>Banks &amp; Wag</strong>. Music unites broader demographics and encourages co-viewing.</p>
+        <p>The timeless songs throughout the series will enable Wiggle Wood to be a show that is &lsquo;hard to grow out of&rsquo; &mdash; enabling parents and carers to enjoy it with their children, instead of being tormented by repetitive, annoying songs.</p>
+        <p>Each episode features <strong>three musical moments</strong>:</p>
+
+        <div class="format-steps" style="margin-top:1.5rem">
+          <div class="format-step"><span class="step-num">1</span><div><strong>Wiggle Wood Rock</strong> <span style="opacity:.6;font-size:.88rem">(working title)</span><p>The opening theme song &mdash; an inclusive introduction to the series and our characters, welcoming everyone to Wiggle Wood, where no problem is too big and no hero is too small.</p></div></div>
+          <div class="format-step"><span class="step-num">2</span><div><strong>Wiggle It Out</strong><p>The recurring pop song that encourages the Wigglers and the audience to shake away their worries and find a solution. A foot-stomping, heart-pounding call to action that will get children and families up and moving.</p></div></div>
+          <div class="format-step"><span class="step-num">3</span><div><strong>Reflection Song</strong><p>Led by Bellona, this big musical number wraps the story up, allowing characters and audience to reflect on what they have learned. Ten different reflection songs, themed around a different emotional lesson, will be repeated across the series.</p></div></div>
+        </div>
       </div>
-      <div style="display:flex;flex-direction:column;justify-content:center;gap:1.4rem">
-        <blockquote style="border-left:3px solid var(--green-mid,#3a6b4a);padding-left:1.4rem;margin:0">
-          <p style="font-size:1.1rem;font-style:italic;margin-bottom:.5rem">&ldquo;Wiggle Wood is built on the understanding that young children&rsquo;s feelings are real, big, and entirely valid. Every story we tell starts from that place.&rdquo;</p>
-          <cite style="font-size:.9rem;font-style:normal;opacity:.7">From the Wiggle Wood Series Bible</cite>
+      <div>
+        <h3 class="h-label">Musical Influences</h3>
+        <p style="color:var(--paper-dim);margin-bottom:1.4rem">Positive songs that energise and inspire the target audience:</p>
+        <div style="display:flex;flex-direction:column;gap:.8rem;margin-bottom:2rem">
+          <div style="background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1rem 1.2rem">
+            <div style="font-weight:700;font-size:.95rem;color:#fff">&lsquo;Walking On Sunshine&rsquo;</div>
+            <div style="font-size:.82rem;color:var(--paper-dim)">Katrina and the Waves</div>
+          </div>
+          <div style="background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1rem 1.2rem">
+            <div style="font-weight:700;font-size:.95rem;color:#fff">&lsquo;Wake Up Boo&rsquo;</div>
+            <div style="font-size:.82rem;color:var(--paper-dim)">The Boo Radleys</div>
+          </div>
+          <div style="background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1rem 1.2rem">
+            <div style="font-weight:700;font-size:.95rem;color:#fff">&lsquo;Can&rsquo;t Stop the Feeling&rsquo;</div>
+            <div style="font-size:.82rem;color:var(--paper-dim)">Justin Timberlake</div>
+          </div>
+          <div style="background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1rem 1.2rem">
+            <div style="font-weight:700;font-size:.95rem;color:#fff">&lsquo;Just a Cloud Away&rsquo; &amp; &lsquo;Happy&rsquo;</div>
+            <div style="font-size:.82rem;color:var(--paper-dim)">Pharrell Williams</div>
+          </div>
+        </div>
+        <blockquote style="border-left:3px solid var(--gold);padding-left:1.3rem;margin:0">
+          <p style="font-size:1rem;font-style:italic;margin-bottom:.5rem">&ldquo;Over the course of the series, our hit songs will be released on a Wiggle Wood album for children to enjoy again and again.&rdquo;</p>
+          <cite style="font-size:.85rem;font-style:normal;opacity:.65">From the Wiggle Wood Series Bible</cite>
         </blockquote>
-        <div class="cta-band" style="margin-top:1rem">
-          <p class="eyebrow" style="justify-content:center">Download the Bible</p>
-          <p class="lead" style="max-width:48ch;margin:.6rem auto 1.4rem;font-size:1rem">The full Series Bible is available in the Documents section, alongside the pilot script, financial documents, and all other key production materials.</p>
-          <a class="btn" href="/documents">Go to Documents &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE WORLD ===================== -->
+<section class="section" id="world" data-reveal>
+  <div class="container">
+    <p class="eyebrow">The World</p>
+    <h2 class="h-2">The world of Wiggle Wood</h2>
+    <p style="max-width:72ch;margin-bottom:2rem">Wiggle Wood is a traditional woodland, home to a huge and diverse population of insects, arachnids, reptiles, birds and small mammals. A natural, temperate environment broadly situated in the UK &mdash; though this is never stated in the series. As such, the world has seasons, offering a huge variety of stories to tell.</p>
+
+    <div class="two-col" style="margin-bottom:3rem">
+      <div>
+        <p>Some creatures live in the woods and some are just passing through &mdash; which means the Wigglers can bump into a spider collecting dew from her web, a flamingo who has lost her way, or even a giant polar bear who took a winter holiday but now needs to find shade from the spring sunshine. No matter who these animals are or where they come from, they all share one thing in common: they need help from the Wigglers.</p>
+        <p>The seasons affect the inhabitants of Wiggle Wood, and the Wigglers will come across friends old and new at different stages in their seasonal life cycle &mdash; a character they may have previously helped during the spring months will face different challenges during the autumn as they prepare for the coming cold weather, allowing us to revisit audience favourites.</p>
+      </div>
+      <div>
+        <p>This also provides opportunities for <strong>seasonal specials</strong> that tie into those tent-pole moments in kids&rsquo; lives &mdash; from typical spring, summer, autumn and winter activities to those based in the animal kingdom, such as hibernation, migration, flood, drought, growth and rebirth.</p>
+        <div style="margin-top:1.5rem;background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1.4rem 1.5rem">
+          <p style="font-style:italic;color:var(--paper-dim);font-size:.9rem;margin:0">&ldquo;A big, wide world, seen through the lens of a small child. Full of wonder, because nature is magical and there is a lesson to be learned from every creature.&rdquo;</p>
         </div>
+      </div>
+    </div>
+
+    <p class="eyebrow">Locations</p>
+    <h3 class="h-2" style="font-size:clamp(1.2rem,2.2vw,1.8rem);margin-bottom:.4rem">An ever-expanding world</h3>
+    <p style="color:var(--paper-dim);max-width:64ch;margin-bottom:0">New locations will be introduced through the series. The following stand out as our starting points.</p>
+
+    <div class="loc-grid">
+      <div class="loc-card">
+        <h4>Caterpillar Cubby</h4>
+        <p>At the centre of the woods stands the <strong>Great Oak</strong>, and nestled in the nook of one of its 700-year-old branches is Caterpillar Cubby. The home, school and safe place for Bellona to teach her Wigglers &mdash; a hollow tree branch that has naturally grown into the shape of a caterpillar, featuring a bedroom, living space, play-space and greenhouse.</p>
+      </div>
+      <div class="loc-card">
+        <h4>Wiggle Wood Way</h4>
+        <p>The main highway through the woods runs right past the Great Oak and brings a diverse range of visitors to the area. Rather than a busy street, this is a forest track &mdash; with travellers hiking or racing along on their own natural transportation.</p>
+      </div>
+      <div class="loc-card">
+        <h4>Pebble Brook</h4>
+        <p>A slow-running stream that passes by the Great Oak and leads off through the woods towards a lake in the meadow. Shallow enough for the Wigglers to play near safely &mdash; racing model leaf boats and splashing in the sunshine.</p>
+      </div>
+      <div class="loc-card">
+        <h4>Midsummer Meadow</h4>
+        <p>A vibrant flower meadow, home to a bustling population of small animals and insects just waiting for the Wigglers to lend them a helping hand. Long grasses and bright flowers sway in a warm breeze.</p>
+      </div>
+      <div class="loc-card">
+        <h4>Lily Pad Lake</h4>
+        <p>A pond near the meadow that looks like a giant lake to the little Wigglers. Here, they can enjoy lakeside adventures, safe on the floating lily pads &mdash; and travel across the lake to go waterskiing with the pond-skaters.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== LOOK AND FEEL ===================== -->
+<section class="section section-alt" id="look" data-reveal>
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <p class="eyebrow">Design &amp; Animation</p>
+        <h2 class="h-2">Look and feel</h2>
+        <p>Wiggle Wood is realised in <strong>2.5D animation</strong> &mdash; a process where 2D characters are given a degree of shading and weight, while the backgrounds have a depth of field and dynamic lighting that suggests a real-world backdrop to the Wigglers&rsquo; adventures.</p>
+        <p>The characters are designed to feel aspirational, offering a little more emotional range than competing brands, with colour schemes that reflect the Wigglers&rsquo; distinct personalities. A large proportion of the emotional storytelling will come through facial expressions and body language to ensure the stories can be understood by all ages and abilities.</p>
+        <p>The characters&rsquo; unique silhouettes make them instantly recognisable: Cyd is round and cuddly, Cosmo is long and wiggly, Chadwick is compact and speedy &mdash; but they also have a commonality in their design that makes them feel part of a team.</p>
+      </div>
+      <div>
+        <p>Caterpillars are naturally fuzzy and the heroes look very soft and huggable. The audience should imagine they can reach into the screen and squeeze their new friends, just as they would their favourite toy at home &mdash; or even their very own plush Wiggler.</p>
+        <p>The Wigglers love to sing and dance, so their bodies have a lot of movement, allowing them to flex and perform as a child would. All movements will be replicable in the real world.</p>
+        <div style="margin-top:1.5rem;background:var(--glass-soft);border:1px solid var(--glass-border);border-radius:var(--r-md);padding:1.6rem">
+          <p class="eyebrow" style="font-size:.68rem;margin-bottom:.8rem">Design Philosophy</p>
+          <p style="font-size:.92rem;font-style:italic;margin:0;color:var(--paper-dim)">&ldquo;This is the antithesis to over-stimulation. Think: accessible calm action and comedy. A family comedy where pacing and tone is appropriate for the youngest viewers, while layering in additional gags for older siblings and parents.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RULES ===================== -->
+<section class="section" id="rules" data-reveal>
+  <div class="container">
+    <p class="eyebrow">Creative Guardrails</p>
+    <h2 class="h-2">The rules of Wiggle Wood</h2>
+    <p style="max-width:64ch;margin-bottom:2.5rem;color:var(--paper-dim)">The bible makes clear what the world permits and what it categorically does not, so that every story decision is made with confidence.</p>
+
+    <div class="rules-col">
+      <div class="rule-group">
+        <h4>Wiggle Wood is&hellip;</h4>
+        <ul>
+          <li>A big, wide world, seen through the lens of a small child</li>
+          <li>Full of wonder, because nature is magical and there is a lesson to be learned from every creature</li>
+          <li>Where real-world challenges become supersized from the kids&rsquo; point of view</li>
+          <li>Where choices have consequences and plotlines are always driven by the Wigglers&rsquo; decisions</li>
+          <li>Where the laws of physics apply &mdash; there is no magic, beyond nature&rsquo;s own</li>
+          <li>Where any creature can exist and is always in need of help from the Wigglers</li>
+          <li>A world without humans</li>
+        </ul>
+      </div>
+      <div class="rule-group">
+        <h4>Caterpillar Cubby is&hellip;</h4>
+        <ul>
+          <li>A safe place where children can reflect on their experiences and grow</li>
+          <li>A small pool where the tiniest change can create the biggest ripples</li>
+          <li>Where we don&rsquo;t avoid difficult questions and age-appropriate behaviours</li>
+          <li>Where failure is nothing to be afraid of</li>
+          <li>Where differences and individuality are championed</li>
+        </ul>
+      </div>
+      <div class="rule-group">
+        <h4>The Wigglers are&hellip;</h4>
+        <ul>
+          <li>The audience&rsquo;s best friends &mdash; they are real kids, with real joys, worries, interests and questions</li>
+          <li>Fallible and make all the same mistakes as real children, but they always learn from them</li>
+          <li>Messy &mdash; young caterpillars exploring their world and the relationships within it</li>
+          <li>A mirror for the audience &mdash; every child should identify with at least one character motivation in any given episode</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SAMPLE STORIES ===================== -->
+<section class="section section-alt" id="stories" data-reveal>
+  <div class="container">
+    <p class="eyebrow">Sample Storylines</p>
+    <h2 class="h-2">Ten episodes developed, twenty springboards ready</h2>
+    <p style="max-width:66ch;margin-bottom:2.5rem;color:var(--paper-dim)">Ten episodes are already developed to outline stage and ready to go into production. Below are three samples, alongside further springboards from the twenty already developed.</p>
+
+    <div class="story-cards">
+
+      <div class="story-card">
+        <div class="story-card__num">Episode 1</div>
+        <h3>A Sticky Situation</h3>
+        <p><strong>Chadwick</strong> is determined to learn to play the bluebell horn, but he won&rsquo;t accept anybody&rsquo;s help &mdash; even though his failure to even make a sound with it is frustrating him. He becomes even more annoyed when Cosmo gives him a demonstration: she can play really loud.</p>
+        <p>On their way through the wood, the Wigglers come across <strong>Red Admiral Butterfly</strong>, perched on the side of a sycamore tree, unusually cagey about what he&rsquo;s up to. Chadwick whizzes up to investigate and discovers the truth: the Admiral is stuck in some sticky sycamore sap &mdash; and now Chadwick is stuck too.</p>
+        <p>One by one the whole group gets stuck. The Admiral is contrite &mdash; he didn&rsquo;t want to admit he needed help. He thought he could get out of this sticky situation on his own. Together they call for help with a mighty blast of Cosmo&rsquo;s bluebell horn, drawing the attention of Barbara the Stag Beetle, who soon has everyone free. Back at Caterpillar Cubby, Bellona leads a song about it being OK to ask for help &mdash; and Chadwick finally finds the courage to ask Cosmo to teach him the horn.</p>
+        <p style="font-style:italic;color:var(--gold);font-size:.88rem">Theme: It&rsquo;s OK to ask for help.</p>
+      </div>
+
+      <div class="story-card">
+        <div class="story-card__num">Episode 2</div>
+        <h3>What&rsquo;s In a Name?</h3>
+        <p><strong>Cosmo</strong> is getting frustrated: Chadwick likes to call strawberries &lsquo;dawbees&rsquo;; Cyd calls them &lsquo;red berries&rsquo;. Cosmo just can&rsquo;t understand why the others can&rsquo;t use the right name. Bellona eases Cosmo onto a different topic by suggesting they head out to wiggle out their problems.</p>
+        <p>In the wood, they encounter <strong>Colin Woodlouse</strong> &mdash; Cosmo is delighted to share that woodlice have lots of funny nicknames. Colin sighs, because he absolutely does know this. Cosmo becomes increasingly animated listing the names, while Cyd and Chadwick try to mime what each one makes them think of. Colin finally runs out of patience and stomps off in a huff.</p>
+        <p>A gentle nudge from Bellona brings Cosmo to a revelation: she asks Colin which name he prefers. Colin smiles. &ldquo;It&rsquo;s&hellip; Colin!&rdquo; Everyone laughs. Cosmo is happy to learn that everyone should respect what people choose to call themselves.</p>
+        <p style="font-style:italic;color:var(--gold);font-size:.88rem">Theme: Respect what people choose to call themselves.</p>
+      </div>
+
+      <div class="story-card">
+        <div class="story-card__num">Episode 3</div>
+        <h3>Funny Bug</h3>
+        <p><strong>Cyd</strong> and <strong>Cosmo</strong> are having fun making silly hats, but Chadwick is in a playful mood &mdash; all he wants to do is jump out on them shouting &lsquo;Boo!&rsquo; It was kind of funny the first time, but all the boos are getting in the way of all-important hat-making. Bellona suggests Chadwick heads off into the wood to wiggle things out.</p>
+        <p>He encounters <strong>Simon Stick Insect</strong>, who has been masquerading as a twig. They begin a prank-off &mdash; but both friends soon begin to get frustrated with each other&rsquo;s gags. Then Cyd and Cosmo arrive, wearing their fabulously silly hats. Chadwick and Simon can&rsquo;t help but roll around laughing. Chadwick stops &mdash; Cyd and Cosmo managed to make them laugh without a prank! In a joyful music sequence, they discover different ways to make each other laugh: funny disguises, tickly vines, wiggly walks and silly faces.</p>
+        <p style="font-style:italic;color:var(--gold);font-size:.88rem">Theme: There are lots of ways to make people laugh.</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top:3rem">
+      <p class="eyebrow">Further Springboards</p>
+      <div class="guest-list">
+        <div class="guest-item">
+          <h4>Show Your Glow <span style="opacity:.5;font-size:.78rem">(pilot, full script available)</span></h4>
+          <p>Luna the glow-worm is feeling shy about her shine. The Wigglers help her show her glow &mdash; and learn that your best is beautiful.</p>
+        </div>
+        <div class="guest-item">
+          <h4>Don&rsquo;t Yuck My Dung</h4>
+          <p>Bruno the dung beetle needs help rolling his dungball, but Cosmo does not like the idea of touching poo. Bruno teaches the Wigglers that just because you don&rsquo;t like something, it doesn&rsquo;t mean everybody feels the same way. And that&rsquo;s fine.</p>
+        </div>
+        <div class="guest-item">
+          <h4>Hog Bugs</h4>
+          <p>A gang of greedy locusts are passing through Wiggle Wood wanting to eat everything in sight. The Wigglers show that sharing has its own rewards.</p>
+        </div>
+        <div class="guest-item">
+          <h4>Noisy Neighbours</h4>
+          <p>Cosmo bumps into Oliver Owl, who&rsquo;s at his wit&rsquo;s end &mdash; his neighbour Robin Robin loves to sing, and nocturnal Oliver just wants to sleep. Maybe there&rsquo;s a simpler solution than earplugs?</p>
+        </div>
+        <div class="guest-item">
+          <h4>Strong as Silk</h4>
+          <p>Chadwick can&rsquo;t believe that Sansi Silkworm&rsquo;s thread is strong enough to help. Our caterpillar friend needs to learn that looks can be deceiving and things &mdash; and people &mdash; can be stronger than they seem.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== BRAND EXPANSIONS ===================== -->
+<section class="section" id="expansions" data-reveal>
+  <div class="container">
+    <p class="eyebrow">Beyond the Screen</p>
+    <h2 class="h-2">Brand expansions</h2>
+    <p style="max-width:66ch;margin-bottom:2rem;color:var(--paper-dim)">A rich and diverse world offering endless opportunities for future episodes, games, and merchandise &mdash; driving fandom and audience affinity through great storytelling and smart brand-building.</p>
+
+    <div class="expand-grid">
+      <div class="expand-item">
+        <h4>Worldwide Series Licence</h4>
+        <ul>
+          <li>Traditional broadcast series pick-up and production of further episodes</li>
+          <li>Film rights and cinematic episode compilations and sing-alongs</li>
+        </ul>
+      </div>
+      <div class="expand-item">
+        <h4>Live Entertainment</h4>
+        <ul>
+          <li>Theatre rights &mdash; Wiggle Wood: The Musical</li>
+          <li>Theme parks &mdash; Wiggle Wood World</li>
+        </ul>
+      </div>
+      <div class="expand-item">
+        <h4>Digital Games</h4>
+        <ul>
+          <li>Side-scrolling / platform adventure</li>
+          <li>Touch-screen educational and design experiences</li>
+          <li>Made for Nintendo Switch and mobile platforms</li>
+        </ul>
+      </div>
+      <div class="expand-item">
+        <h4>Books &amp; Publishing</h4>
+        <ul>
+          <li>Read along at home with books and a comic</li>
+          <li>Facts about the natural world &mdash; discover your very own Wiggle Wood</li>
+        </ul>
+      </div>
+      <div class="expand-item">
+        <h4>Audio Experiences</h4>
+        <ul>
+          <li>Audio books and full-cast adventures</li>
+          <li>Jokes and games via Tonies, YouTube Kids, Audible Kids</li>
+          <li>Podcast platforms and smart speakers</li>
+        </ul>
+      </div>
+      <div class="expand-item">
+        <h4>Commercial Products</h4>
+        <ul>
+          <li>Plush toys, playsets and figures</li>
+          <li>Vinyl collectables and board games</li>
+        </ul>
+      </div>
+      <div class="expand-item">
+        <h4>School Tie-ins</h4>
+        <ul>
+          <li>Educational packs and lesson plans based on episodes from the series</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CREATIVE TEAM ===================== -->
+<section class="section section-alt" id="team" data-reveal>
+  <div class="container">
+    <p class="eyebrow">The People</p>
+    <h2 class="h-2">Creative team</h2>
+    <p style="max-width:64ch;margin-bottom:2.5rem;color:var(--paper-dim)">An award-winning team bringing together decades of experience in children&rsquo;s animation, music, production, education and brand strategy.</p>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card__role">Creator</div>
+        <h4>Aim&eacute;e Anderson</h4>
+        <p>Founder and CEO of Better World Entertainment. Over 20 years as a senior marketeer, building and advising some of the world&rsquo;s most iconic brands through storytelling. Former Managing Director at DDA, working with Netflix, Disney, Universal Studios and Sony.</p>
+        <p>Founded ACCESS ALL AREAS Ltd (Triple A) in 2016. A standout partnership: HP Inc. and the film MANTO, which premiered in Cannes&rsquo; Un Certain Regard and was picked up by Netflix worldwide.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Showrunner</div>
+        <h4>Adam Carter</h4>
+        <p>Royal Television Society Award-winning Creative Producer with 20 years&rsquo; experience crafting award-winning entertainment for children and families. Started as a Henson-trained puppeteer before moving into scripting and production.</p>
+        <p>After 13 years at the BBC, led teams at Moonbug. Credits: <em>Duck &amp; Frog, Go Jetters, JoJo and Gran Gran, Oddbods, Booba, The Raccoons, Blue Peter</em> and many more.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Head Writer</div>
+        <h4>Jen Upton</h4>
+        <p>Award-winning writer and producer. Has developed, written and produced family favourites including <em>Peppa Pig, Pip and Posy, Paddington, Fireman Sam, Noddy</em> and <em>Dennis and Gnasher</em>.</p>
+        <p>Worked with Disney, Netflix, CITV, CBC, Warner, Aardman, BBC, Nickelodeon and 9 Story / Brown Bag Films.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Musical Director</div>
+        <h4>Jax Jones</h4>
+        <p>DJ, songwriter, producer and remixer. Co-wrote and produced &ldquo;I Got U&rdquo; with Duke Dumont, a UK number one. Further hits: &lsquo;All Day and Night&rsquo; (Billboard number one), &lsquo;You Don&rsquo;t Know Me&rsquo; (UK number 3) and &lsquo;Instruction&rsquo; featuring Demi Lovato &amp; Stefflon Don (UK number one).</p>
+        <p>Jax will pen the theme song and the tentpole original song for each season of Wiggle Wood.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Episodic Composers &amp; Songwriters</div>
+        <h4>Banks &amp; Wag</h4>
+        <p>British composers Chris Banks &amp; Wag Marshall-Page. RTS and BAFTA award-winning television, Sony award-winning radio, Promax BDA award-winning commercials, and iTunes number one singles.</p>
+        <p>CBeebies credits: <em>Go Jetters, ZingZillas</em> and annual Christmas Shows. Also <em>Blue Peter, Newsround, Something Special</em> and Netflix&rsquo;s <em>Mighty Little Bheem</em> &mdash; the platform&rsquo;s most-watched international release of 2019.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Voice Director</div>
+        <h4>Dave Peacock</h4>
+        <p>Voice directing and casting professionally for almost 20 years, having directed over 70 TV series and a dozen features. Credits: <em>Hilda, Thunderbirds Are Go!, Moominvalley, The Octonauts, Dennis &amp; Gnasher Unleashed, 101 Dalmatian Street, Love Death &amp; Robots, Kiya &amp; The Kimoja Heroes</em>.</p>
+        <p>Nominated for Emmys for voice direction on <em>Hilda</em> (2021 and 2022). Won Emmy as Supervising Dialogue Editor on <em>Octonauts: Ring of Fire</em> (2022).</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Nature Advisor</div>
+        <h4>Ian Redmond, OBE</h4>
+        <p>Tropical field biologist and conservationist. Joined Dian Fossey studying mountain gorillas in Rwanda in 1976. Introduced Sir David Attenborough to the gorillas in 1978 for BBC&rsquo;s <em>Life on Earth</em>. Appeared in over 100 documentaries for the BBC, National Geographic and Discovery Channel.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Creative Strategist &amp; Disability Consultant</div>
+        <h4>Ally Castle MBE</h4>
+        <p>Creative strategist with over two decades of senior experience at the BBC across audience planning, commissioning and corporate strategy. Awarded an MBE for services to inclusivity and diversity in UK broadcasting in 2024.</p>
+        <p>Advising specifically on the portrayal of Chadwick, who uses his acorn wheelchair as a mobility aid, ensuring his character is integrated naturally and respectfully within the narrative.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Child Development &amp; Education Consultant</div>
+        <h4>Dr Jacqueline Harding</h4>
+        <p>Award-winning writer, researcher and child development expert specialising in early years education and children&rsquo;s media. Author of <em>The Brain That Loves to Play</em>. Chair of the Bright Start Foundation, Director of Tomorrow&rsquo;s Child, Visiting Research Fellow at Middlesex University, and former BBC Education Editor.</p>
+        <p>Leads audience insight and developmental advisory for Wiggle Wood, conducting focus groups with preschool children.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__role">Production Management</div>
+        <h4>Nest Productions</h4>
+        <p>Led by Head of Production Marisa Erftemeijer, Nest Productions leads on all administrative work including budgets, HR, scheduling and tax credits. Credits include <em>Love in the Flesh</em> (BBC3), <em>Diana: Our Mother</em> (ITV/HBO), <em>Putin: The New Tsar</em> (BBC2) and more.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ---- CTA ---- -->
+<section class="section" data-reveal>
+  <div class="container">
+    <div class="cta-band">
+      <p class="eyebrow" style="justify-content:center">Take the next step</p>
+      <h2 class="h-2" style="max-width:24ch;margin-inline:auto">Ready to join us for a wiggle?</h2>
+      <p class="lead" style="max-width:54ch;margin:.7rem auto 1.7rem">All production documents, certifications and financial materials are available in the investor data room. We&rsquo;d love to walk you through everything in person.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="/documents">Go to Documents &rarr;</a>
+        <a class="btn btn-ghost" href="mailto:aimee@betterworldentertainment.com">Start a conversation</a>
       </div>
     </div>
   </div>
@@ -218,7 +928,7 @@
       </div>
     </div>
     <div class="footer__legal">
-      <p>The Wiggle Wood Company Ltd - Registered Company Number: 1425898</p>
+      <p>The Wiggle Wood Company Ltd &mdash; Registered Company Number: 1425898</p>
       <p>Registered Address: Nightingale House, East Street, Epsom, KT17 1HQ</p>
       <p>Contact: <a href="mailto:aimee@betterworldentertainment.com">aimee@betterworldentertainment.com</a></p>
     </div>
@@ -228,6 +938,22 @@
     </div>
   </div>
 </footer>
+
 <script src="assets/js/wigglewood.js" defer></script>
+<script>
+(function(){
+  const links = document.querySelectorAll('.sb-nav__link');
+  const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+
+  function update(){
+    const mid = window.scrollY + window.innerHeight * 0.35;
+    let active = 0;
+    sections.forEach((s, i) => { if(s && s.offsetTop <= mid) active = i; });
+    links.forEach((l,i) => l.classList.toggle('active', i === active));
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>
