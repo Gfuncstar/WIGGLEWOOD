@@ -91,7 +91,7 @@
 /* subtle seam strip — just enough to soften the video-to-content edge */
 .page-hero-fade{
   position:relative;z-index:10;
-  height:48px;margin-top:-48px;pointer-events:none;
+  height:20px;margin-top:-20px;pointer-events:none;
   background:linear-gradient(180deg, transparent 0%, rgba(9,24,25,.55) 100%);
 }
 
