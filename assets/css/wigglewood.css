@@ -56,7 +56,7 @@
 
 /* ---------- Reset ---------- */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:110px}
 body{
   margin:0;
   font-family:var(--font-body);
@@ -438,11 +438,13 @@ strong{font-weight:700;color:#fff}
 .pull-quote p{margin:0}
 
 /* ---------- section variants ---------- */
-.section-alt{background:rgba(5,16,17,.18)}
+.section-alt{background:rgba(5,16,17,.38);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
 .section-rule{border-bottom:1px solid var(--glass-border);padding-bottom:.6rem;margin-bottom:1.4rem}
 .h-label{font-family:var(--font-eyebrow);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--gold-glow);margin:1.6rem 0 .5rem}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
 .two-col>*>:first-child{margin-top:0}
+/* Column divider: border sits in the gap, padding creates breathing room from it */
+.two-col > * + *{border-left:1px solid var(--glass-border);padding-left:clamp(1.5rem,3vw,2rem)}
 .prose{max-width:900px}
 .prose h4{font-family:var(--font-eyebrow);font-weight:700;color:var(--gold-glow);text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;margin:1.4rem 0 .4rem}
 .prose p{color:var(--paper-dim)}
@@ -533,6 +535,7 @@ strong{font-weight:700;color:#fff}
 }
 @media(max-width:980px){
   .two-col{grid-template-columns:1fr}
+  .two-col > * + *{border-left:none;padding-left:0;border-top:1px solid var(--glass-border);padding-top:1.5rem}
   .profit-grid{grid-template-columns:1fr}
   .advisers-grid{grid-template-columns:1fr 1fr}
   .mini-chars{grid-template-columns:1fr}
@@ -544,6 +547,17 @@ strong{font-weight:700;color:#fff}
   .songs{grid-template-columns:1fr}
   /* mini-chars single column already handled at 980 but reinforce */
   .mini-chars{grid-template-columns:1fr}
+}
+
+/* ---------- Anchor targets: clear fixed nav ---------- */
+/* Any element with an id used as an anchor gets breathing room below the nav */
+[id]{scroll-margin-top:110px}
+
+/* ---------- Section headings: visual accent so sections read as distinct ---------- */
+.section .h-2,.section-alt .h-2{
+  padding-bottom:.75rem;
+  border-bottom:1px solid var(--glass-border);
+  margin-bottom:1.75rem !important;
 }
 
 /* ---------- Scroll reveal (JS-gated) ---------- */
