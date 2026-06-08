@@ -355,7 +355,7 @@ PAGES.push({
   metaDesc: "The synopsis, the repeatable episode format, and the first stories of Wiggle Wood.",
   eyebrow: "The Animation Series",
   h1: "Synopsis",
-  lead: "Three young caterpillars are on their way to becoming butterflies supported by a woodland full of friends - a heart-warming modern take on Aseop's Fables",
+  lead: "Wiggle Wood tells the story of three young caterpillars who are on their way to becoming butterflies, and on their important journey they are supported by a woodland full of friends. It's a magical, heart-warming modern take on Aseop's Fables.",
   actors: [{ name: "cyd", role: "lead" }, { name: "chadwick", role: "support", flip: true }],
   peekers: [{ name: "cosmo", pos: "br" }],
   html: `
