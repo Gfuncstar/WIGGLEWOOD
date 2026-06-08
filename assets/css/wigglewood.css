@@ -549,6 +549,18 @@ strong{font-weight:700;color:#fff}
   .mini-chars{grid-template-columns:1fr}
 }
 
+/* ---------- Market research page ---------- */
+.competitor-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.swot-panel{border-top:3px solid var(--glass-border-hi)}
+.swot-strengths{border-top-color:var(--green)}
+.swot-weaknesses{border-top-color:var(--coral)}
+.swot-opportunities{border-top-color:var(--gold)}
+.swot-threats{border-top-color:var(--teal)}
+@media(max-width:780px){
+  .competitor-grid,.swot-grid{grid-template-columns:1fr}
+}
+
 /* ---------- Anchor targets: clear fixed nav ---------- */
 /* Any element with an id used as an anchor gets breathing room below the nav */
 [id]{scroll-margin-top:110px}
