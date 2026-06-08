@@ -19,55 +19,46 @@
 <link rel="stylesheet" href="assets/css/wigglewood.css?v=12" />
 <link rel="stylesheet" href="assets/css/world.css?v=12" />
 <style>
-.bible-contents{
+/* ---- bible covers ---- */
+.bible-covers{display:flex;flex-direction:column;gap:.8rem;margin-top:1.4rem}
+
+/* ---- stats strip ---- */
+.bible-stats{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:1rem;
   margin-top:2rem;
 }
-.bible-item{
+.bible-stat{
   background:var(--glass-soft);
   border:1px solid var(--glass-border);
   border-radius:var(--r-md);
-  padding:1.2rem 1.4rem;
-  display:flex;gap:.9rem;align-items:flex-start;
-}
-.bible-item__num{
-  font-family:var(--font-display);font-weight:800;font-size:1.5rem;
-  color:var(--gold);line-height:1;flex-shrink:0;padding-top:.1rem;
-}
-.bible-item h4{
-  font-family:var(--font-display);font-size:.95rem;font-weight:700;
-  color:#fff;margin:0 0 .3rem;
-}
-.bible-item p{font-size:.82rem;line-height:1.55;color:var(--paper-dim);margin:0}
-
-.dl-card{
-  background:var(--glass);backdrop-filter:blur(18px) saturate(1.2);
-  border:1.5px solid var(--glass-border-hi);
-  border-radius:var(--r-xl);
-  padding:2.8rem 3rem;
+  padding:1.4rem 1.6rem;
   text-align:center;
-  max-width:560px;
-  margin:0 auto;
 }
-.dl-card .h-2{margin-bottom:.6rem}
-.dl-card .lead{margin-bottom:1.8rem}
-.dl-icon{
-  width:56px;height:56px;
-  background:rgba(250,193,46,.12);
-  border:1.5px solid rgba(250,193,46,.35);
-  border-radius:var(--r-md);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1.4rem;
+.bible-stat__num{
+  font-family:var(--font-display);font-weight:800;font-size:2rem;
+  color:var(--gold);line-height:1;display:block;margin-bottom:.3rem;
 }
-.dl-meta{
-  margin-top:1.2rem;
-  font-family:var(--font-eyebrow);font-weight:600;font-size:.72rem;
-  text-transform:uppercase;letter-spacing:.16em;
-  color:var(--paper-dim);opacity:.65;
+.bible-stat__label{font-size:.8rem;color:var(--paper-dim);line-height:1.4}
+
+/* ---- pull quote ---- */
+.bible-pullquote{
+  border-left:3px solid var(--gold);
+  padding:.6rem 0 .6rem 1.6rem;
+  margin:2rem 0 1.8rem;
+  max-width:60ch;
 }
-@media(max-width:560px){.dl-card{padding:2rem 1.4rem}}
+.bible-pullquote p{
+  font-family:var(--font-display);font-size:1.15rem;font-weight:600;
+  color:#fff;line-height:1.5;margin:0;font-style:italic;
+}
+.bible-pullquote cite{
+  display:block;margin-top:.5rem;
+  font-size:.78rem;font-style:normal;
+  font-family:var(--font-eyebrow);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper-dim);
+}
 </style>
 </head>
 <body>
@@ -158,102 +149,117 @@
     <div class="page-hero__text">
       <p class="eyebrow">The Animation Series</p>
       <h1 class="h-1">The Series Bible</h1>
-      <p class="lead">The complete creative foundation of Wiggle Wood &mdash; available to download as a PDF.</p>
+      <p class="lead">The creative foundation every member of the team reads first &mdash; and returns to throughout production.</p>
     </div>
   </div>
 </header>
 <div class="page-hero-fade" aria-hidden="true"></div>
-
-<!-- ---- Download card ---- -->
+<!-- ---- Section 1: What is the Series Bible? ---- -->
 <section class="section" data-reveal>
   <div class="container">
-    <div class="dl-card">
-      <div class="dl-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fac12e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14,2 14,8 20,8"/>
-          <line x1="12" y1="11" x2="12" y2="17"/>
-          <polyline points="9,14 12,17 15,14"/>
-        </svg>
+    <div class="two-col">
+      <div class="two-col__text">
+        <p class="eyebrow">The Series Bible</p>
+        <h2 class="h-2">The creative foundation every team member reads first</h2>
+        <p>The Wiggle Wood Series Bible is the single document that holds the world together. It is the first thing anyone joining the creative team reads, and the reference every writer, director, and designer returns to throughout production.</p>
+        <p>It defines how the characters think, how they speak, and how they behave. It sets out what happens in Wiggle Wood and, just as importantly, what does not. It gives every new voice the context they need to contribute to the world without pulling it in the wrong direction.</p>
+        <p>As the series grows, the bible grows with it. When a new character is introduced, when the world extends into a new location, when a storytelling rule is refined in production &mdash; the bible is updated to reflect it. It is a living document, not a fixed one.</p>
       </div>
-      <p class="eyebrow" style="justify-content:center">Series Bible &mdash; Revised 2026</p>
-      <h2 class="h-2">Download the full bible</h2>
-      <p class="lead" style="font-size:1rem">Characters, world, format, music, creative rules, sample stories, brand expansions, and the complete creative team &mdash; everything in one document.</p>
-      <a class="btn" href="assets/docs/Wiggle-Wood-Series-Bible.pdf" download="Wiggle-Wood-Series-Bible.pdf">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>
-        Download PDF
-      </a>
-      <p class="dl-meta">PDF &nbsp;&middot;&nbsp; Confidential &nbsp;&middot;&nbsp; For approved recipients</p>
+      <div class="two-col__visual panel-prose" style="display:flex;align-items:center;justify-content:center">
+        <p style="font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:#fff;line-height:1.7;text-align:center;max-width:28ch;margin:0">
+          &ldquo;Anyone new to the project reads the bible and understands the world. The characters, the rules, the tone &mdash; everything that unites the storytelling.&rdquo;
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ---- What&rsquo;s inside ---- -->
+<!-- ---- Section 2: What the Bible Covers ---- -->
 <section class="section section-alt" data-reveal>
   <div class="container">
-    <p class="eyebrow">What&rsquo;s inside</p>
-    <h2 class="h-2">Ten chapters. One creative vision.</h2>
-    <p style="max-width:64ch;color:var(--paper-dim)">The Wiggle Wood Series Bible is the single creative document that holds the world together &mdash; the first thing every new member of the creative team reads and the reference every writer, director, and designer returns to throughout production.</p>
-
-    <div class="bible-contents" data-reveal-stagger>
-      <div class="bible-item">
-        <div class="bible-item__num">1</div>
-        <div><h4>Overview</h4><p>The premise, format, and four pillars of the series. What Wiggle Wood is and what makes it unique.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">2</div>
-        <div><h4>The Characters</h4><p>Full profiles for Cyd, Cosmo, Chadwick, and Bellona, plus guest and recurring characters.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">3</div>
-        <div><h4>Episode Format</h4><p>The five-step emotional structure and full timestamped running order for every episode.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">4</div>
-        <div><h4>Music</h4><p>Three songs per episode, musical influences, and the role of Jax Jones and Banks &amp; Wag.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">5</div>
-        <div><h4>The World</h4><p>The woodland setting and five core locations: Caterpillar Cubby, Wiggle Wood Way, Pebble Brook, Midsummer Meadow, and Lily Pad Lake.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">6</div>
-        <div><h4>Look &amp; Feel</h4><p>2.5D animation style, character design philosophy, and the antithesis-to-overstimulation approach.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">7</div>
-        <div><h4>The Rules</h4><p>Creative guardrails for Wiggle Wood, Caterpillar Cubby, and the Wigglers &mdash; what the world permits and what it does not.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">8</div>
-        <div><h4>Sample Stories</h4><p>Three full episode synopses and five springboard summaries from the twenty already developed.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">9</div>
-        <div><h4>Brand Expansions</h4><p>Licensing, live entertainment, digital games, books, audio, merchandise, and school tie-ins.</p></div>
-      </div>
-      <div class="bible-item">
-        <div class="bible-item__num">10</div>
-        <div><h4>Creative Team</h4><p>Full bios for all ten team members, from creator Aim&eacute;e Anderson to production management at Nest Productions.</p></div>
+    <div class="two-col">
+      <div class="two-col__text">
+        <p class="eyebrow">What the Bible Covers</p>
+        <h2 class="h-2">Five areas. One unified world.</h2>
+        <p>The bible is organised around the five things every creative team member needs to understand before they write a single word or draw a single frame.</p>
+        <div class="bible-covers format-steps" data-reveal-stagger>
+          <div class="format-step">
+            <span class="step-num">1</span>
+            <div>
+              <strong>The World</strong>
+              <p>The woodland setting, the five core locations, the rules of the physical space, and the atmosphere that makes Wiggle Wood feel unlike anywhere else in children's television.</p>
+            </div>
+          </div>
+          <div class="format-step">
+            <span class="step-num">2</span>
+            <div>
+              <strong>The Characters</strong>
+              <p>Full profiles for Cyd, Cosmo, Chadwick, and Bellona &mdash; how they think, how they speak, what drives them, what they fear, and how they relate to one another. The bible is the source of truth for every character decision.</p>
+            </div>
+          </div>
+          <div class="format-step">
+            <span class="step-num">3</span>
+            <div>
+              <strong>Tone &amp; Voice</strong>
+              <p>The emotional register of the series &mdash; warm, unhurried, and genuinely funny without ever being frantic. What the series sounds like, and what it never sounds like.</p>
+            </div>
+          </div>
+          <div class="format-step">
+            <span class="step-num">4</span>
+            <div>
+              <strong>The Rules</strong>
+              <p>The creative guardrails that protect the world. What Wiggle Wood permits and what it does not &mdash; for storytelling, for character behaviour, for the visual world, and for the music.</p>
+            </div>
+          </div>
+          <div class="format-step">
+            <span class="step-num">5</span>
+            <div>
+              <strong>The Long-term Vision</strong>
+              <p>How the series grows &mdash; across seasons, into brand extensions, and into new formats &mdash; while keeping the world consistent and the characters true to themselves.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ---- CTA ---- -->
+<!-- ---- Section 3: A Living Document ---- -->
 <section class="section" data-reveal>
   <div class="container">
-    <div class="cta-band">
-      <p class="eyebrow" style="justify-content:center">Ready to talk?</p>
-      <h2 class="h-2" style="max-width:24ch;margin-inline:auto">All documents in one place</h2>
-      <p class="lead" style="max-width:54ch;margin:.7rem auto 1.7rem">The Series Bible sits alongside our financial model, certifications and pilot materials in the investor data room.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center">
-        <a class="btn" href="assets/docs/Wiggle-Wood-Series-Bible.pdf" download="Wiggle-Wood-Series-Bible.pdf">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>
-          Download Bible PDF
-        </a>
-        <a class="btn btn-ghost" href="/documents">All Documents &rarr;</a>
+    <p class="eyebrow">A Living Document</p>
+    <h2 class="h-2">Built to grow with the series</h2>
+    <p style="max-width:64ch;color:var(--paper-dim)">The bible is not a document written once and filed away. It is updated at every significant stage of production &mdash; when the world extends, when a character develops, when a creative decision is made that sets a new precedent.</p>
+
+    <div class="bible-stats" data-reveal-stagger>
+      <div class="bible-stat">
+        <span class="bible-stat__num">10</span>
+        <span class="bible-stat__label">Team members who read the bible before they begin</span>
       </div>
+      <div class="bible-stat">
+        <span class="bible-stat__num">57</span>
+        <span class="bible-stat__label">Episodes developed, each shaped by the bible&rsquo;s rules</span>
+      </div>
+      <div class="bible-stat">
+        <span class="bible-stat__num">5</span>
+        <span class="bible-stat__label">Core creative areas that every team member must understand</span>
+      </div>
+      <div class="bible-stat">
+        <span class="bible-stat__num">1</span>
+        <span class="bible-stat__label">Source of truth for the entire creative team</span>
+      </div>
+    </div>
+
+    <div class="bible-pullquote">
+      <p>&ldquo;The bible is what keeps every writer, director, and designer working from the same world &mdash; the same characters, the same rules, the same vision. It is what makes Wiggle Wood feel consistent whether you joined the project at the beginning or are joining it now.&rdquo;</p>
+      <cite>Aim&eacute;e Anderson &mdash; Creator, Wiggle Wood</cite>
+    </div>
+
+    <div class="cta-band" style="margin-top:2rem">
+      <p class="eyebrow" style="justify-content:center">The full document</p>
+      <h2 class="h-2" style="max-width:28ch;margin-inline:auto">Download the Series Bible</h2>
+      <p class="lead" style="max-width:54ch;margin:.7rem auto 1.7rem">The Series Bible is available in full in the documents section, alongside our financial model, certifications, and pilot materials.</p>
+      <a class="btn" href="/documents">Go to Documents &rarr;</a>
     </div>
   </div>
 </section>
