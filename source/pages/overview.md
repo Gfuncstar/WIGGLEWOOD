@@ -13,7 +13,7 @@
 - h3: The Opportunity
 
 ## Body copy
-- By 2035, Wiggle Wood will be the number one children's IP in the world, generating £1 billion in annual revenue and growing.
+- By 2035, Wiggle Wood will be the number one children's IP in the world, generating $1 billion in annual revenue and growing.
 - Wiggle Wood is a music-led animated series for children aged three to five, home to three adventurous young caterpillars named Cyd, Chadwick and Cosmo. It is a modern take on Aesop's Fables, where every new adventure offers a mirror into the Wigglers' own lives. By helping the friends they meet along the way, Cyd, Chadwick and Cosmo develop new skills and learn to navigate their own emotions, abilities and friendships. Each episode features an original, irresistible song through which the caterpillars share their discoveries with Bellona, their guardian butterfly.
 - Just like the three to five year olds who will watch it, these little Wigglers are taking their first steps into a big, exciting world, meeting new friends and uncovering nature's best kept secrets. Children and families will come for the comedy and the music. They will stay for the lovable characters and the genuinely valuable insights into their own emotional lives.
 - Wiggle Wood is not just a series. It is a carefully constructed children's IP with the creative foundation, commercial architecture and global ambition to become one of the most loved and trusted children's brands in the world.
