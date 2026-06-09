@@ -428,6 +428,22 @@ strong{font-weight:700;color:#fff}
 .footer__legal p{margin:0}
 .footer__legal a{color:rgba(127,160,148,.7);text-decoration:underline;text-underline-offset:3px}
 
+/* ---------- Vision statement ---------- */
+.vision-statement{
+  text-align:center;padding:2rem 2.5rem;margin:1.8rem 0 .4rem;
+  background:rgba(255,224,122,.06);
+  border:1px solid rgba(255,224,122,.28);
+  border-radius:var(--r-md);
+  box-shadow:0 0 40px rgba(255,200,60,.08), inset 0 1px 0 rgba(255,255,255,.06);
+}
+.vision-statement p{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.15rem,2.2vw,1.5rem);
+  color:var(--gold);line-height:1.45;
+  text-shadow:0 0 28px rgba(255,200,60,.35);
+  margin:0;
+}
+
 /* ---------- Pull quote ---------- */
 .pull-quote{
   border-left:3px solid var(--gold);padding:.8rem 1.2rem;margin:1.4rem 0;
